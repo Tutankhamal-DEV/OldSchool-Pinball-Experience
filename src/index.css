@@ -1,0 +1,1295 @@
+@import "tailwindcss";
+
+/* ===========================
+   Old School Pinball — Design System
+   =========================== */
+
+:root {
+  --color-scanline: rgba(18, 16, 16, 0.5);
+  --color-crt-glow: rgba(255, 255, 255, 0.03);
+  --angle: 0deg;
+}
+
+@theme {
+  /* Neon American Bar Brand Palette */
+  --color-pinball-black: #080305;
+  /* Deep, warm black */
+  --color-pinball-dark: #1a0505;
+  /* Deep crimson shadow */
+  --color-pinball-red: #ff2a2a;
+  /* Bright neon red */
+  --color-pinball-yellow: #ffb703;
+  /* Warm neon amber */
+  --color-pinball-gold: #fb8500;
+  /* Rich orange gold */
+  --color-pinball-cream: #ffe6cf;
+  /* Warm tinted cream for text */
+  --color-pinball-neon-red: #ff0033;
+  /* Pure neon red */
+  --color-pinball-neon-pink: #ff1493;
+  /* Warm magenta accent */
+  --color-pinball-neon-blue: #00f3ff;
+  /* Keeping cyan just for tiny accents */
+  --color-pinball-chrome: #b0a8a8;
+  /* Warmer silver */
+
+  /* Typography */
+  --font-elegant: 'Damion', cursive;
+  /* Replaces pixel font for main neon signatures */
+  --font-retro: 'Pacifico', cursive;
+  /* Secondary script font */
+  --font-body: 'Play', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+  /* Kept for UI elements/scores */
+}
+
+/* ===========================
+   Base & Reset
+   =========================== */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+  /* Global font size bump (from default 16px) */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-pinball-black);
+  color: var(--color-pinball-cream);
+  overflow-x: hidden;
+  font-weight: 600;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 1), 0px 0px 30px rgba(0, 0, 0, 1), -1px -1px 4px rgba(0, 0, 0, 0.9);
+}
+
+::selection {
+  background-color: var(--color-pinball-red);
+  color: white;
+}
+
+/* ===========================
+   Global Typography & Box Enhancements
+   =========================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1);
+}
+
+.glass-panel,
+.glass-panel-heavy,
+.glass-panel-solid,
+.glass-panel-yellow,
+.feature-card,
+.menu-card,
+.btn-retro {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+.hero-logo-shadow {
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+}
+
+/* ===========================
+   Custom Scrollbar
+   =========================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-pinball-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-pinball-red);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-pinball-neon-red);
+}
+
+/* ===========================
+   Animations
+   =========================== */
+
+@keyframes neonPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 5px var(--color-pinball-red),
+      0 0 10px var(--color-pinball-red),
+      0 0 20px rgba(196, 30, 42, 0.4);
+  }
+
+  50% {
+    box-shadow:
+      0 0 10px var(--color-pinball-red),
+      0 0 20px var(--color-pinball-red),
+      0 0 40px rgba(196, 30, 42, 0.6),
+      0 0 60px rgba(196, 30, 42, 0.3);
+  }
+}
+
+@keyframes neonPulseYellow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 5px var(--color-pinball-yellow),
+      0 0 10px rgba(255, 0, 255, 0.3);
+  }
+
+  50% {
+    box-shadow:
+      0 0 10px var(--color-pinball-yellow),
+      0 0 25px rgba(255, 0, 255, 0.5),
+      0 0 50px rgba(0, 243, 255, 0.4);
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    background-position-y: 0px;
+  }
+
+  100% {
+    background-position-y: 60px;
+  }
+}
+
+@keyframes starsDrift {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-500px);
+  }
+}
+
+@keyframes textFlicker {
+  0% {
+    opacity: 1;
+  }
+
+  3% {
+    opacity: 0.4;
+  }
+
+  6% {
+    opacity: 1;
+  }
+
+  7% {
+    opacity: 0.6;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  32% {
+    opacity: 0.7;
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  62% {
+    opacity: 0.3;
+  }
+
+  63% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scanlineWipe {
+  0% {
+    transform: translateX(-120%) skewX(-15deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.6;
+  }
+
+  85% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateX(120%) skewX(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatBounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes rotateGlow {
+  0% {
+    --angle: 0deg;
+  }
+
+  100% {
+    --angle: 360deg;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ===========================
+   Utility Animation Classes
+   =========================== */
+
+.bg-radial-vignette {
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(8, 3, 5, 0.8) 90%, rgba(8, 3, 5, 1) 100%);
+}
+
+.bg-feathered-shadow {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(8, 3, 5, 0.4) 12%,
+      rgba(8, 3, 5, 0.72) 35%,
+      rgba(8, 3, 5, 0.72) 65%,
+      rgba(8, 3, 5, 0.4) 88%,
+      transparent 100%);
+}
+
+.animate-neon-pulse {
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+.animate-neon-pulse-yellow {
+  animation: neonPulseYellow 3s ease-in-out infinite;
+}
+
+.animate-text-flicker {
+  animation: textFlicker 4s infinite;
+}
+
+.animate-scanline-wipe {
+  animation: scanlineWipe 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-float {
+  animation: floatBounce 3s ease-in-out infinite;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 50%,
+      transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* ===========================
+   Animated Red Border
+   =========================== */
+
+.animated-red-border {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.animated-red-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: rotateGlow 3s linear infinite;
+  pointer-events: none;
+}
+
+/* ===========================
+   Neon Text Glow
+   =========================== */
+
+.neon-text-red {
+  color: var(--color-pinball-red);
+  text-shadow: none;
+}
+
+.neon-text-yellow {
+  color: var(--color-pinball-yellow);
+  text-shadow: none;
+}
+
+.neon-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 3s ease-in-out forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.chromatic-text {
+  text-shadow:
+    2px 2px 0px var(--color-pinball-neon-red),
+    -2px -2px 0px var(--color-pinball-neon-blue),
+    0 0 20px rgba(255, 0, 255, 0.5);
+}
+
+/* ===========================
+   Glass Panel
+   =========================== */
+
+.glass-panel {
+  background: rgba(10, 10, 10, 0.75);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 2px solid var(--color-pinball-red);
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.glass-panel:hover {
+  background: rgba(10, 10, 10, 0.9);
+  border-color: transparent;
+  box-shadow: 0 0 25px rgba(255, 42, 42, 0.6), 0 0 50px rgba(0, 255, 255, 0.2);
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  /* Pull it slightly to cover the 2px border */
+  border-radius: 8px;
+  padding: 2px;
+  background: conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.glass-panel:hover::before {
+  opacity: 1;
+  animation: rotateGlow 3s linear infinite;
+}
+
+@keyframes rgbBorderSlide {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+/* ===========================
+   Retro Button (Gamified)
+   =========================== */
+
+.btn-retro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-body);
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: white;
+  border-radius: 8px;
+  /* Square off for boxy game feel */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  /* Animated dual-color border trick */
+  border: 2px solid transparent;
+  background:
+    linear-gradient(135deg, #1a0505, #080305) padding-box,
+    linear-gradient(90deg, var(--color-pinball-red), var(--color-pinball-yellow), var(--color-pinball-red)) border-box;
+  background-size: 100% 100%, 200% 100%;
+  animation: btnBorderSlide 2s linear infinite;
+  box-shadow: 0 0 10px rgba(255, 42, 42, 0.3);
+}
+
+@keyframes btnBorderSlide {
+  to {
+    background-position: 100% 0, 200% 0;
+  }
+}
+
+.btn-retro:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 15px var(--color-pinball-red),
+    0 0 30px rgba(196, 30, 42, 0.4);
+}
+
+.btn-retro:active {
+  transform: scale(0.95);
+}
+
+/* Glassmorphism shine sweep effect for all retro buttons */
+.btn-retro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transform: skewX(-25deg);
+  animation: sweepGlassGlow 6s infinite ease-in-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes sweepGlassGlow {
+
+  0%,
+  70% {
+    left: -100%;
+  }
+
+  90%,
+  100% {
+    left: 200%;
+  }
+}
+
+.btn-retro-nav {
+  padding: 0.35rem 0.85rem !important;
+  font-size: 0.75rem !important;
+  /* Use background-image so it does not override background-position animated property */
+  background-image:
+    linear-gradient(135deg, #050505, #000000),
+    linear-gradient(90deg, var(--color-pinball-red), var(--color-pinball-yellow), var(--color-pinball-red)) !important;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.btn-retro-yellow {
+  background:
+    linear-gradient(135deg, var(--color-pinball-yellow), var(--color-pinball-gold)) padding-box,
+    linear-gradient(90deg, #ffb703, #ffffff, #ffb703) border-box;
+  color: var(--color-pinball-black);
+}
+
+.btn-retro-yellow:hover {
+  box-shadow:
+    0 0 15px var(--color-pinball-yellow),
+    0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+.btn-retro-rgb {
+  background:
+    linear-gradient(135deg, #1a0505, #080305) padding-box,
+    conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000) border-box;
+  color: white;
+  animation: rotateGlow 3s linear infinite;
+}
+
+.btn-retro-rgb:hover {
+  box-shadow:
+    0 0 15px #ff0000,
+    0 0 30px rgba(255, 0, 0, 0.4);
+}
+
+/* ===========================
+   Section Titles
+   =========================== */
+
+.section-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(2.5rem, 8vw, 6.5rem);
+  text-transform: none;
+  /* Keep natural script casing */
+  letter-spacing: normal;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+
+  /* Reset body shadow for clean neon fill */
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+
+  /* Solid fill with neon glow */
+  color: var(--color-pinball-red);
+
+  /* Continuous pulsing color animation */
+  animation: neon-inner-pulse 3s ease-in-out infinite;
+}
+
+@keyframes neon-inner-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    color: var(--color-pinball-yellow);
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+  }
+
+  50% {
+    opacity: 0.8;
+    color: var(--color-pinball-red);
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+  }
+}
+
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg,
+      transparent,
+      var(--color-pinball-red),
+      var(--color-pinball-yellow),
+      var(--color-pinball-red),
+      transparent);
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   ARCADE MACHINES — Large, dense corridor
+   ═══════════════════════════════════════════ */
+
+.arc-machine {
+  position: absolute;
+  z-index: var(--z, 10);
+  pointer-events: none;
+}
+
+/* Left machines anchor from right edge, right machines from left edge */
+.arc-machine-l {
+  transform: translate(-30%, -100%);
+}
+
+.arc-machine-r {
+  transform: translate(-70%, -100%);
+}
+
+.arc-m-body {
+  position: relative;
+  width: var(--mw, 70px);
+  height: var(--mh, 170px);
+  background: linear-gradient(180deg, #0d0b12 0%, #100e16 35%, #0c0a10 100%);
+  clip-path: polygon(6% 0%, 94% 0%, 97% 12%, 97% 100%, 3% 100%, 3% 12%);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.6), 2px 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Marquee — bright glowing header */
+.arc-m-marquee {
+  position: absolute;
+  top: 0;
+  left: 4%;
+  width: 92%;
+  height: 14%;
+  background: var(--mc, #FF1493);
+  opacity: 0.75;
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 0 8px var(--mc, #FF1493), 0 0 20px color-mix(in srgb, var(--mc, #FF1493) 45%, transparent);
+}
+
+/* Screen — with game content */
+.arc-m-screen {
+  position: absolute;
+  top: 17%;
+  left: 10%;
+  width: 80%;
+  height: 30%;
+  background: #030308;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  box-shadow: 0 0 6px var(--sc, #00E5FF), inset 0 0 12px color-mix(in srgb, var(--sc, #00E5FF) 12%, transparent);
+}
+
+/* Scanline overlay on screen */
+.arc-m-scanline {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent 0px, transparent 2px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 3px);
+  pointer-events: none;
+}
+
+/* ── Screen pixel art ── */
+.arc-scr-px {
+  position: absolute;
+  inset: 3px;
+  background: color-mix(in srgb, var(--sc, #00E5FF) 8%, transparent);
+  transition: background 0.15s;
+}
+
+/* INVADER game — grid of "sprites" */
+.arc-game-invader[data-frame="0"] {
+  background:
+    /* Row 1 invaders */
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 15% 15% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 35% 15% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 55% 15% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 75% 15% / 14% 20%,
+    /* Row 2 */
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 25% 40% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 45% 40% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 65% 40% / 14% 20%,
+    /* Ship at bottom */
+    linear-gradient(var(--sc), var(--sc)) 45% 82% / 18% 8%,
+    color-mix(in srgb, var(--sc) 6%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-invader[data-frame="1"] {
+  background:
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 18% 18% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 38% 18% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 58% 18% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 78% 18% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 22% 43% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 42% 43% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 62% 43% / 14% 20%,
+    linear-gradient(var(--sc), var(--sc)) 50% 82% / 18% 8%,
+    color-mix(in srgb, var(--sc) 6%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-invader[data-frame="2"] {
+  background:
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 12% 12% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 32% 12% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 52% 12% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 72% 12% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 28% 38% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 48% 38% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 68% 38% / 14% 20%,
+    linear-gradient(var(--sc), var(--sc)) 42% 82% / 18% 8%,
+    color-mix(in srgb, var(--sc) 6%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-invader[data-frame="3"] {
+  background:
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 20% 20% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 40% 20% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 60% 20% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 80% 20% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 20% 45% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 50% 45% / 14% 20%,
+    radial-gradient(circle 2px, var(--sc) 65%, transparent 65%) 70% 45% / 14% 20%,
+    linear-gradient(var(--sc), var(--sc)) 48% 82% / 18% 8%,
+    color-mix(in srgb, var(--sc) 6%, transparent);
+  background-repeat: no-repeat;
+}
+
+/* PAC-MAN game — pac + dots */
+.arc-game-pac[data-frame="0"] {
+  background:
+    /* Pac-Man (open mouth) */
+    conic-gradient(from 35deg, var(--sc) 0deg, var(--sc) 290deg, transparent 290deg) 15% 48% / 18% 28%,
+    /* Dots */
+    radial-gradient(circle 2px, var(--sc) 60%, transparent 60%) 45% 52% / 8% 12%,
+    radial-gradient(circle 2px, var(--sc) 60%, transparent 60%) 55% 52% / 8% 12%,
+    radial-gradient(circle 2px, var(--sc) 60%, transparent 60%) 65% 52% / 8% 12%,
+    radial-gradient(circle 2px, var(--sc) 60%, transparent 60%) 75% 52% / 8% 12%,
+    /* Ghost */
+    radial-gradient(ellipse, var(--sc) 55%, transparent 55%) 85% 48% / 14% 22%,
+    color-mix(in srgb, var(--sc) 5%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-pac[data-frame="1"] {
+  background:
+    conic-gradient(from 20deg, var(--sc) 0deg, var(--sc) 320deg, transparent 320deg) 28% 48% / 18% 28%,
+    radial-gradient(circle 2px, var(--sc) 60%, transparent 60%) 55% 52% / 8% 12%,
+    radial-gradient(circle 2px, var(--sc) 60%, transparent 60%) 65% 52% / 8% 12%,
+    radial-gradient(circle 2px, var(--sc) 60%, transparent 60%) 75% 52% / 8% 12%,
+    radial-gradient(ellipse, var(--sc) 55%, transparent 55%) 88% 48% / 14% 22%,
+    color-mix(in srgb, var(--sc) 5%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-pac[data-frame="2"] {
+  background:
+    conic-gradient(from 35deg, var(--sc) 0deg, var(--sc) 290deg, transparent 290deg) 42% 48% / 18% 28%,
+    radial-gradient(circle 2px, var(--sc) 60%, transparent 60%) 65% 52% / 8% 12%,
+    radial-gradient(circle 2px, var(--sc) 60%, transparent 60%) 75% 52% / 8% 12%,
+    radial-gradient(ellipse, var(--sc) 55%, transparent 55%) 88% 48% / 14% 22%,
+    color-mix(in srgb, var(--sc) 5%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-pac[data-frame="3"] {
+  background:
+    conic-gradient(from 10deg, var(--sc) 0deg, var(--sc) 340deg, transparent 340deg) 55% 48% / 18% 28%,
+    radial-gradient(circle 2px, var(--sc) 60%, transparent 60%) 75% 52% / 8% 12%,
+    radial-gradient(ellipse, var(--sc) 55%, transparent 55%) 88% 48% / 14% 22%,
+    color-mix(in srgb, var(--sc) 5%, transparent);
+  background-repeat: no-repeat;
+}
+
+/* PONG game — paddles + ball */
+.arc-game-pong[data-frame="0"] {
+  background:
+    /* Left paddle */
+    linear-gradient(var(--sc), var(--sc)) 8% 35% / 6% 28%,
+    /* Right paddle */
+    linear-gradient(var(--sc), var(--sc)) 88% 55% / 6% 28%,
+    /* Ball */
+    radial-gradient(circle 3px, var(--sc) 60%, transparent 60%) 40% 45% / 10% 14%,
+    /* Center line (dashed) */
+    repeating-linear-gradient(180deg, var(--sc) 0px, var(--sc) 3px, transparent 3px, transparent 8px) 49% 0% / 3% 100%,
+    color-mix(in srgb, var(--sc) 4%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-pong[data-frame="1"] {
+  background:
+    linear-gradient(var(--sc), var(--sc)) 8% 50% / 6% 28%,
+    linear-gradient(var(--sc), var(--sc)) 88% 35% / 6% 28%,
+    radial-gradient(circle 3px, var(--sc) 60%, transparent 60%) 55% 30% / 10% 14%,
+    repeating-linear-gradient(180deg, var(--sc) 0px, var(--sc) 3px, transparent 3px, transparent 8px) 49% 0% / 3% 100%,
+    color-mix(in srgb, var(--sc) 4%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-pong[data-frame="2"] {
+  background:
+    linear-gradient(var(--sc), var(--sc)) 8% 60% / 6% 28%,
+    linear-gradient(var(--sc), var(--sc)) 88% 25% / 6% 28%,
+    radial-gradient(circle 3px, var(--sc) 60%, transparent 60%) 70% 65% / 10% 14%,
+    repeating-linear-gradient(180deg, var(--sc) 0px, var(--sc) 3px, transparent 3px, transparent 8px) 49% 0% / 3% 100%,
+    color-mix(in srgb, var(--sc) 4%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-pong[data-frame="3"] {
+  background:
+    linear-gradient(var(--sc), var(--sc)) 8% 40% / 6% 28%,
+    linear-gradient(var(--sc), var(--sc)) 88% 60% / 6% 28%,
+    radial-gradient(circle 3px, var(--sc) 60%, transparent 60%) 30% 55% / 10% 14%,
+    repeating-linear-gradient(180deg, var(--sc) 0px, var(--sc) 3px, transparent 3px, transparent 8px) 49% 0% / 3% 100%,
+    color-mix(in srgb, var(--sc) 4%, transparent);
+  background-repeat: no-repeat;
+}
+
+/* TETRIS game — falling blocks */
+.arc-game-tetris[data-frame="0"] {
+  background:
+    linear-gradient(var(--sc), var(--sc)) 20% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 32% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 20% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 55% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 55% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 67% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 45% 30% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 45% 22% / 12% 8%,
+    color-mix(in srgb, var(--sc) 5%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-tetris[data-frame="1"] {
+  background:
+    linear-gradient(var(--sc), var(--sc)) 20% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 32% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 20% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 55% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 55% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 67% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 45% 40% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 45% 32% / 12% 8%,
+    color-mix(in srgb, var(--sc) 5%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-tetris[data-frame="2"] {
+  background:
+    linear-gradient(var(--sc), var(--sc)) 20% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 32% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 20% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 55% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 55% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 67% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 45% 52% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 45% 44% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 57% 44% / 12% 8%,
+    color-mix(in srgb, var(--sc) 5%, transparent);
+  background-repeat: no-repeat;
+}
+
+.arc-game-tetris[data-frame="3"] {
+  background:
+    linear-gradient(var(--sc), var(--sc)) 20% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 32% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 20% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 55% 75% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 55% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 67% 67% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 45% 60% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 45% 52% / 12% 8%,
+    linear-gradient(var(--sc), var(--sc)) 57% 52% / 12% 8%,
+    color-mix(in srgb, var(--sc) 5%, transparent);
+  background-repeat: no-repeat;
+}
+
+/* Control panel */
+.arc-m-panel {
+  position: absolute;
+  top: 52%;
+  left: 8%;
+  width: 84%;
+  height: 12%;
+  background: rgba(20, 16, 28, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 6px;
+}
+
+.arc-m-joy {
+  width: 5px;
+  height: 12px;
+  background: linear-gradient(180deg, #CC3333, #777);
+  border-radius: 2px 2px 0 0;
+  margin-right: 5px;
+}
+
+.arc-m-btn {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px currentColor;
+}
+
+/* Coin door */
+.arc-m-coin {
+  position: absolute;
+  top: 72%;
+  left: 22%;
+  width: 56%;
+  height: 10%;
+  background: rgba(8, 8, 12, 0.85);
+  border: 1px solid rgba(50, 40, 30, 0.25);
+}
+
+.arc-m-coin::before,
+.arc-m-coin::after {
+  content: '';
+  position: absolute;
+  top: 18%;
+  width: 28%;
+  height: 55%;
+  background: rgba(255, 50, 50, 0.35);
+  border-radius: 1px;
+}
+
+.arc-m-coin::before {
+  left: 10%;
+}
+
+.arc-m-coin::after {
+  right: 10%;
+}
+
+/* Screen glow on floor */
+.arc-m-glow {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 50px;
+  background: radial-gradient(ellipse at top, color-mix(in srgb, var(--sc) 18%, transparent) 0%, transparent 75%);
+  pointer-events: none;
+}
+
+/* Machine shadow */
+.arc-m-shadow {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 10px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.5) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Foosball ── */
+.arc-foos {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translateX(-50%);
+  z-index: 15;
+  pointer-events: none;
+}
+
+.arc-foos-top {
+  width: 120px;
+  height: 58px;
+  background: linear-gradient(180deg, #5d8a3c, #4a7a30, #3d6828);
+  border: 3px solid #c4a35a;
+  border-radius: 4px;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.arc-foos-top::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: 2px;
+  background: linear-gradient(90deg, #888, #ccc, #888);
+  box-shadow: 0 12px 0 #999, 0 24px 0 #888, 0 36px 0 #999;
+}
+
+.arc-foos-legs {
+  width: 120px;
+  height: 22px;
+  position: relative;
+}
+
+.arc-foos-legs::before,
+.arc-foos-legs::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 6px;
+  height: 22px;
+  background: #c4a35a;
+  border-radius: 0 0 2px 2px;
+}
+
+.arc-foos-legs::before {
+  left: 10px;
+}
+
+.arc-foos-legs::after {
+  right: 10px;
+}
+
+/* ── Neon signs ── */
+.arc-neon {
+  position: absolute;
+  z-index: 22;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.arc-neon-txt {
+  font-family: var(--font-pixel, 'Press Start 2P', monospace);
+  color: var(--nc, #FF4444);
+  text-shadow:
+    0 0 4px var(--nc),
+    0 0 10px var(--nc),
+    0 0 20px var(--nc),
+    0 0 40px color-mix(in srgb, var(--nc) 55%, transparent),
+    0 0 80px color-mix(in srgb, var(--nc) 25%, transparent);
+  letter-spacing: 0.12em;
+  transition: opacity 0.05s;
+  animation: nFlick 5s infinite;
+}
+
+/* ── Mouse spotlight ── */
+.arc-spot {
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  pointer-events: none;
+  background: radial-gradient(circle 300px at var(--sx, 50vw) var(--sy, 50vh),
+      rgba(255, 200, 100, 0.06) 0%, rgba(255, 140, 0, 0.025) 35%, transparent 65%);
+  transition: background 0.12s ease-out;
+}
+
+/* ── Warm ambient ── */
+.arc-warm {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 120, 0, 0.012) 35%, rgba(255, 80, 0, 0.025) 70%, rgba(200, 60, 0, 0.035) 100%);
+}
+
+/* ── Vignette ── */
+.arc-vig {
+  position: absolute;
+  inset: 0;
+  z-index: 26;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 42%, transparent 30%, rgba(0, 0, 0, 0.55) 70%, rgba(0, 0, 0, 0.88) 100%);
+}
+
+/* ── Keyframes ── */
+@keyframes nFlick {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.82;
+  }
+
+  6% {
+    opacity: 1;
+  }
+
+  7.5% {
+    opacity: 0.5;
+  }
+
+  8.5% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  52% {
+    opacity: 0.65;
+  }
+
+  53% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  91% {
+    opacity: 0.35;
+  }
+
+  92% {
+    opacity: 1;
+  }
+}
+
+@keyframes bPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px var(--pc, #FFA500), 0 0 25px rgba(255, 165, 0, 0.6), 0 0 50px rgba(255, 140, 0, 0.25);
+  }
+
+  50% {
+    box-shadow: 0 0 14px var(--pc, #FFA500), 0 0 32px rgba(255, 165, 0, 0.7), 0 0 60px rgba(255, 140, 0, 0.35);
+  }
+}
+
+@keyframes pSwing {
+
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(-50%) rotate(0.6deg);
+  }
+
+  75% {
+    transform: translateX(-50%) rotate(-0.6deg);
+  }
+}
+
+/* ══════════════════════════════════════════
+   GLITCH TEXT ANIMATION
+   ══════════════════════════════════════════ */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.glitch-text::before {
+  color: #0ff;
+  z-index: -1;
+  animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  color: #f0f;
+  z-index: -2;
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: inset(20% 0 80% 0);
+    transform: translate(-2px, 1px);
+  }
+
+  20% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(2px, -1px);
+  }
+
+  40% {
+    clip-path: inset(40% 0 50% 0);
+    transform: translate(2px, 2px);
+  }
+
+  60% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(-2px, -2px);
+  }
+
+  80% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    clip-path: inset(30% 0 50% 0);
+    transform: translate(-2px, 1px);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: inset(10% 0 60% 0);
+    transform: translate(2px, -1px);
+  }
+
+  20% {
+    clip-path: inset(30% 0 20% 0);
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    clip-path: inset(70% 0 10% 0);
+    transform: translate(-2px, -1px);
+  }
+
+  60% {
+    clip-path: inset(20% 0 50% 0);
+    transform: translate(2px, 2px);
+  }
+
+  80% {
+    clip-path: inset(50% 0 30% 0);
+    transform: translate(-2px, -2px);
+  }
+
+  100% {
+    clip-path: inset(5% 0 80% 0);
+    transform: translate(2px, 1px);
+  }
+}
+
+/* CRT Overlay Static Backgrounds */
+.crt-scanlines-bg {
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0px, rgba(0, 0, 0, 0.06) 1px, transparent 1px, transparent 3px);
+}
+
+.crt-vignette-bg {
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+}

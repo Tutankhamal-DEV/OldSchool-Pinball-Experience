@@ -1,0 +1,195 @@
+import { useRef, useState, useEffect } from 'react'
+import { motion, useInView } from 'motion/react'
+import { useTranslation } from 'react-i18next'
+
+type Category = 'all' | 'pinball' | 'arcade'
+
+interface Machine {
+    name: string
+    category: 'pinball' | 'arcade'
+    year?: number
+    detail?: string
+}
+
+const MACHINES: Machine[] = [
+    // ── Pinball (from production site) ──
+    { name: 'A.G. Football', category: 'pinball', year: 1991 },
+    { name: 'Batman', category: 'pinball', year: 2016 },
+    { name: 'Baseball', category: 'pinball', year: 1957 },
+    { name: 'Cavaleiro Negro', category: 'pinball', year: 1980 },
+    { name: 'Cirqus Voltaire', category: 'pinball', year: 1997 },
+    { name: 'Fire Action', category: 'pinball', year: 1980 },
+    { name: 'Game of Thrones', category: 'pinball', year: 2015 },
+    { name: 'Guardians of the Galaxy', category: 'pinball', year: 2017 },
+    { name: 'Hawkman', category: 'pinball', year: 1981 },
+    { name: 'Jack Bot', category: 'pinball', year: 1995 },
+    { name: 'Jack in the Box', category: 'pinball', year: 1973 },
+    { name: 'Jet Spin', category: 'pinball', year: 1977 },
+    { name: 'Junk Yard', category: 'pinball', year: 1996 },
+    { name: 'Medieval Madness', category: 'pinball', year: 1997 },
+    { name: 'Metallica', category: 'pinball', year: 2013 },
+    { name: 'Oba-Oba', category: 'pinball', year: 1978 },
+    { name: 'OXO', category: 'pinball', year: 1973 },
+    { name: 'Revenge From Mars', category: 'pinball', year: 1999 },
+    { name: 'Royal Flush', category: 'pinball', year: 1976 },
+    { name: 'Scared Stiff', category: 'pinball', year: 1996 },
+    { name: 'Stargate', category: 'pinball', year: 1995 },
+    { name: 'Star Wars SEGA', category: 'pinball', year: 1997 },
+    { name: 'Sure Shot', category: 'pinball', year: 1981 },
+    { name: 'The Wizard of Oz', category: 'pinball', year: 2013 },
+    { name: 'The Beatles', category: 'pinball', year: 2018 },
+    { name: 'Vortex', category: 'pinball', year: 1980 },
+    // ── Arcades & Outros Jogos ──
+    { name: 'Bebometro', category: 'arcade', detail: 'Teste de Sobriedade' },
+    { name: 'Lucky & Wild', category: 'arcade', year: 1993, detail: 'Arcade Tiro' },
+    { name: 'Mini Arcade Classics', category: 'arcade', detail: '3x Multijogos' },
+    { name: 'Pandora 6', category: 'arcade', detail: '2x Multijogos' },
+    { name: 'Pandora Alpha Plus', category: 'arcade', detail: 'Multijogos' },
+    { name: 'Pebolim', category: 'arcade' },
+    { name: 'Pong', category: 'arcade', detail: 'Ping Pong Digital' },
+    { name: 'Real Puncher', category: 'arcade', detail: 'Soco' },
+    { name: 'Super Monaco GP SEGA', category: 'arcade', year: 1989 },
+    { name: 'Terminator 2', category: 'arcade', detail: 'Arcade Tiro' },
+    { name: 'Vortex', category: 'arcade', detail: 'Teste de Reflexo' },
+]
+
+const FILTERS: { label: string; value: Category }[] = [
+    { label: 'Todas', value: 'all' },
+    { label: 'Pinball', value: 'pinball' },
+    { label: 'Arcade', value: 'arcade' },
+]
+
+export default function Machines() {
+    const { t } = useTranslation();
+    const ref = useRef<HTMLElement>(null)
+    const inView = useInView(ref, { once: true, margin: '-100px' })
+    const bgInView = useInView(ref, { amount: 0.3 })
+
+    useEffect(() => {
+        if (bgInView) {
+            window.dispatchEvent(new CustomEvent("set-canvas-scene", { detail: 2 }))
+        }
+    }, [bgInView])
+
+    const [filter, setFilter] = useState<Category>('all')
+
+    const sortedMachines = [...MACHINES].sort((a, b) => a.name.localeCompare(b.name))
+    const filtered = filter === 'all'
+        ? sortedMachines
+        : sortedMachines.filter((m) => m.category === filter)
+
+    const groupedMachines = filter === 'all'
+        ? {
+            [t('machines.groups.arcades')]: filtered.filter(m => m.category === 'arcade'),
+            [t('machines.groups.pinballs')]: filtered.filter(m => m.category === 'pinball'),
+        }
+        : {
+            [filter === 'pinball' ? t('machines.groups.pinballs') : t('machines.groups.arcades')]: filtered
+        }
+
+    return (
+        <section id="maquinas" ref={ref} className="relative py-24 px-4 z-1">
+            <div className="max-w-6xl mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6 }}
+                    className="text-center mb-12"
+                >
+                    <h2 className="section-title text-pinball-yellow">{t('machines.title')}</h2>
+                    <p className="font-body text-pinball-cream/70 mt-6 max-w-xl mx-auto">
+                        {t('machines.description')}
+                    </p>
+                </motion.div>
+
+                {/* Close-up pinball bumpers banner */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ delay: 0.2, duration: 0.7 }}
+                    className="relative overflow-hidden rounded-lg border-2 border-pinball-red/20 mb-10 group"
+                >
+                    <div className="aspect-[21/9] relative">
+                        <picture>
+                            <source media="(max-width: 768px)" srcSet="/images/ambiente_04-sm.webp" />
+                            <img
+                                src="/images/ambiente_04.webp"
+                                alt="Pinball and Arcade Area - Old School"
+                                width={1200}
+                                height={500}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <div className="absolute inset-0 bg-gradient-to-t from-pinball-black/60 via-transparent to-pinball-black/30" />
+                    </div>
+                </motion.div>
+
+                {/* Filter tabs */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={inView ? { opacity: 1 } : {}}
+                    transition={{ delay: 0.3, duration: 0.4 }}
+                    className="flex justify-center gap-2 mb-10"
+                >
+                    {FILTERS.map((f) => (
+                        <button
+                            key={f.value}
+                            onClick={() => setFilter(f.value)}
+                            className={`px-5 py-2 rounded-full font-tech text-sm transition-all duration-300 ${filter === f.value
+                                ? 'bg-pinball-red text-white shadow-lg shadow-pinball-red/30'
+                                : 'bg-pinball-dark text-pinball-cream/60 hover:text-pinball-cream hover:bg-pinball-dark/80'
+                                }`}
+                        >
+                            {t(`machines.filters.${f.value}`)}
+                        </button>
+                    ))}
+                </motion.div>
+
+                {/* Compact Machine List */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.1, duration: 0.6 }}
+                    className="glass-panel p-4 md:p-8 max-w-5xl mx-auto"
+                >
+                    {Object.entries(groupedMachines).map(([catName, machines]) => machines.length > 0 && (
+                        <div key={catName} className="mb-6 last:mb-0">
+                            {filter === 'all' && (
+                                <h3 className="font-pixel text-sm sm:text-base text-pinball-yellow mb-3 border-b border-white/10 pb-2">
+                                    {catName}
+                                </h3>
+                            )}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-1">
+                                {machines.map((machine, i) => (
+                                    <div
+                                        key={`${machine.name}-${machine.category}-${i}`}
+                                        className="flex items-center justify-between group py-1 px-2 rounded hover:bg-white/5 transition-colors"
+                                    >
+                                        <div className="flex items-center gap-2 overflow-hidden">
+                                            <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${machine.category === 'pinball' ? 'bg-pinball-red' : 'bg-pinball-neon-blue'
+                                                } shadow-[0_0_8px_currentColor] opacity-50 group-hover:opacity-100 transition-opacity`} />
+                                            <p className="font-tech text-[13px] sm:text-sm text-pinball-cream/80 group-hover:text-pinball-yellow transition-colors duration-300 truncate">
+                                                {machine.name} {machine.detail && <span className="opacity-50 text-[10px] ml-1 uppercase">{machine.detail}</span>}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </motion.div>
+
+                {/* Count */}
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={inView ? { opacity: 1 } : {}}
+                    transition={{ delay: 1, duration: 0.4 }}
+                    className="text-center mt-8 font-mono text-sm text-pinball-cream/40"
+                >
+                    {filtered.length} {t('machines.count_machines')} {filter !== 'all' ? `${t('machines.count_of')} ${t(`machines.filters.${filter}`)}` : t('machines.count_total')}
+                </motion.p>
+            </div>
+        </section>
+    )
+}

@@ -1,0 +1,30 @@
+--- MOBILE ISSUES ---
+is-on-https: 0 - Does not use HTTPS - 23 insecure requests found
+largest-contentful-paint: 0 - Largest Contentful Paint - 17.7 s
+mainthread-work-breakdown: 0 - Minimize main-thread work - 23.6 s
+bootup-time: 0 - Reduce JavaScript execution time - 7.6 s
+third-party-summary: 0 - Reduce the impact of third-party code - Third-party code blocked the main thread for 380 ms
+largest-contentful-paint-element: 0 - Largest Contentful Paint element - 17,660 ms
+valid-source-maps: 0 - Missing source maps for large first-party JavaScript - 
+color-contrast: 0 - Background and foreground colors do not have a sufficient contrast ratio. - 
+unminified-javascript: 0 - Minify JavaScript - Est savings of 70 KiB
+unused-css-rules: 0 - Reduce unused CSS - Est savings of 246 KiB
+unused-javascript: 0 - Reduce unused JavaScript - Est savings of 192 KiB
+uses-text-compression: 0 - Enable text compression - Est savings of 631 KiB
+uses-responsive-images: 0 - Properly size images - Est savings of 176 KiB
+robots-txt: 0 - robots.txt is not valid - 30 errors found
+forced-reflow-insight: 0 - Forced reflow - 
+image-delivery-insight: 0 - Improve image delivery - Est savings of 1,166 KiB
+network-dependency-tree-insight: 0 - Network dependency tree - 
+render-blocking-insight: 0 - Render blocking requests - Est savings of 1,950 ms
+interactive: 0.03 - Time to Interactive - 18.8 s
+max-potential-fid: 0.07 - Max Potential First Input Delay - 530 ms
+total-blocking-time: 0.1 - Total Blocking Time - 1,800 ms
+first-contentful-paint: 0.11 - First Contentful Paint - 4.8 s
+speed-index: 0.33 - Speed Index - 6.9 s
+unsized-images: 0.5 - Image elements do not have explicit `width` and `height` - 
+total-byte-weight: 0.5 - Avoid enormous network payloads - Total size was 3,784 KiB
+offscreen-images: 0.5 - Defer offscreen images - Est savings of 1,372 KiB
+render-blocking-resources: 0.5 - Eliminate render-blocking resources - Est savings of 0 ms
+legacy-javascript: 0.5 - Avoid serving legacy JavaScript to modern browsers - 
+uses-passive-event-listeners: 0.5 - Does not use passive listeners to improve scrolling performance - 

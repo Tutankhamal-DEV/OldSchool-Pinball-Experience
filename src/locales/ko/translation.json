@@ -1,0 +1,183 @@
+{
+    "navbar": {
+        "home": "홈",
+        "atmosphere": "분위기",
+        "bar": "아메리칸 바",
+        "machines": "머신",
+        "media": "미디어",
+        "tickets": "티켓",
+        "contact": "연락처",
+        "buy_online": "온라인 구매",
+        "sound_on": "소리 켜기",
+        "sound_off": "소리 끄기",
+        "menu": "메뉴",
+        "events": "이벤트"
+    },
+    "footer": {
+        "brand_description": "라틴 아메리카 최고의 핀볼 & 아케이드 공간. 상파울루에서의 특별한 향수 체험.",
+        "links_title": "링크",
+        "social_title": "소셜",
+        "address": "Teodoro Sampaio 거리 2038 - Pinheiros\n상파울루 - SP, 05406-150",
+        "payment_info": "Pix, 체크카드 및 신용카드 결제 가능",
+        "copyright": "© 2026 Old School Pinball. 모든 권리 보유.",
+        "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
+        "developer_credit": "TUTANKHAMAL DEV 개발"
+    },
+    "hero": {
+        "title_part1": "진정한 ",
+        "title_highlight": "레트로",
+        "title_part2": " 경험",
+        "award_text": "TWIPY 어워드 수상 • 라틴 아메리카 최고의 장소",
+        "btn_tickets": "????",
+        "btn_more": "자세히 보기"
+    },
+    "atmosphere": {
+        "title": "분위기",
+        "description": "Old School의 모든 공간은 아케이드의 황금기로 여러분을 안내하도록 디자인되었습니다.",
+        "areas": {
+            "batman": {
+                "title": "배트맨 코너",
+                "desc": "수집품과 고담 시의 어두운 분위기를 살린 다크 나이트 전용 공간."
+            },
+            "geek": {
+                "title": "긱 & 스타워즈 룸",
+                "desc": "80년대와 90년대 대중 문화가 모인 은하계 테마 공간."
+            },
+            "dance": {
+                "title": "댄스 플로어 & DJ",
+                "desc": "라이브 DJ가 들려주는 8090 최고의 히트곡에 맞춰 춤을 춰보세요!"
+            }
+        }
+    },
+    "american_bar": {
+        "title": "아메리칸 바",
+        "description": "먹고 마시고 즐기세요 - 올스쿨 내 아메리칸 다이너!",
+        "hint_desktop": "클릭 또는 드래그",
+        "hint_mobile": "드래그하여 넘기기"
+    },
+    "machines": {
+        "title": "우리의 머신",
+        "description": "30종 이상의 클래식 핀볼 및 아케이드. 모든 게임은 프리 플레이 설정입니다!",
+        "filters": {
+            "all": "전체",
+            "pinball": "핀볼",
+            "arcade": "아케이드"
+        },
+        "groups": {
+            "arcades": "아케이드 및 기타",
+            "pinballs": "핀볼 머신"
+        },
+        "count_machines": "머신",
+        "count_of": "중",
+        "count_total": "총"
+    },
+    "media": {
+        "title": "미디어",
+        "description": "Old School Pinball의 하이라이트와 버추얼 투어를 시청하세요."
+    },
+    "events": {
+        "title": "이벤트 & 대관",
+        "description": "생일 파티, 기업 행사, 방송 촬영 등을 위한 대관 서비스!",
+        "types": {
+            "birthday": {
+                "title": "생일 파티",
+                "description": "머신과 DJ를 갖춘 특별한 공간에서 생일을 축하하세요."
+            },
+            "corporate": {
+                "title": "기업 행사",
+                "description": "팀 빌딩 빛 사교를 위한 휴식 공간."
+            },
+            "podcast": {
+                "title": "촬영 및 팟캐스트",
+                "description": "독특한 레트로 배경에서 미디어 제작."
+            },
+            "media": {
+                "title": "미디어 프로덕션",
+                "description": "80년대 오락실 테마 촬영 공간."
+            }
+        },
+        "btn_reserve": "WhatsApp 예약"
+    },
+    "tickets": {
+        "title": "티켓 안내",
+        "description": "놀고 싶은 만큼 즐기세요! 매주 목요일과 토요일 오후 6시부터 자정까지.",
+        "plans": {
+            "online": {
+                "name": "온라인 예매",
+                "discount": "10% 할인",
+                "description": "온라인 구매 시 10% 할인을 받으세요!",
+                "features": {
+                    "f1": "무제한 입장",
+                    "f2": "모든 머신 이용 가능",
+                    "f3": "코인 불필요",
+                    "f4": "당일 사용 유효"
+                }
+            },
+            "door": {
+                "name": "현장 발권",
+                "description": "입구에서 결제하고 하루 종일 즐기세요.",
+                "features": {
+                    "f1": "무제한 입장",
+                    "f2": "모든 머신 이용 가능",
+                    "f3": "코인 불필요",
+                    "f4": "카드 결제 환영"
+                }
+            },
+            "kids": {
+                "name": "어린이",
+                "discount": "12세 이하",
+                "description": "토요일 12세 이하 어린이 무제한 입장.",
+                "features": {
+                    "f1": "무제한 입장",
+                    "f2": "모든 머신 이용 가능",
+                    "f3": "코인 불필요",
+                    "f4": "보호자 동반 필수"
+                }
+            }
+        },
+        "btn_buy": "온라인 구매",
+        "btn_more": "자세히 알아보기"
+    },
+    "contact": {
+        "title": "연락처 안내",
+        "description": "언제든 자유롭게 연락 주세요. 여러분을 기다립니다!",
+        "info": {
+            "address_label": "주소",
+            "address_value": "R. Teodureto Souto, 292a - Cambuci, 상파울루 - SP",
+            "whatsapp_label": "WhatsApp 문자",
+            "email_label": "이메일",
+            "hours_label": "운영 시간",
+            "hours_value": "목요일 및 토요일 - 오후 18시 ~ 자정"
+        },
+        "btn_contact": "메시지 보내기"
+    },
+    "chatbot": {
+        "tooltip": "도움이 필요하신가요?",
+        "aria_open": "지원 열기",
+        "aria_close": "닫기",
+        "aria_send": "전송",
+        "status_online": "온라인",
+        "title": "OSB 지원",
+        "welcome": "안녕하세요! 인공지능 도우미입니다.",
+        "placeholder": "메시지...",
+        "fallback": "WhatsApp: +55 11 91562-0127.",
+        "answers": {
+            "tickets": "온라인에서 10% 할인된 티켓을 구매하세요!",
+            "location": "R. Teodureto Souto, 292a. 목/토 영업!",
+            "games": "30개 이상의 무료 플레이 머신!"
+        },
+        "options": {
+            "tickets": "티켓",
+            "location": "위치",
+            "games": "게임"
+        }
+    },
+    "cookies": {
+        "title": "Privacy Policies",
+        "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
+        "accept": "I AGREE",
+        "info_btn": "INFORMATION",
+        "modal_title": "Cookie Policy & Privacy",
+        "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+    }
+}

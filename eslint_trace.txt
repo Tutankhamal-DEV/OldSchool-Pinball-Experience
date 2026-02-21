@@ -1,0 +1,14 @@
+
+> oldschoolpinball@1.0.0 lint
+> eslint src/ --max-warnings 0
+
+
+C:\work_files\development\react\oldschoolpinball\src\components\effects\CanvasBackground.tsx
+   177:9   error  This assigned value is not used in subsequent statements  no-useless-assignment
+   178:9   error  This assigned value is not used in subsequent statements  no-useless-assignment
+   179:9   error  'step' is never reassigned. Use 'const' instead           prefer-const
+  1250:13  error  Duplicate case label                                      no-duplicate-case
+
+✖ 4 problems (4 errors, 0 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+

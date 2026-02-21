@@ -1,0 +1,183 @@
+{
+    "navbar": {
+        "home": "Inicio",
+        "atmosphere": "Atmósfera",
+        "bar": "American Bar",
+        "machines": "Máquinas",
+        "media": "Medios",
+        "tickets": "Entradas",
+        "contact": "Contacto",
+        "buy_online": "Comprar Online",
+        "sound_on": "Sonido Encendido",
+        "sound_off": "Sonido Apagado",
+        "menu": "Menú",
+        "events": "Eventos"
+    },
+    "footer": {
+        "brand_description": "El mejor espacio de pinball y arcade de América Latina. Una experiencia nostálgica única en São Paulo.",
+        "links_title": "ENLACES",
+        "social_title": "SOCIAL",
+        "address": "Calle Teodoro Sampaio, 2038 - Pinheiros\nSão Paulo - SP, 05406-150",
+        "payment_info": "Aceptamos Pix, tarjetas de débito y crédito",
+        "copyright": "© 2026 Old School Pinball. Todos los derechos reservados.",
+        "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
+        "developer_credit": "DESARROLLADO POR: TUTANKHAMAL DEV"
+    },
+    "hero": {
+        "title_part1": "La Auténtica Experiencia ",
+        "title_highlight": "Retro",
+        "title_part2": "",
+        "award_text": "Ganador de los Premios TWIPY • Mejor Ubicación de América Latina",
+        "btn_tickets": "PASAPORTE",
+        "btn_more": "Saber Más"
+    },
+    "atmosphere": {
+        "title": "La Atmósfera",
+        "description": "Cada rincón de Old School fue diseñado para transportarte a la era dorada de los arcades. Elegido el Mejor Espacio de Pinball de América Latina y orgulloso ganador internacional de los Premios TWIPY en Texas, EE.UU. (Marzo de 2023).",
+        "areas": {
+            "batman": {
+                "title": "Rincón de Batman",
+                "desc": "Un rincón dedicado al Caballero de la Noche con coleccionables, arte y la atmósfera sombría de Gotham City."
+            },
+            "geek": {
+                "title": "Entorno Geek & Star Wars",
+                "desc": "Figuras de acción, pósteres vintage, luces de neón y toda la cultura pop de los 80s y 90s en un espacio temático intergaláctico."
+            },
+            "dance": {
+                "title": "Pista de Baile & DJ",
+                "desc": "¡Baila al ritmo de los grandes éxitos de los 80s y 90s con nuestro DJ en vivo! Iluminación retro y mucha energía con buen ritmo."
+            }
+        }
+    },
+    "american_bar": {
+        "title": "American Bar",
+        "description": "Un diner retro americano dentro de Old School. Come, bebe y juega, ¡todo en un solo lugar!",
+        "hint_desktop": "HAZ CLIC O ARRASTRA",
+        "hint_mobile": "ARRASTRA PARA PASAR LA PÁGINA"
+    },
+    "machines": {
+        "title": "Nuestras Máquinas",
+        "description": "Más de 30 máquinas clásicas de pinball y arcade. Todos los juegos configurados en juego libre, ¡juega cuanto quieras!",
+        "filters": {
+            "all": "Todas",
+            "pinball": "Pinball",
+            "arcade": "Arcade"
+        },
+        "groups": {
+            "arcades": "Arcades & Otros Juegos",
+            "pinballs": "Máquinas de Pinball"
+        },
+        "count_machines": "máquinas",
+        "count_of": "de",
+        "count_total": "en total"
+    },
+    "media": {
+        "title": "Medios",
+        "description": "Mira los mejores momentos, campeonatos y tours virtuales directamente desde Old School Pinball."
+    },
+    "events": {
+        "title": "Eventos & Alquiler",
+        "description": "¡Fiestas de cumpleaños, eventos corporativos, grabación de podcasts, comerciales y más! Reserva para tu evento exclusivo.",
+        "types": {
+            "birthday": {
+                "title": "Fiestas de Cumpleaños",
+                "description": "¡Celebra tu cumpleaños de manera diferente! Espacio exclusivo con máquinas, DJ y bar completo."
+            },
+            "corporate": {
+                "title": "Eventos Corporativos",
+                "description": "¡Un team building único! Ambiente relajado para socializar, happy hours y eventos de empresa."
+            },
+            "podcast": {
+                "title": "Grabaciones & Podcasts",
+                "description": "Grabaciones de podcasts, comerciales y producciones audiovisuales. Un escenario retro auténtico y único."
+            },
+            "media": {
+                "title": "Producciones de Medios",
+                "description": "Sesiones de fotos, grabaciones y producciones con temática arcade de los 80."
+            }
+        },
+        "btn_reserve": "Reserva por WhatsApp"
+    },
+    "tickets": {
+        "title": "Pasaportes",
+        "description": "¡Juega todo lo que quieras! Todos los juegos en juego libre. Todos los jueves y sábados de 6 PM a medianoche.",
+        "plans": {
+            "online": {
+                "name": "Online",
+                "discount": "10% dto - Solo Online",
+                "description": "¡10% de descuento solo aquí! Juega todas las máquinas cuanto quieras, sin fichas.",
+                "features": {
+                    "f1": "Acceso ilimitado",
+                    "f2": "Todas las máquinas",
+                    "f3": "Sin fichas",
+                    "f4": "Válido por el día"
+                }
+            },
+            "door": {
+                "name": "En Puerta",
+                "description": "Pasaporte completo. Paga en la entrada y disfruta toda la noche.",
+                "features": {
+                    "f1": "Acceso ilimitado",
+                    "f2": "Todas las máquinas",
+                    "f3": "Sin fichas",
+                    "f4": "Pix y Tarjeta"
+                }
+            },
+            "kids": {
+                "name": "Infantil",
+                "discount": "Hasta los 12 años",
+                "description": "Los sábados, los niños hasta los 12 años pagan R$ 63. ¡Juegan gratis!",
+                "features": {
+                    "f1": "Acceso ilimitado",
+                    "f2": "Todas las máquinas",
+                    "f3": "Sin fichas",
+                    "f4": "Supervisión de adulto"
+                }
+            }
+        },
+        "btn_buy": "Comprar Online",
+        "btn_more": "Saber Más"
+    },
+    "contact": {
+        "title": "Contacto",
+        "description": "Ven a visitarnos o ponte en contacto. ¡Te esperamos!",
+        "info": {
+            "address_label": "Dirección",
+            "address_value": "R. Teodureto Souto, 292a - Cambuci, São Paulo - SP, 01541-000",
+            "whatsapp_label": "WhatsApp",
+            "email_label": "Email",
+            "hours_label": "Horario",
+            "hours_value": "Jueves y Sábados - 6 PM a Medianoche"
+        },
+        "btn_contact": "Habla con Nosotros"
+    },
+    "chatbot": {
+        "tooltip": "¿Necesitas ayuda? ¡Contáctanos!",
+        "aria_open": "Abrir Soporte",
+        "aria_close": "Cerrar",
+        "aria_send": "Enviar",
+        "status_online": "En línea",
+        "title": "Soporte OSB",
+        "welcome": "¡Hola Jugador 1! Soy el Asistente IA. ¿En qué ayudo?",
+        "placeholder": "Tu mensaje...",
+        "fallback": "Comando no reconocido. WhatsApp: +55 11 91562-0127.",
+        "answers": {
+            "tickets": "¡Compra entradas online con 10% de descuento! Juega sin fichas.",
+            "location": "R. Teodureto Souto, 292a - Cambuci. Jueves y sábados 18h-00h!",
+            "games": "Más de 30 máquinas en Free Play."
+        },
+        "options": {
+            "tickets": "Entradas",
+            "location": "Horarios",
+            "games": "Juegos"
+        }
+    },
+    "cookies": {
+        "title": "Privacy Policies",
+        "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
+        "accept": "I AGREE",
+        "info_btn": "INFORMATION",
+        "modal_title": "Cookie Policy & Privacy",
+        "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+    }
+}
