@@ -41,7 +41,7 @@ export default function Navbar({ activeSection = 'home' }: NavbarProps) {
                     {/* Logo */}
                     <a href="#home" className="flex items-center gap-2 group flex-shrink-0">
                         <img
-                            src="/images/nav_logo_oldschool.avif"
+                            src="/images/nav_logo.webp"
                             alt="Old School Pinball"
                             className="h-10 w-auto object-contain
                 group-hover:brightness-125 transition-all duration-300"

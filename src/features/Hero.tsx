@@ -12,7 +12,7 @@ export default function Hero() {
         <section
             id="home"
             ref={ref}
-            className="relative min-h-screen flex items-center justify-center overflow-hidden"
+            className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
             style={{ zIndex: 1 }}
         >
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
@@ -27,14 +27,13 @@ export default function Hero() {
                     {/* Background glow removed as per user request */}
 
                     <img
-                        src="/images/hero-logo-optimized.avif"
+                        src="/images/hero_logo.webp"
                         alt="Old School Pinball & Arcade"
                         width={400}
-                        height={264}
+                        height={320}
                         fetchPriority="high"
-                        className="hero-logo-shadow w-48 sm:w-56 md:w-72 lg:w-96 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300"
-                        onClick={() => window.dispatchEvent(new CustomEvent('toggle-canvas-scene'))}
-                        title="Clique para alternar o cenário ao fundo"
+                        decoding="async"
+                        className="hero-logo-shadow w-40 sm:w-48 md:w-60 lg:w-80 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300"
                     />
                 </motion.div>
 

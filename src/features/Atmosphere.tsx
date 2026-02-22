@@ -161,6 +161,8 @@ export default function Atmosphere() {
                                             width={800}
                                             height={600}
                                             className="w-full h-full object-cover"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                     </picture>
                                     <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent md:hidden" />

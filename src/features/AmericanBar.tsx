@@ -1,6 +1,8 @@
-import React, { useRef } from 'react'
-import { motion, useInView } from 'motion/react'
+import React, { useRef, useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
+import { motion, useInView, AnimatePresence } from 'motion/react'
 import HTMLFlipBook from 'react-pageflip'
+import { useTranslation } from 'react-i18next'
 
 // The 11 pages of the menu
 const MENU_PAGES = [
@@ -26,6 +28,8 @@ const Page = React.forwardRef<HTMLDivElement, { imageUrl: string, number: number
                 alt={`Menu Page ${props.number}`}
                 className="w-full h-full object-cover pointer-events-none"
                 draggable={false}
+                loading="lazy"
+                decoding="async"
             />
         </div>
     )
@@ -33,12 +37,116 @@ const Page = React.forwardRef<HTMLDivElement, { imageUrl: string, number: number
 
 Page.displayName = 'Page'
 
-import { useTranslation } from 'react-i18next'
+/* ─── PDF-like Fullscreen Modal ─── */
+function MenuModal({
+    pages,
+    onClose,
+}: {
+    pages: string[]
+    onClose: () => void
+}) {
+    const { t } = useTranslation()
+    const scrollRef = useRef<HTMLDivElement>(null)
+
+    // Lock body scroll when modal is open & support Escape key
+    useEffect(() => {
+        const prevOverflow = document.body.style.overflow
+        document.body.style.overflow = 'hidden'
+
+        const handleEsc = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') onClose()
+        }
+        window.addEventListener('keydown', handleEsc)
+
+        return () => {
+            document.body.style.overflow = prevOverflow
+            window.removeEventListener('keydown', handleEsc)
+        }
+    }, [onClose])
+
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[9999] flex flex-col bg-black/95 backdrop-blur-sm"
+        >
+            {/* Sticky top bar */}
+            <div className="flex items-center justify-between px-4 py-3 bg-black/90 border-b border-pinball-red/20 shrink-0">
+                <span className="font-pixel text-pinball-cream/60 text-[0.6rem] tracking-widest uppercase">
+                    {t('american_bar.title', 'Cardápio')} — {pages.length} {t('american_bar.zoom_pages', 'páginas')}
+                </span>
+                <button
+                    onClick={onClose}
+                    className="flex items-center gap-1.5 text-pinball-cream bg-pinball-red/20 hover:bg-pinball-red/40 transition-colors px-3 py-2 -mr-2 rounded-lg border border-pinball-red/30"
+                    aria-label="Fechar"
+                >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                    <span className="font-pixel text-[0.6rem] tracking-widest uppercase">
+                        {t('american_bar.zoom_close', 'Fechar')}
+                    </span>
+                </button>
+            </div>
+
+            {/* Scrollable page list (PDF-like) */}
+            <div
+                ref={scrollRef}
+                className="flex-1 overflow-y-auto overflow-x-hidden overscroll-contain py-4 px-2 sm:px-4"
+            >
+                <div className="max-w-[600px] mx-auto flex flex-col gap-3">
+                    {pages.map((src, i) => (
+                        <div key={i} className="relative">
+                            <img
+                                src={src}
+                                alt={`${t('american_bar.title', 'Cardápio')} — ${t('american_bar.zoom_page', 'Página')} ${i + 1}`}
+                                className="w-full h-auto rounded-md shadow-lg shadow-black/50"
+                                loading={i < 3 ? 'eager' : 'lazy'}
+                                decoding="async"
+                                draggable={false}
+                            />
+                            <span className="absolute bottom-2 right-2 bg-black/70 text-pinball-cream/50 text-[0.5rem] font-pixel px-2 py-0.5 rounded tracking-widest">
+                                {i + 1}/{pages.length}
+                            </span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Sticky bottom bar — back to top */}
+            <div className="flex items-center justify-between px-4 py-2.5 bg-black/90 border-t border-pinball-red/20 shrink-0">
+                <button
+                    onClick={() => scrollRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
+                    className="flex items-center gap-2 text-pinball-cream/50 hover:text-pinball-yellow transition-colors font-pixel text-[0.55rem] tracking-widest uppercase"
+                >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="m18 15-6-6-6 6" />
+                    </svg>
+                    {t('american_bar.zoom_top', 'Voltar ao topo')}
+                </button>
+                <button
+                    onClick={onClose}
+                    className="flex items-center gap-1.5 text-pinball-cream/60 hover:text-pinball-red transition-colors font-pixel text-[0.55rem] tracking-widest uppercase"
+                >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                    {t('american_bar.zoom_close', 'Fechar')}
+                </button>
+            </div>
+        </motion.div>
+    )
+}
 
 export default function AmericanBar() {
     const { t } = useTranslation();
     const ref = useRef<HTMLElement>(null)
     const inView = useInView(ref, { once: true, margin: '-100px' })
+    const [zoomOpen, setZoomOpen] = useState(false)
 
     return (
         <section id="bar" ref={ref} className="relative py-24 px-4 z-1">
@@ -113,6 +221,7 @@ export default function AmericanBar() {
                             usePortrait={false}
                             showPageCorners={false}
                             flippingTime={1000}
+
                             className="menu-flipbook mx-auto shadow-2xl"
                             style={{ margin: "0 auto" }}
                         >
@@ -122,30 +231,47 @@ export default function AmericanBar() {
                         </HTMLFlipBook>
                     </motion.div>
 
-                    {/* Interaction instruction */}
-                    <div className="mt-8 text-pinball-cream/50 font-pixel text-xs tracking-widest animate-pulse flex items-center gap-3">
-                        <span className="w-8 h-px bg-pinball-red/50" />
-                        {t('american_bar.hint_mobile')}
-                        <span className="w-8 h-px bg-pinball-red/50" />
+                    {/* Zoom / expand button + hint */}
+                    <div className="mt-6 flex flex-col items-center gap-3">
+                        <button
+                            onClick={() => setZoomOpen(true)}
+                            className="flex items-center gap-2 px-4 py-2 rounded-lg
+                                bg-pinball-red/15 border border-pinball-red/30 text-pinball-cream/80
+                                hover:bg-pinball-red/25 hover:text-pinball-cream
+                                active:scale-95 transition-all duration-200
+                                font-pixel text-[0.65rem] tracking-widest uppercase"
+                        >
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                <line x1="11" y1="8" x2="11" y2="14" />
+                                <line x1="8" y1="11" x2="14" y2="11" />
+                            </svg>
+                            {t('american_bar.zoom_btn', 'Ampliar Cardápio')}
+                        </button>
+
+                        <div className="text-pinball-cream/50 font-pixel text-xs tracking-widest animate-pulse flex items-center gap-3">
+                            <span className="w-8 h-px bg-pinball-red/50" />
+                            {t('american_bar.hint_mobile')}
+                            <span className="w-8 h-px bg-pinball-red/50" />
+                        </div>
                     </div>
                 </motion.div>
 
-                {/* Retro checkerboard accent */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={inView ? { opacity: 1 } : {}}
-                    transition={{ delay: 0.8, duration: 0.6 }}
-                    className="mt-12 h-4 mx-auto max-w-md"
-                    style={{
-                        background: `repeating-linear-gradient(
-              90deg,
-              #C41E2A 0px, #C41E2A 16px,
-              #FFD700 16px, #FFD700 32px
-            )`,
-                        opacity: 0.3,
-                    }}
-                />
             </div>
+
+            {/* PDF-like menu modal — rendered via Portal to escape z-index stacking */}
+            {createPortal(
+                <AnimatePresence>
+                    {zoomOpen && (
+                        <MenuModal
+                            pages={MENU_PAGES}
+                            onClose={() => setZoomOpen(false)}
+                        />
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
         </section>
     )
 }

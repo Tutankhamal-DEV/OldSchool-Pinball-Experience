@@ -59,17 +59,25 @@ const FILTERS: { label: string; value: Category }[] = [
     { label: 'Arcade', value: 'arcade' },
 ]
 
+const BANNER_SLIDES = [
+    { src: '/images/ambiente_04.webp', mobile: '/images/ambiente_04-sm.webp' },
+    { src: '/images/pinball_machines_1.webp' },
+    { src: '/images/ambiente_do_bar-sm.webp' },
+];
+
 export default function Machines() {
     const { t } = useTranslation();
     const ref = useRef<HTMLElement>(null)
     const inView = useInView(ref, { once: true, margin: '-100px' })
-    const bgInView = useInView(ref, { amount: 0.3 })
+
+    const [currentSlide, setCurrentSlide] = useState(0)
 
     useEffect(() => {
-        if (bgInView) {
-            window.dispatchEvent(new CustomEvent("set-canvas-scene", { detail: 2 }))
-        }
-    }, [bgInView])
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % BANNER_SLIDES.length)
+        }, 5000)
+        return () => clearInterval(timer)
+    }, [])
 
     const [filter, setFilter] = useState<Category>('all')
 
@@ -102,26 +110,49 @@ export default function Machines() {
                     </p>
                 </motion.div>
 
-                {/* Close-up pinball bumpers banner */}
+                {/* Hero Banner Carousel */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ delay: 0.2, duration: 0.7 }}
-                    className="relative overflow-hidden rounded-lg border-2 border-pinball-red/20 mb-10 group"
+                    className="relative overflow-hidden rounded-lg border-2 border-pinball-red/20 mb-10 group bg-pinball-black"
                 >
                     <div className="aspect-[21/9] relative">
-                        <picture>
-                            <source media="(max-width: 768px)" srcSet="/images/ambiente_04-sm.webp" />
-                            <img
-                                src="/images/ambiente_04.webp"
-                                alt="Pinball and Arcade Area - Old School"
-                                width={1200}
-                                height={500}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                loading="lazy"
-                            />
-                        </picture>
-                        <div className="absolute inset-0 bg-gradient-to-t from-pinball-black/60 via-transparent to-pinball-black/30" />
+                        {BANNER_SLIDES.map((slide, index) => (
+                            <div
+                                key={index}
+                                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                                    }`}
+                            >
+                                <picture>
+                                    {slide.mobile && (
+                                        <source media="(max-width: 768px)" srcSet={slide.mobile} />
+                                    )}
+                                    <img
+                                        src={slide.src}
+                                        alt={`Pinball and Arcade Area - Slide ${index + 1}`}
+                                        className={`w-full h-full object-cover transition-transform duration-[10000ms] ease-linear ${index === currentSlide ? 'scale-110' : 'scale-100'
+                                            }`}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </picture>
+                            </div>
+                        ))}
+                        <div className="absolute inset-0 bg-gradient-to-t from-pinball-black/60 via-transparent to-pinball-black/30 z-20 pointer-events-none" />
+
+                        {/* Carousel Indicators */}
+                        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-30">
+                            {BANNER_SLIDES.map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setCurrentSlide(i)}
+                                    className={`h-2 rounded-full transition-all duration-300 ${currentSlide === i ? 'bg-pinball-red w-6' : 'w-2 bg-white/40 hover:bg-white/70'
+                                        }`}
+                                    aria-label={`Ver slide ${i + 1}`}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </motion.div>
 
@@ -160,17 +191,17 @@ export default function Machines() {
                                     {catName}
                                 </h3>
                             )}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-1">
+                            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-2 sm:gap-x-6 gap-y-1">
                                 {machines.map((machine, i) => (
                                     <div
                                         key={`${machine.name}-${machine.category}-${i}`}
-                                        className="flex items-center justify-between group py-1 px-2 rounded hover:bg-white/5 transition-colors"
+                                        className="flex items-center justify-between group py-1 px-1 sm:px-2 rounded hover:bg-white/5 transition-colors overflow-hidden"
                                     >
-                                        <div className="flex items-center gap-2 overflow-hidden">
+                                        <div className="flex items-center gap-1.5 sm:gap-2 overflow-hidden w-full">
                                             <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${machine.category === 'pinball' ? 'bg-pinball-red' : 'bg-pinball-neon-blue'
                                                 } shadow-[0_0_8px_currentColor] opacity-50 group-hover:opacity-100 transition-opacity`} />
-                                            <p className="font-tech text-[13px] sm:text-sm text-pinball-cream/80 group-hover:text-pinball-yellow transition-colors duration-300 truncate">
-                                                {machine.name} {machine.detail && <span className="opacity-50 text-[10px] ml-1 uppercase">{machine.detail}</span>}
+                                            <p className="font-tech text-xs sm:text-sm text-pinball-cream/80 group-hover:text-pinball-yellow transition-colors duration-300 truncate">
+                                                {machine.name} {machine.detail && <span className="opacity-50 text-[9px] sm:text-[10px] ml-1 uppercase">{machine.detail}</span>}
                                             </p>
                                         </div>
                                     </div>

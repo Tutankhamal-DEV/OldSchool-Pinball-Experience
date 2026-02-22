@@ -13,30 +13,43 @@ const TVStaticBackground = ({ isActive }: { isActive: boolean }) => {
         if (!ctx) return;
 
         let frameId: number;
-        let lastTime = 0;
 
-        const draw = (time: number) => {
-            // throttle to ~30fps for retro feel and performance
-            if (time - lastTime < 33) {
-                frameId = requestAnimationFrame(draw);
-                return;
+        // Pre-render 1:1 pixel high-frequency noise matrix
+        const w = 256;
+        const h = 256;
+        const offscreen = document.createElement('canvas');
+        offscreen.width = w;
+        offscreen.height = h;
+        const oCtx = offscreen.getContext('2d', { alpha: true });
+        if (oCtx) {
+            const imgData = oCtx.createImageData(w, h);
+            const data = imgData.data;
+            for (let i = 0; i < data.length; i += 4) {
+                const light = Math.random() > 0.5 ? 255 : 0;
+                data[i] = light;
+                data[i + 1] = light;
+                data[i + 2] = light;
+                data[i + 3] = Math.random() * 80; // Opacity layer thickness
             }
-            lastTime = time;
+            oCtx.putImageData(imgData, 0, 0);
+        }
 
-            const w = canvas.width;
-            const h = canvas.height;
-            ctx.clearRect(0, 0, w, h);
-            ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
-            // Follow original pattern for dense, small pixels
-            for (let i = 0; i < 4000; i++) {
-                const x = Math.random() * w;
-                const y = Math.random() * h;
-                const size = Math.random() * 4 + 1;
-                ctx.fillRect(x, y, size, size);
+        const draw = () => {
+            const width = canvas.width;
+            const height = canvas.height;
+            ctx.clearRect(0, 0, width, height);
+
+            const pattern = ctx.createPattern(offscreen, 'repeat');
+            if (pattern) {
+                ctx.fillStyle = pattern;
+                ctx.save();
+                ctx.translate(-Math.random() * 256, -Math.random() * 256);
+                ctx.fillRect(0, 0, width + 256, height + 256);
+                ctx.restore();
             }
             frameId = requestAnimationFrame(draw);
         };
-        frameId = requestAnimationFrame(draw);
+        draw();
         return () => cancelAnimationFrame(frameId);
     }, [isActive]);
 
@@ -111,7 +124,7 @@ export default function Media() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ delay: 0.2, duration: 0.7 }}
-                    className="relative w-full max-w-4xl aspect-[4/3] sm:aspect-[16/10] flex items-center justify-center mt-8 group cursor-pointer"
+                    className="relative w-full max-w-4xl flex items-center justify-center mt-8 group cursor-pointer"
                     onClick={() => {
                         if (!playerRef.current && isApiReady) {
                             // Create player on first click to avoid auto-loading heavy iframe unnecessarily
@@ -153,16 +166,15 @@ export default function Media() {
                         }
                     }}
                 >
-                    {/* The TV Frame Image */}
                     <img
                         src={isPlaying ? "/images/tv-frame-on.avif" : "/images/tv-frame-off.avif"}
                         alt="TV Retro Frame"
-                        className="absolute inset-0 w-full h-full object-contain z-30 drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] pointer-events-none transition-none"
+                        className="relative block w-full h-auto z-30 drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] pointer-events-none transition-none"
                     />
 
                     {/* The Video Area (Masked inside the TV) */}
                     {/* Adjusted layout to move mask Right and Up, matching the TV's inner bevel */}
-                    <div className="absolute top-[5%] sm:top-[9%] left-[11%] sm:left-[7.5%] right-[23.5%] sm:right-[24.5%] bottom-[16%] sm:bottom-[18%] rounded-[10%] sm:rounded-[30px] overflow-hidden bg-[#050510] z-0 flex items-center justify-center shadow-[inset_0_0_100px_rgba(0,0,0,0.9)]">
+                    <div className="absolute top-[9%] bottom-[18%] left-[7.5%] right-[23.0%] sm:right-[23.0%] rounded-[5%] sm:rounded-[30px] overflow-hidden bg-[#050510] z-0 flex items-center justify-center shadow-[inset_0_0_100px_rgba(0,0,0,0.9)]">
 
                         {/* Fake CRT scanning overlay inside video - Top Z-index so it overlays youtube frame */}
                         <div

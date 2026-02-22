@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
 import { MapPin, Clock, MessageCircle, Mail, Phone } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -30,13 +30,6 @@ export default function Contact() {
     const { t } = useTranslation()
     const ref = useRef<HTMLElement>(null)
     const inView = useInView(ref, { once: true, margin: '-100px' })
-    const bgInView = useInView(ref, { amount: 0.3 })
-
-    useEffect(() => {
-        if (bgInView) {
-            window.dispatchEvent(new CustomEvent("set-canvas-scene", { detail: 7 }))
-        }
-    }, [bgInView])
 
     return (
         <section ref={ref} className="relative py-24 px-4 z-1">
