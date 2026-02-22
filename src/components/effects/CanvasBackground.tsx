@@ -6,14 +6,14 @@ import { useEffect, useRef, useState } from "react";
 //  Background images per section
 // ══════════════════════════════════════════
 const BG_MAP: Record<string, string | null> = {
-    home: '/images/background.webp',
+    home: '/images/ambiente_04-sm.webp',
     sobre: '/images/ambiente_05.webp',
     maquinas: '/images/ambiente_04.webp',
     bar: '/images/ambiente_do_bar.webp',
     midia: '/images/ambiente_03.webp',
     eventos: '/images/ambiente_02.webp',
     ingressos: '/images/ambiente_01.webp',
-    contato: null,
+    contato: '/images/ambiente_04.webp',
     footer: null,
 };
 

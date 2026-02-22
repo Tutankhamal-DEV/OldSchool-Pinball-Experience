@@ -77,8 +77,8 @@ export default function Contact() {
                                             <p className="font-pixel text-[10px] text-pinball-cream/50 mb-1">
                                                 {t(`contact.info.${info.id}_label`)}
                                             </p>
-                                            <p className="font-body text-sm text-pinball-cream/80
-                        group-hover:text-pinball-cream transition-colors duration-300">
+                                            <p className={`font-body text-xs sm:text-sm text-pinball-cream/80
+                        group-hover:text-pinball-cream transition-colors duration-300${info.id === 'email' ? ' break-all' : ''}`}>
                                                 {/* Some values like phone or email are fine remaining hardcoded if they don't change by language, but we stored texts for some. */}
                                                 {info.id === 'whatsapp' ? '+55 (11) 91562-0127' :
                                                     info.id === 'email' ? 'oldschoolpinballsite@gmail.com' :
