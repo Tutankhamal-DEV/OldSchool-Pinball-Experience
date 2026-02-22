@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // ══════════════════════════════════════════
 //  Background images per section
@@ -16,6 +16,16 @@ const BG_MAP: Record<string, string | null> = {
     contato: null,
     footer: null,
 };
+
+// Preload all background images so crossfade is instant
+if (typeof window !== 'undefined') {
+    Object.values(BG_MAP).forEach(src => {
+        if (src) {
+            const img = new Image();
+            img.src = src;
+        }
+    });
+}
 
 // ══════════════════════════════════════════
 //  ARCADE ALLEY – 3D Perspective Checkerboard (Classic B&W)
@@ -97,6 +107,81 @@ function renderArcadeAlley(ctx: CanvasRenderingContext2D, w: number, h: number, 
     }
 }
 
+// ══════════════════════════════════════════
+//  Crossfade Background Image Component
+//  Renders two layers — outgoing fades out while incoming fades in
+// ══════════════════════════════════════════
+const FADE_DURATION = 800; // ms
+
+function CrossfadeImage({ src }: { src: string | null }) {
+    const [layers, setLayers] = useState<{ src: string; opacity: number; key: number }[]>([]);
+    const keyCounterRef = useRef(0);
+    const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+    useEffect(() => {
+        // On src change: add new layer at opacity 0, then animate
+        if (!src) {
+            // Fade out all existing layers
+            setLayers(prev =>
+                prev.map(layer => ({ ...layer, opacity: 0 }))
+            );
+            // Remove after transition completes
+            if (timerRef.current) clearTimeout(timerRef.current);
+            timerRef.current = setTimeout(() => setLayers([]), FADE_DURATION + 50);
+            return;
+        }
+
+        // Already showing this image? Skip
+        const currentSrc = layers[layers.length - 1]?.src;
+        if (currentSrc === src) return;
+
+        const newKey = ++keyCounterRef.current;
+
+        setLayers(prev => {
+            // Fade out previous layers, add new one at opacity 0
+            const fading = prev.map(layer => ({ ...layer, opacity: 0 }));
+            return [...fading, { src, opacity: 0, key: newKey }];
+        });
+
+        // After a brief paint cycle, fade in the new layer
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                setLayers(prev =>
+                    prev.map(layer =>
+                        layer.key === newKey ? { ...layer, opacity: 1 } : layer
+                    )
+                );
+            });
+        });
+
+        // Clean up fully-faded layers after the transition
+        if (timerRef.current) clearTimeout(timerRef.current);
+        timerRef.current = setTimeout(() => {
+            setLayers(prev => prev.filter(layer => layer.opacity > 0));
+        }, FADE_DURATION + 100);
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [src]);
+
+    return (
+        <>
+            {layers.map(layer => (
+                <img
+                    key={layer.key}
+                    src={layer.src}
+                    alt=""
+                    aria-hidden="true"
+                    className="fixed inset-0 w-full h-full object-cover pointer-events-none z-[20]"
+                    style={{
+                        opacity: layer.opacity,
+                        transition: `opacity ${FADE_DURATION}ms ease-in-out`,
+                    }}
+                />
+            ))}
+        </>
+    );
+}
+
 export default function CanvasBackground({ activeSection }: { activeSection: string }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const animationRef = useRef<number>(0);
@@ -151,16 +236,8 @@ export default function CanvasBackground({ activeSection }: { activeSection: str
     // Layer order: image (z-20) → dark shadow (z-25) → canvas (z-35) → vignette (z-39) → content (z-50)
     return (
         <>
-            {/* 1. Background image — all sections at z-[20], 100% opacity */}
-            {bgSrc && (
-                <img
-                    key={bgSrc}
-                    src={bgSrc}
-                    alt=""
-                    aria-hidden="true"
-                    className="fixed inset-0 w-full h-full object-cover pointer-events-none animate-fade-in z-[20]"
-                />
-            )}
+            {/* 1. Background image — crossfade between sections */}
+            <CrossfadeImage src={bgSrc} />
 
             {/* 2. Feathered shadow — dark center strip between image and canvas */}
             <div
