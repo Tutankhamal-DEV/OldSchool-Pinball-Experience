@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { Menu, X, Ticket, Home, Sparkles, Coffee, Gamepad2, PlaySquare, Calendar, Mail } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './LanguageSwitcher'
@@ -20,14 +20,79 @@ type NavbarProps = {
 }
 
 export default function Navbar({ activeSection = 'home' }: NavbarProps) {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [scrolled, setScrolled] = useState(false)
     const [mobileOpen, setMobileOpen] = useState(false)
+    const [overflowed, setOverflowed] = useState(false)
+
+    // Refs for overflow detection
+    const barRef = useRef<HTMLDivElement>(null);
+    const linksRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 60)
         window.addEventListener('scroll', onScroll, { passive: true })
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
+
+    // Dynamic overflow detection — switches to hamburger when items don't fit
+    const checkOverflow = useCallback(() => {
+        const bar = barRef.current;
+        const links = linksRef.current;
+        if (!bar || !links) return;
+
+        // Temporarily show links to measure their natural width
+        const wasHidden = links.style.display;
+        links.style.display = 'flex';
+        links.style.visibility = 'hidden';
+        links.style.position = 'absolute';
+
+        // Total width consumed by: logo (~60px gap) + links + right side elements
+        const logoEl = bar.querySelector('[data-nav-logo]') as HTMLElement | null;
+        const rightEl = bar.querySelector('[data-nav-right]') as HTMLElement | null;
+
+        const logoWidth = logoEl ? logoEl.offsetWidth + 16 : 80; // 16px gap
+        const rightWidth = rightEl ? rightEl.offsetWidth + 16 : 200;
+        const linksWidth = links.scrollWidth;
+        const availableWidth = bar.clientWidth;
+
+        // Add a safety margin (24px) to prevent any visual collision
+        const totalNeeded = logoWidth + linksWidth + rightWidth + 24;
+
+        // Restore original state
+        links.style.display = wasHidden;
+        links.style.visibility = '';
+        links.style.position = '';
+
+        setOverflowed(totalNeeded > availableWidth);
+    }, []);
+
+    // Observe for resize and language changes
+    useEffect(() => {
+        checkOverflow();
+
+        const ro = new ResizeObserver(() => {
+            checkOverflow();
+        });
+
+        if (barRef.current) {
+            ro.observe(barRef.current);
+        }
+
+        window.addEventListener('resize', checkOverflow);
+
+        return () => {
+            ro.disconnect();
+            window.removeEventListener('resize', checkOverflow);
+        };
+    }, [checkOverflow]);
+
+    // Re-check when language changes (translated labels may have different widths)
+    useEffect(() => {
+        // Small delay to let the DOM update with new text
+        const timer = setTimeout(checkOverflow, 50);
+        return () => clearTimeout(timer);
+    }, [i18n.language, checkOverflow]);
 
     return (
         <nav
@@ -37,9 +102,12 @@ export default function Navbar({ activeSection = 'home' }: NavbarProps) {
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16 flex-nowrap whitespace-nowrap">
+                <div
+                    ref={barRef}
+                    className="flex items-center justify-between h-16 flex-nowrap whitespace-nowrap"
+                >
                     {/* Logo */}
-                    <a href="#home" className="flex items-center gap-2 group flex-shrink-0">
+                    <a href="#home" className="flex items-center gap-2 group flex-shrink-0" data-nav-logo>
                         <img
                             src="/images/nav_logo.webp"
                             alt="Old School Pinball"
@@ -48,8 +116,12 @@ export default function Navbar({ activeSection = 'home' }: NavbarProps) {
                         />
                     </a>
 
-                    {/* Desktop Nav */}
-                    <div className="hidden lg:flex items-center gap-1 flex-nowrap whitespace-nowrap overflow-hidden">
+                    {/* Desktop Nav — hidden when overflowed */}
+                    <div
+                        ref={linksRef}
+                        className={`items-center gap-1 flex-nowrap whitespace-nowrap overflow-hidden ${overflowed ? 'hidden' : 'flex'
+                            }`}
+                    >
                         {NAV_LINKS_BASE.map((link) => {
                             const isActive = activeSection === link.sectionId
                             return (
@@ -72,23 +144,23 @@ export default function Navbar({ activeSection = 'home' }: NavbarProps) {
                     </div>
 
                     {/* Right — CTA */}
-                    <div className="flex items-center gap-1 sm:gap-3 flex-nowrap whitespace-nowrap flex-shrink-0">
+                    <div className="flex items-center gap-1 sm:gap-3 flex-nowrap whitespace-nowrap flex-shrink-0" data-nav-right>
                         <LanguageSwitcher />
 
                         <a
                             href="https://wa.me/5511915620127"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="max-lg:!hidden lg:!inline-flex btn-retro btn-retro-nav gap-2"
+                            className={`btn-retro btn-retro-nav gap-2 ${overflowed ? '!hidden' : '!inline-flex'}`}
                         >
                             <Ticket className="w-4 h-4 mr-2" />
                             {t('navbar.buy_online')}
                         </a>
 
-                        {/* Mobile hamburger */}
+                        {/* Mobile hamburger — visible when overflowed */}
                         <button
                             onClick={() => setMobileOpen(!mobileOpen)}
-                            className="lg:hidden p-2 text-pinball-cream"
+                            className={`p-2 text-pinball-cream ${overflowed ? '' : 'hidden'}`}
                             aria-label={t('navbar.menu')}
                         >
                             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -97,9 +169,10 @@ export default function Navbar({ activeSection = 'home' }: NavbarProps) {
                 </div>
             </div>
 
-            {/* Mobile drawer */}
+            {/* Mobile drawer — visible when overflowed */}
             <div
-                className={`lg:hidden fixed left-0 right-0 top-16 h-[calc(100vh-4rem)] bg-pinball-black/95 backdrop-blur-lg border-t border-pinball-red/20 overflow-y-auto transition-all duration-300 ${mobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8 pointer-events-none'
+                className={`fixed left-0 right-0 top-16 h-[calc(100vh-4rem)] bg-pinball-black/95 backdrop-blur-lg border-t border-pinball-red/20 overflow-y-auto transition-all duration-300 ${!overflowed ? 'hidden' : ''
+                    } ${mobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8 pointer-events-none'
                     }`}
             >
                 <div className="flex flex-col items-center justify-start py-6 px-6 space-y-2">
