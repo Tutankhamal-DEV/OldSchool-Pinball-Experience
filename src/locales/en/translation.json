@@ -27,7 +27,7 @@
         "title_part1": "The Authentic ",
         "title_highlight": "Retro",
         "title_part2": " Experience",
-        "award_text": "TWIPY Awards Winner • Best Location in Latin America",
+        "award_text": "TWIPY Awards Winner • Best Arcade in Latin America",
         "btn_tickets": "PASSPORT",
         "btn_more": "Learn More"
     },
@@ -53,7 +53,10 @@
         "title": "American Bar",
         "description": "An American retro diner inside Old School. Eat, drink, and play - all in one place!",
         "hint_desktop": "CLICK OR DRAG",
-        "hint_mobile": "DRAG TO FLIP THE PAGE"
+        "hint_mobile": "DRAG TO FLIP THE PAGE",
+        "zoom_btn": "ZOOM MENU",
+        "zoom_page": "PAGE",
+        "zoom_hint": "PINCH TO ZOOM"
     },
     "machines": {
         "title": "Our Machines",

@@ -9,6 +9,7 @@ import os
 import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
+from typing import Any, Dict, List
 
 PROJECT_SRC = Path(r"c:\work_files\development\react\oldschoolpinball\src")
 PROJECT_PUBLIC = Path(r"c:\work_files\development\react\oldschoolpinball\public")
@@ -111,9 +112,9 @@ def main():
     print("  CONTENT AUDIT: oldschoolpinball.com vs Local Project")
     print("=" * 70)
 
-    all_prod_images = {}   # url -> {pages, alt}
-    all_prod_texts = {}    # text -> pages
-    prod_machines = []
+    all_prod_images: Dict[str, Dict[str, Any]] = {}   # url -> {pages, alt}
+    all_prod_texts: Dict[str, List[str]] = {}    # text -> pages
+    prod_machines: List[Dict[str, str]] = []
 
     for page_name, url in PAGES.items():
         print(f"\n🔍 Scraping: {page_name} ({url})")
@@ -179,7 +180,8 @@ def main():
         found_local = any(fname_lower in ref.lower() for ref in local_img_refs) or \
                       any(fname_lower == img.lower() for img in local_public_imgs)
         status = "✅ FOUND" if found_local else "❌ MISSING"
-        print(f"  {status} | {fname[:40]:<40} | pages: {pages}")
+        fname_display = fname[:40]
+        print(f"  {status} | {fname_display:<40} | pages: {pages}")
         if alt:
             print(f"         | alt: {alt}")
 
@@ -213,7 +215,7 @@ def main():
         "Horário": ["quintas", "sábados", "18h", "18:00", "meia-noite", "00h"],
         "Eventos/Reservas": ["aniversário", "corporativos", "eventos", "podcast"],
         "American Bar": ["American Bar", "AMERICAN BAR"],
-        "Melhor Espaço Pinball": ["melhor espaço", "Melhor Espaço", "América Latina"],
+        "Melhor Fliperama Pinball": ["melhor fliperama", "Melhor Fliperama", "América Latina"],
         "Compre Online": ["Compre Online", "compre agora", "COMPRE"],
         "Pix/Cartão": ["pix", "cartão de crédito", "débito"],
     }

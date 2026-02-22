@@ -27,7 +27,7 @@
         "title_part1": "A Autêntica Experiência ",
         "title_highlight": "Retrô",
         "title_part2": "",
-        "award_text": "Vencedor TWIPY Awards • Melhor Espaço da América Latina",
+        "award_text": "Vencedor TWIPY Awards • Melhor Fliperama da América Latina",
         "btn_tickets": "PASSAPORTE",
         "btn_more": "Saiba Mais"
     },
@@ -53,7 +53,10 @@
         "title": "American Bar",
         "description": "Uma lanchonete retrô americana dentro do Old School. Coma, beba e jogue - tudo no mesmo lugar!",
         "hint_desktop": "CLIQUE OU ARRASTE",
-        "hint_mobile": "ARRASTE PARA VIRAR A PÁGINA"
+        "hint_mobile": "ARRASTE PARA VIRAR A PÁGINA",
+        "zoom_btn": "AMPLIAR CARDÁPIO",
+        "zoom_page": "PÁGINA",
+        "zoom_hint": "USE DOIS DEDOS PARA ZOOM"
     },
     "machines": {
         "title": "Nossas Máquinas",
