@@ -12,9 +12,16 @@ export default function CookieConsent() {
     // Only show if the user hasn't explicitly consented yet
     const consent = localStorage.getItem("osp_cookie_consent");
     if (!consent) {
-      // Small delay so it doesn't pop up instantly on page load
-      const timer = setTimeout(() => setIsVisible(true), 2500);
-      return () => clearTimeout(timer);
+      // Defer until browser is idle (after LCP) to avoid competing with Hero render
+      const show = () => setIsVisible(true);
+      if ("requestIdleCallback" in window) {
+        const id = requestIdleCallback(show, { timeout: 3500 });
+        return () => cancelIdleCallback(id);
+      } else {
+        // Safari fallback — wait until after LCP settles
+        const timer = setTimeout(show, 2500);
+        return () => clearTimeout(timer);
+      }
     }
   }, []);
 
