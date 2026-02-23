@@ -208,12 +208,18 @@ export default function CanvasBackground({ activeSection }: { activeSection: str
         const ctx = canvas.getContext("2d", { alpha: true });
         if (!ctx) return;
 
+        // Cache dimensions to avoid forced reflow on every frame
+        let cachedW = window.innerWidth;
+        let cachedH = window.innerHeight;
+
         const resize = () => {
+            cachedW = window.innerWidth;
+            cachedH = window.innerHeight;
             const dpr = window.devicePixelRatio || 1;
-            canvas.width = window.innerWidth * dpr;
-            canvas.height = window.innerHeight * dpr;
-            canvas.style.width = `${window.innerWidth}px`;
-            canvas.style.height = `${window.innerHeight}px`;
+            canvas.width = cachedW * dpr;
+            canvas.height = cachedH * dpr;
+            canvas.style.width = `${cachedW}px`;
+            canvas.style.height = `${cachedH}px`;
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         };
 
@@ -230,9 +236,8 @@ export default function CanvasBackground({ activeSection }: { activeSection: str
             const delta = lastFrameRef.current ? Math.min((now - lastFrameRef.current) / 1000, 0.05) : 0.016;
             lastFrameRef.current = now;
             timeRef.current += delta;
-            const w = window.innerWidth, h = window.innerHeight;
 
-            renderArcadeAlley(ctx, w, h, timeRef.current);
+            renderArcadeAlley(ctx, cachedW, cachedH, timeRef.current);
 
             animationRef.current = requestAnimationFrame(render);
         };
