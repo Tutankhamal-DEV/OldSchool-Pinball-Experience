@@ -29,12 +29,12 @@ export default function Hero() {
                     <img
                         src="/images/hero_logo.webp"
                         alt="Old School Pinball & Arcade"
-                        width={400}
-                        height={320}
+                        width={800}
+                        height={637}
                         fetchPriority="high"
                         loading="eager"
                         decoding="async"
-                        className="hero-logo-shadow w-40 sm:w-48 md:w-60 lg:w-80 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300"
+                        className="hero-logo-shadow w-[72%] sm:w-60 md:w-64 lg:w-80 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300"
                     />
                 </motion.div>
 
