@@ -53,7 +53,13 @@
         "title": "Quán Bar Mỹ",
         "description": "Nhà hàng kiểu Mỹ bên trong Old School. Ăn, uống và vui chơi!",
         "hint_desktop": "NHẤP CHUỘT HOẶC KÉO",
-        "hint_mobile": "KÉO ĐỂ LẬT TRANG"
+        "hint_mobile": "KÉO ĐỂ LẬT TRANG",
+        "zoom_btn": "PHÓNG TO THỰC ĐƠN",
+        "zoom_page": "TRANG",
+        "zoom_hint": "CHỤM ĐỂ PHÓNG TO",
+        "zoom_pages": "trang",
+        "zoom_close": "Đóng",
+        "zoom_top": "Lên đầu trang"
     },
     "machines": {
         "title": "Máy Của Chúng Tôi",
@@ -69,7 +75,19 @@
         },
         "count_machines": "máy",
         "count_of": "/ ",
-        "count_total": "tổng cộng"
+        "count_total": "tổng cộng",
+        "list_label": "Danh Sách Máy",
+        "machine_details": {
+            "sobriety_test": "Kiểm Tra Tỉnh Táo",
+            "shooting_arcade": "Arcade Bắn Súng",
+            "multi_game_3x": "3x Đa Trò Chơi",
+            "multi_game_2x": "2x Đa Trò Chơi",
+            "multi_game": "Đa Trò Chơi",
+            "foosball": "Bi Lắc",
+            "digital_ping_pong": "Bóng Bàn Kỹ Thuật Số",
+            "punch": "Máy Đấm Bốc",
+            "reflex_test": "Kiểm Tra Phản Xạ"
+        }
     },
     "media": {
         "title": "Truyền Thông",

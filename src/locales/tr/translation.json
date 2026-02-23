@@ -53,7 +53,13 @@
         "title": "Amerikan Barı",
         "description": "Old School'un içinde Amerikan retro lokantası. Yiyin, için ve oynayın!",
         "hint_desktop": "TIKLA VEYA SÜRÜKLE",
-        "hint_mobile": "SAYFAYI ÇEVİRMEK İÇİN SÜRÜKLEYİN"
+        "hint_mobile": "SAYFAYI ÇEVİRMEK İÇİN SÜRÜKLEYİN",
+        "zoom_btn": "MENÜYÜ BÜYÜT",
+        "zoom_page": "SAYFA",
+        "zoom_hint": "YAKINLAŞTIRMAK İÇİN KISTIN",
+        "zoom_pages": "sayfa",
+        "zoom_close": "Kapat",
+        "zoom_top": "Başa dön"
     },
     "machines": {
         "title": "Makinelerimiz",
@@ -69,7 +75,19 @@
         },
         "count_machines": "makine",
         "count_of": "/",
-        "count_total": "toplam"
+        "count_total": "toplam",
+        "list_label": "Makine Listesi",
+        "machine_details": {
+            "sobriety_test": "Ayıklık Testi",
+            "shooting_arcade": "Nişancı Arcade",
+            "multi_game_3x": "3x Çoklu Oyun",
+            "multi_game_2x": "2x Çoklu Oyun",
+            "multi_game": "Çoklu Oyun",
+            "foosball": "Langırt",
+            "digital_ping_pong": "Dijital Masa Tenisi",
+            "punch": "Yumruk",
+            "reflex_test": "Refleks Testi"
+        }
     },
     "media": {
         "title": "Medya",

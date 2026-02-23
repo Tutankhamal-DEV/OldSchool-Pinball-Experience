@@ -53,7 +53,13 @@
         "title": "アメリカンバー",
         "description": "Old School内のアメリカンレトロダイナー。食べて、飲んで、遊んで！",
         "hint_desktop": "クリックでページをめくる",
-        "hint_mobile": "スワイプでページをめくる"
+        "hint_mobile": "スワイプでページをめくる",
+        "zoom_btn": "メニュー拡大",
+        "zoom_page": "ページ",
+        "zoom_hint": "ピンチで拡大",
+        "zoom_pages": "ページ",
+        "zoom_close": "閉じる",
+        "zoom_top": "トップに戻る"
     },
     "machines": {
         "title": "最新のマシン",
@@ -69,7 +75,19 @@
         },
         "count_machines": "台",
         "count_of": "/",
-        "count_total": "合計"
+        "count_total": "合計",
+        "list_label": "マシン一覧",
+        "machine_details": {
+            "sobriety_test": "飲酒テスト",
+            "shooting_arcade": "シューティングアーケード",
+            "multi_game_3x": "3x マルチゲーム",
+            "multi_game_2x": "2x マルチゲーム",
+            "multi_game": "マルチゲーム",
+            "foosball": "テーブルサッカー",
+            "digital_ping_pong": "デジタル卓球",
+            "punch": "パンチマシン",
+            "reflex_test": "反射テスト"
+        }
     },
     "media": {
         "title": "メディア",

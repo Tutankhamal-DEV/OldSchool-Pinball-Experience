@@ -53,7 +53,13 @@
         "title": "美式酒吧",
         "description": "位于Old School内的美式复古餐厅。吃喝玩乐，一应俱全！",
         "hint_desktop": "点击或拖拽翻页",
-        "hint_mobile": "滑动翻页"
+        "hint_mobile": "滑动翻页",
+        "zoom_btn": "放大菜单",
+        "zoom_page": "页",
+        "zoom_hint": "双指缩放",
+        "zoom_pages": "页",
+        "zoom_close": "关闭",
+        "zoom_top": "回到顶部"
     },
     "machines": {
         "title": "我们的机器",
@@ -69,7 +75,19 @@
         },
         "count_machines": "台机器",
         "count_of": "/",
-        "count_total": "总计"
+        "count_total": "总计",
+        "list_label": "游戏机列表",
+        "machine_details": {
+            "sobriety_test": "清醒度测试",
+            "shooting_arcade": "射击街机",
+            "multi_game_3x": "3合1多游戏",
+            "multi_game_2x": "2合1多游戏",
+            "multi_game": "多游戏",
+            "foosball": "桌上足球",
+            "digital_ping_pong": "数字乒乓球",
+            "punch": "拳击机",
+            "reflex_test": "反应测试"
+        }
     },
     "media": {
         "title": "媒体",

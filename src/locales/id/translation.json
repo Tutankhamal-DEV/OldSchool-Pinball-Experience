@@ -53,7 +53,13 @@
         "title": "American Bar",
         "description": "Restoran retro ala Amerika di dalam Old School. Makan, minum, dan bermain!",
         "hint_desktop": "KLIK ATAU GESER",
-        "hint_mobile": "GESER UNTUK MEMBALIK HALAMAN"
+        "hint_mobile": "GESER UNTUK MEMBALIK HALAMAN",
+        "zoom_btn": "PERBESAR MENU",
+        "zoom_page": "HALAMAN",
+        "zoom_hint": "CUBIT UNTUK ZOOM",
+        "zoom_pages": "halaman",
+        "zoom_close": "Tutup",
+        "zoom_top": "Kembali ke atas"
     },
     "machines": {
         "title": "Mesin Kami",
@@ -69,7 +75,19 @@
         },
         "count_machines": "mesin",
         "count_of": "dari",
-        "count_total": "total"
+        "count_total": "total",
+        "list_label": "Daftar Mesin",
+        "machine_details": {
+            "sobriety_test": "Tes Ketenangan",
+            "shooting_arcade": "Arcade Tembak",
+            "multi_game_3x": "3x Multigame",
+            "multi_game_2x": "2x Multigame",
+            "multi_game": "Multigame",
+            "foosball": "Foosball",
+            "digital_ping_pong": "Ping Pong Digital",
+            "punch": "Tinju",
+            "reflex_test": "Tes Refleks"
+        }
     },
     "media": {
         "title": "Media",

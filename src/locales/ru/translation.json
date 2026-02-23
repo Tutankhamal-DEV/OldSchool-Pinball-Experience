@@ -53,7 +53,13 @@
         "title": "Американский бар",
         "description": "Американский ретро-дайнер внутри Old School. Ешьте, пейте и играйте!",
         "hint_desktop": "НАЖМИТЕ ИЛИ ПОТЯНИТЕ",
-        "hint_mobile": "СВАЙПНИТЕ ДЛЯ ПЕРЕВОРОТА СТРАНИЦЫ"
+        "hint_mobile": "СВАЙПНИТЕ ДЛЯ ПЕРЕВОРОТА СТРАНИЦЫ",
+        "zoom_btn": "УВЕЛИЧИТЬ МЕНЮ",
+        "zoom_page": "СТРАНИЦА",
+        "zoom_hint": "СВЕДИТЕ ПАЛЬЦЫ ДЛЯ УВЕЛИЧЕНИЯ",
+        "zoom_pages": "страниц",
+        "zoom_close": "Закрыть",
+        "zoom_top": "Наверх"
     },
     "machines": {
         "title": "Наши Автоматы",
@@ -69,7 +75,19 @@
         },
         "count_machines": "машины",
         "count_of": "из",
-        "count_total": "всего"
+        "count_total": "всего",
+        "list_label": "Список Автоматов",
+        "machine_details": {
+            "sobriety_test": "Тест на Трезвость",
+            "shooting_arcade": "Аркадный Тир",
+            "multi_game_3x": "3x Мультиигры",
+            "multi_game_2x": "2x Мультиигры",
+            "multi_game": "Мультиигры",
+            "foosball": "Настольный Футбол",
+            "digital_ping_pong": "Цифровой Пинг-Понг",
+            "punch": "Боксёрский Автомат",
+            "reflex_test": "Тест Реакции"
+        }
     },
     "media": {
         "title": "Медиа",

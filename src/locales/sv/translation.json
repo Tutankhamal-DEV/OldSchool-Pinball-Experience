@@ -53,7 +53,13 @@
         "title": "American Bar",
         "description": "En retro amerikansk diner inne i Old School.",
         "hint_desktop": "KLICKA ELLER DRA",
-        "hint_mobile": "DRA FÖR ATT VÄNDA BLAD"
+        "hint_mobile": "DRA FÖR ATT VÄNDA BLAD",
+        "zoom_btn": "FÖRSTORA MENY",
+        "zoom_page": "SIDA",
+        "zoom_hint": "NYPA FÖR ATT ZOOMA",
+        "zoom_pages": "sidor",
+        "zoom_close": "Stäng",
+        "zoom_top": "Tillbaka upp"
     },
     "machines": {
         "title": "Våra Maskiner",
@@ -69,7 +75,19 @@
         },
         "count_machines": "maskiner",
         "count_of": "av",
-        "count_total": "totalt"
+        "count_total": "totalt",
+        "list_label": "Maskinlista",
+        "machine_details": {
+            "sobriety_test": "Nykterhetsprov",
+            "shooting_arcade": "Skjutspel",
+            "multi_game_3x": "3x Multispel",
+            "multi_game_2x": "2x Multispel",
+            "multi_game": "Multispel",
+            "foosball": "Fotbollsspel",
+            "digital_ping_pong": "Digitalt Pingis",
+            "punch": "Boxningsautomat",
+            "reflex_test": "Reflextest"
+        }
     },
     "media": {
         "title": "Media",

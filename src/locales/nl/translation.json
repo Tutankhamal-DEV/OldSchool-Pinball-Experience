@@ -53,7 +53,13 @@
         "title": "American Bar",
         "description": "Een Amerikaanse retro diner binnen in Old School. Eten, drinken en spelen!",
         "hint_desktop": "KLIK OF SLEEP",
-        "hint_mobile": "SLEEP OM DE PAGINA OM TE SLAAN"
+        "hint_mobile": "SLEEP OM DE PAGINA OM TE SLAAN",
+        "zoom_btn": "MENU VERGROTEN",
+        "zoom_page": "PAGINA",
+        "zoom_hint": "KNIJP OM TE ZOOMEN",
+        "zoom_pages": "pagina's",
+        "zoom_close": "Sluiten",
+        "zoom_top": "Naar boven"
     },
     "machines": {
         "title": "Onze Machines",
@@ -69,7 +75,19 @@
         },
         "count_machines": "machines",
         "count_of": "van",
-        "count_total": "in totaal"
+        "count_total": "in totaal",
+        "list_label": "Machinelijst",
+        "machine_details": {
+            "sobriety_test": "Nuchterheidstest",
+            "shooting_arcade": "Schiet-Arcade",
+            "multi_game_3x": "3x Multispel",
+            "multi_game_2x": "2x Multispel",
+            "multi_game": "Multispel",
+            "foosball": "Tafelvoetbal",
+            "digital_ping_pong": "Digitaal Tafeltennis",
+            "punch": "Boksautomaat",
+            "reflex_test": "Reflextest"
+        }
     },
     "media": {
         "title": "Media",

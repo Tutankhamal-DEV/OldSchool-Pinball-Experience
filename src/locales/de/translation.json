@@ -53,7 +53,13 @@
         "title": "American Bar",
         "description": "Ein amerikanisches Retro-Diner im Old School. Essen, trinken und spielen - alles an einem Ort!",
         "hint_desktop": "KLICKEN ODER ZIEHEN",
-        "hint_mobile": "ZIEHEN UM DIE SEITE ZU WENDEN"
+        "hint_mobile": "ZIEHEN UM DIE SEITE ZU WENDEN",
+        "zoom_btn": "MENÜ VERGRÖSSERN",
+        "zoom_page": "SEITE",
+        "zoom_hint": "PINCH ZUM ZOOMEN",
+        "zoom_pages": "Seiten",
+        "zoom_close": "Schließen",
+        "zoom_top": "Nach oben"
     },
     "machines": {
         "title": "Unsere Maschinen",
@@ -69,7 +75,19 @@
         },
         "count_machines": "maschinen",
         "count_of": "von",
-        "count_total": "insgesamt"
+        "count_total": "insgesamt",
+        "list_label": "Maschinenliste",
+        "machine_details": {
+            "sobriety_test": "Nüchternheitstest",
+            "shooting_arcade": "Schieß-Arcade",
+            "multi_game_3x": "3x Multispiel",
+            "multi_game_2x": "2x Multispiel",
+            "multi_game": "Multispiel",
+            "foosball": "Tischfußball",
+            "digital_ping_pong": "Digitales Tischtennis",
+            "punch": "Boxautomat",
+            "reflex_test": "Reflextest"
+        }
     },
     "media": {
         "title": "Medien",

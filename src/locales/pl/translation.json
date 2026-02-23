@@ -53,7 +53,13 @@
         "title": "Amerykański Bar",
         "description": "Amerykańska knajpa w stylu retro w Old School. Jedz, pij i graj - wszystko w jednym miejscu!",
         "hint_desktop": "KLIKNIJ LUB PRZECIĄGNIJ",
-        "hint_mobile": "PRZECIĄGNIJ, BY ZMIENIĆ STRONĘ"
+        "hint_mobile": "PRZECIĄGNIJ, BY ZMIENIĆ STRONĘ",
+        "zoom_btn": "POWIĘKSZ MENU",
+        "zoom_page": "STRONA",
+        "zoom_hint": "ŚCIŚNIJ ABY POWIĘKSZYĆ",
+        "zoom_pages": "stron",
+        "zoom_close": "Zamknij",
+        "zoom_top": "Na górę"
     },
     "machines": {
         "title": "Nasze Maszyny",
@@ -69,7 +75,19 @@
         },
         "count_machines": "maszyn",
         "count_of": "z",
-        "count_total": "w sumie"
+        "count_total": "w sumie",
+        "list_label": "Lista Maszyn",
+        "machine_details": {
+            "sobriety_test": "Test Trzeźwości",
+            "shooting_arcade": "Strzelanka Arcade",
+            "multi_game_3x": "3x Multigry",
+            "multi_game_2x": "2x Multigry",
+            "multi_game": "Multigry",
+            "foosball": "Piłkarzyki",
+            "digital_ping_pong": "Cyfrowy Ping Pong",
+            "punch": "Pięściarz",
+            "reflex_test": "Test Refleksu"
+        }
     },
     "media": {
         "title": "Media",

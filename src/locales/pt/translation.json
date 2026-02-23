@@ -56,7 +56,10 @@
         "hint_mobile": "ARRASTE PARA VIRAR A PÁGINA",
         "zoom_btn": "AMPLIAR CARDÁPIO",
         "zoom_page": "PÁGINA",
-        "zoom_hint": "USE DOIS DEDOS PARA ZOOM"
+        "zoom_hint": "USE DOIS DEDOS PARA ZOOM",
+        "zoom_pages": "páginas",
+        "zoom_close": "Fechar",
+        "zoom_top": "Voltar ao topo"
     },
     "machines": {
         "title": "Nossas Máquinas",
@@ -72,7 +75,19 @@
         },
         "count_machines": "máquinas",
         "count_of": "de",
-        "count_total": "no total"
+        "count_total": "no total",
+        "list_label": "Lista de Máquinas",
+        "machine_details": {
+            "sobriety_test": "Teste de Sobriedade",
+            "shooting_arcade": "Arcade Tiro",
+            "multi_game_3x": "3x Multijogos",
+            "multi_game_2x": "2x Multijogos",
+            "multi_game": "Multijogos",
+            "foosball": "Pebolim",
+            "digital_ping_pong": "Ping Pong Digital",
+            "punch": "Soco",
+            "reflex_test": "Teste de Reflexo"
+        }
     },
     "media": {
         "title": "Mídia",

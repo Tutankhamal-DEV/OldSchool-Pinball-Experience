@@ -53,7 +53,13 @@
         "title": "अमेरिकन बार",
         "description": "ओल्ड स्कूल के अंदर एक अमेरिकी रेट्रो डायनर। खाएं, पिएं और खेलें!",
         "hint_desktop": "क्लिक करें या खींचें",
-        "hint_mobile": "पेज पलटने के लिए खींचें"
+        "hint_mobile": "पेज पलटने के लिए खींचें",
+        "zoom_btn": "मेनू बड़ा करें",
+        "zoom_page": "पेज",
+        "zoom_hint": "ज़ूम के लिए पिंच करें",
+        "zoom_pages": "पेज",
+        "zoom_close": "बंद करें",
+        "zoom_top": "ऊपर जाएं"
     },
     "machines": {
         "title": "हमारी मशीनें",
@@ -69,7 +75,19 @@
         },
         "count_machines": "मशीनें",
         "count_of": "में से",
-        "count_total": "कुल"
+        "count_total": "कुल",
+        "list_label": "मशीन सूची",
+        "machine_details": {
+            "sobriety_test": "शराब परीक्षण",
+            "shooting_arcade": "शूटिंग आर्केड",
+            "multi_game_3x": "3x मल्टीगेम",
+            "multi_game_2x": "2x मल्टीगेम",
+            "multi_game": "मल्टीगेम",
+            "foosball": "फुटबॉल टेबल",
+            "digital_ping_pong": "डिजिटल पिंग पॉन्ग",
+            "punch": "पंच मशीन",
+            "reflex_test": "रिफ्लेक्स टेस्ट"
+        }
     },
     "media": {
         "title": "मीडिया",

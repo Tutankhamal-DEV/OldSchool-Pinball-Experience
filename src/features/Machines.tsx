@@ -37,18 +37,18 @@ const MACHINES: Machine[] = [
     { name: 'The Wizard of Oz', category: 'pinball', year: 2013 },
     { name: 'The Beatles', category: 'pinball', year: 2018 },
     { name: 'Vortex', category: 'pinball', year: 1980 },
-    // ── Arcades & Outros Jogos ──
-    { name: 'Bebometro', category: 'arcade', detail: 'Teste de Sobriedade' },
-    { name: 'Lucky & Wild', category: 'arcade', year: 1993, detail: 'Arcade Tiro' },
-    { name: 'Mini Arcade Classics', category: 'arcade', detail: '3x Multijogos' },
-    { name: 'Pandora 6', category: 'arcade', detail: '2x Multijogos' },
-    { name: 'Pandora Alpha Plus', category: 'arcade', detail: 'Multijogos' },
-    { name: 'Pebolim', category: 'arcade' },
-    { name: 'Pong', category: 'arcade', detail: 'Ping Pong Digital' },
-    { name: 'Real Puncher', category: 'arcade', detail: 'Soco' },
+    // ── Arcades & Other Games ──
+    { name: 'Bebometro', category: 'arcade', detail: 'machines.machine_details.sobriety_test' },
+    { name: 'Lucky & Wild', category: 'arcade', year: 1993, detail: 'machines.machine_details.shooting_arcade' },
+    { name: 'Mini Arcade Classics', category: 'arcade', detail: 'machines.machine_details.multi_game_3x' },
+    { name: 'Pandora 6', category: 'arcade', detail: 'machines.machine_details.multi_game_2x' },
+    { name: 'Pandora Alpha Plus', category: 'arcade', detail: 'machines.machine_details.multi_game' },
+    { name: 'Pebolim', category: 'arcade', detail: 'machines.machine_details.foosball' },
+    { name: 'Pong', category: 'arcade', detail: 'machines.machine_details.digital_ping_pong' },
+    { name: 'Real Puncher', category: 'arcade', detail: 'machines.machine_details.punch' },
     { name: 'Super Monaco GP SEGA', category: 'arcade', year: 1989 },
-    { name: 'Terminator 2', category: 'arcade', detail: 'Arcade Tiro' },
-    { name: 'Vortex', category: 'arcade', detail: 'Teste de Reflexo' },
+    { name: 'Terminator 2', category: 'arcade', detail: 'machines.machine_details.shooting_arcade' },
+    { name: 'Vortex', category: 'arcade', detail: 'machines.machine_details.reflex_test' },
 ]
 
 const BANNER_SLIDES = [
@@ -173,7 +173,7 @@ export default function Machines() {
                                             <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${machine.category === 'pinball' ? 'bg-pinball-red' : 'bg-pinball-neon-blue'
                                                 } shadow-[0_0_8px_currentColor] opacity-50 group-hover:opacity-100 transition-opacity`} />
                                             <p className="font-tech text-xs sm:text-sm text-pinball-cream/80 group-hover:text-pinball-yellow transition-colors duration-300 truncate">
-                                                {machine.name} {machine.detail && <span className="opacity-50 text-[9px] sm:text-[10px] ml-1 uppercase">{machine.detail}</span>}
+                                                {machine.name} {machine.detail && <span className="opacity-50 text-[9px] sm:text-[10px] ml-1 uppercase">{t(machine.detail)}</span>}
                                             </p>
                                         </div>
                                     </div>

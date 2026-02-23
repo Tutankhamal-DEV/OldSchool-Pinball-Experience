@@ -56,7 +56,10 @@
         "hint_mobile": "DRAG TO FLIP THE PAGE",
         "zoom_btn": "ZOOM MENU",
         "zoom_page": "PAGE",
-        "zoom_hint": "PINCH TO ZOOM"
+        "zoom_hint": "PINCH TO ZOOM",
+        "zoom_pages": "pages",
+        "zoom_close": "Close",
+        "zoom_top": "Back to top"
     },
     "machines": {
         "title": "Our Machines",
@@ -72,7 +75,19 @@
         },
         "count_machines": "machines",
         "count_of": "of",
-        "count_total": "in total"
+        "count_total": "in total",
+        "list_label": "Machine List",
+        "machine_details": {
+            "sobriety_test": "Sobriety Test",
+            "shooting_arcade": "Shooting Arcade",
+            "multi_game_3x": "3x Multi-Game",
+            "multi_game_2x": "2x Multi-Game",
+            "multi_game": "Multi-Game",
+            "foosball": "Foosball",
+            "digital_ping_pong": "Digital Ping Pong",
+            "punch": "Punch",
+            "reflex_test": "Reflex Test"
+        }
     },
     "media": {
         "title": "Media",

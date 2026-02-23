@@ -53,7 +53,13 @@
         "title": "아메리칸 바",
         "description": "먹고 마시고 즐기세요 - 올스쿨 내 아메리칸 다이너!",
         "hint_desktop": "클릭 또는 드래그",
-        "hint_mobile": "드래그하여 넘기기"
+        "hint_mobile": "드래그하여 넘기기",
+        "zoom_btn": "메뉴 확대",
+        "zoom_page": "페이지",
+        "zoom_hint": "두 손가락으로 확대",
+        "zoom_pages": "페이지",
+        "zoom_close": "닫기",
+        "zoom_top": "맨 위로"
     },
     "machines": {
         "title": "우리의 머신",
@@ -69,7 +75,19 @@
         },
         "count_machines": "머신",
         "count_of": "중",
-        "count_total": "총"
+        "count_total": "총",
+        "list_label": "머신 목록",
+        "machine_details": {
+            "sobriety_test": "음주 측정",
+            "shooting_arcade": "슈팅 아케이드",
+            "multi_game_3x": "3x 멀티게임",
+            "multi_game_2x": "2x 멀티게임",
+            "multi_game": "멀티게임",
+            "foosball": "테이블 축구",
+            "digital_ping_pong": "디지털 탁구",
+            "punch": "펀치 머신",
+            "reflex_test": "반사 테스트"
+        }
     },
     "media": {
         "title": "미디어",

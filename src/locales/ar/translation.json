@@ -53,7 +53,13 @@
         "title": "البار الأمريكي",
         "description": "مطعم كلاسيكي أمريكي داخل Old School. كل، واشرب، والعب!",
         "hint_desktop": "انقر أو اسحب",
-        "hint_mobile": "اسحب لقلب الصفحة"
+        "hint_mobile": "اسحب لقلب الصفحة",
+        "zoom_btn": "تكبير القائمة",
+        "zoom_page": "صفحة",
+        "zoom_hint": "ضم الأصابع للتكبير",
+        "zoom_pages": "صفحات",
+        "zoom_close": "إغلاق",
+        "zoom_top": "العودة للأعلى"
     },
     "machines": {
         "title": "آلاتنا",
@@ -69,7 +75,19 @@
         },
         "count_machines": "آلة",
         "count_of": "من",
-        "count_total": "المجموع"
+        "count_total": "المجموع",
+        "list_label": "قائمة الأجهزة",
+        "machine_details": {
+            "sobriety_test": "اختبار الرصانة",
+            "shooting_arcade": "آركيد إطلاق نار",
+            "multi_game_3x": "3x ألعاب متعددة",
+            "multi_game_2x": "2x ألعاب متعددة",
+            "multi_game": "ألعاب متعددة",
+            "foosball": "كرة قدم الطاولة",
+            "digital_ping_pong": "بينغ بونغ رقمي",
+            "punch": "لكمة",
+            "reflex_test": "اختبار ردة الفعل"
+        }
     },
     "media": {
         "title": "الوسائط",
