@@ -28,8 +28,7 @@ const Page = React.forwardRef<HTMLDivElement, { imageUrl: string, number: number
                 alt={`Menu Page ${props.number}`}
                 className="w-full h-full object-cover pointer-events-none"
                 draggable={false}
-                loading="lazy"
-                decoding="async"
+                decoding="sync"
             />
         </div>
     )
