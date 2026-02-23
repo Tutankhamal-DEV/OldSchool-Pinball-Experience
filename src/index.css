@@ -34,12 +34,12 @@
   /* Warmer silver */
 
   /* Typography */
-  --font-elegant: 'Damion', cursive;
+  --font-elegant: "Damion", cursive;
   /* Replaces pixel font for main neon signatures */
-  --font-retro: 'Pacifico', cursive;
+  --font-retro: "Pacifico", cursive;
   /* Secondary script font */
-  --font-body: 'Play', sans-serif;
-  --font-mono: 'Share Tech Mono', monospace;
+  --font-body: "Play", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
   /* Kept for UI elements/scores */
 }
 
@@ -63,7 +63,10 @@ body {
   color: var(--color-pinball-cream);
   overflow-x: hidden;
   font-weight: 600;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 1), 0px 0px 30px rgba(0, 0, 0, 1), -1px -1px 4px rgba(0, 0, 0, 0.9);
+  text-shadow:
+    2px 2px 8px rgba(0, 0, 0, 1),
+    0px 0px 30px rgba(0, 0, 0, 1),
+    -1px -1px 4px rgba(0, 0, 0, 0.9);
 
   /* Content Protection */
   -webkit-user-select: none;
@@ -89,10 +92,6 @@ video,
 picture,
 source {
   -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
   pointer-events: none;
 }
 
@@ -126,7 +125,9 @@ p,
 a,
 span,
 li {
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 1);
+  text-shadow:
+    4px 4px 8px rgba(0, 0, 0, 1),
+    0 0 20px rgba(0, 0, 0, 1);
 }
 
 .glass-panel,
@@ -136,11 +137,14 @@ li {
 .feature-card,
 .menu-card,
 .btn-retro {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.8) !important;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    0 4px 8px rgba(0, 0, 0, 0.8) !important;
 }
 
 .hero-logo-shadow {
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8))
+    drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
 }
 
 /* ===========================
@@ -169,7 +173,6 @@ li {
    =========================== */
 
 @keyframes neonPulse {
-
   0%,
   100% {
     box-shadow:
@@ -188,7 +191,6 @@ li {
 }
 
 @keyframes neonPulseYellow {
-
   0%,
   100% {
     box-shadow:
@@ -295,7 +297,6 @@ li {
 }
 
 @keyframes floatBounce {
-
   0%,
   100% {
     transform: translateY(0);
@@ -339,7 +340,7 @@ li {
 }
 
 @property --angle {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
@@ -349,21 +350,28 @@ li {
    =========================== */
 
 .bg-radial-vignette {
-  background: radial-gradient(ellipse at center, transparent 30%, rgba(8, 3, 5, 0.8) 90%, rgba(8, 3, 5, 1) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(8, 3, 5, 0.8) 90%,
+    rgba(8, 3, 5, 1) 100%
+  );
 }
 
 .bg-feathered-shadow {
-  background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(8, 3, 5, 0.08) 4%,
-      rgba(8, 3, 5, 0.2) 10%,
-      rgba(8, 3, 5, 0.45) 20%,
-      rgba(8, 3, 5, 0.75) 35%,
-      rgba(8, 3, 5, 0.75) 65%,
-      rgba(8, 3, 5, 0.45) 80%,
-      rgba(8, 3, 5, 0.2) 90%,
-      rgba(8, 3, 5, 0.08) 96%,
-      transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(8, 3, 5, 0.08) 4%,
+    rgba(8, 3, 5, 0.2) 10%,
+    rgba(8, 3, 5, 0.45) 20%,
+    rgba(8, 3, 5, 0.75) 35%,
+    rgba(8, 3, 5, 0.75) 65%,
+    rgba(8, 3, 5, 0.45) 80%,
+    rgba(8, 3, 5, 0.2) 90%,
+    rgba(8, 3, 5, 0.08) 96%,
+    transparent 100%
+  );
 }
 
 .animate-neon-pulse {
@@ -407,7 +415,6 @@ li {
   animation: heroTitleIn 0.7s 0.5s ease-out both;
 }
 
-
 /* ===========================
    Animated Red Border
    =========================== */
@@ -419,15 +426,28 @@ li {
 }
 
 .animated-red-border::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 8px;
   padding: 2px;
-  background: conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  background: conic-gradient(
+    from var(--angle),
+    #ff0000,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #ff00ff,
+    #ff0000
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   mask-composite: exclude;
   animation: rotateGlow 3s linear infinite;
   pointer-events: none;
@@ -447,8 +467,6 @@ li {
   text-shadow: none;
 }
 
-
-
 /* ===========================
    Glass Panel
    =========================== */
@@ -466,20 +484,35 @@ li {
 .glass-panel:hover {
   background: rgba(10, 10, 10, 0.9);
   border-color: transparent;
-  box-shadow: 0 0 25px rgba(255, 42, 42, 0.6), 0 0 50px rgba(0, 255, 255, 0.2);
+  box-shadow:
+    0 0 25px rgba(255, 42, 42, 0.6),
+    0 0 50px rgba(0, 255, 255, 0.2);
 }
 
 .glass-panel::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -2px;
   /* Pull it slightly to cover the 2px border */
   border-radius: 8px;
   padding: 2px;
-  background: conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  background: conic-gradient(
+    from var(--angle),
+    #ff0000,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #ff00ff,
+    #ff0000
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -490,8 +523,6 @@ li {
   opacity: 1;
   animation: rotateGlow 3s linear infinite;
 }
-
-
 
 /* ===========================
    Retro Button (Gamified)
@@ -521,15 +552,25 @@ li {
   border: 2px solid transparent;
   background:
     linear-gradient(135deg, #1a0505, #080305) padding-box,
-    linear-gradient(90deg, var(--color-pinball-red), var(--color-pinball-yellow), var(--color-pinball-red)) border-box;
-  background-size: 100% 100%, 200% 100%;
+    linear-gradient(
+        90deg,
+        var(--color-pinball-red),
+        var(--color-pinball-yellow),
+        var(--color-pinball-red)
+      )
+      border-box;
+  background-size:
+    100% 100%,
+    200% 100%;
   animation: btnBorderSlide 2s linear infinite;
   box-shadow: 0 0 10px rgba(255, 42, 42, 0.3);
 }
 
 @keyframes btnBorderSlide {
   to {
-    background-position: 100% 0, 200% 0;
+    background-position:
+      100% 0,
+      200% 0;
   }
 }
 
@@ -546,32 +587,34 @@ li {
 
 /* Glassmorphism shine sweep effect for all retro buttons */
 .btn-retro::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent);
-  transform: skewX(-25deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-200%) skewX(-25deg);
   animation: sweepGlassGlow 6s infinite ease-in-out;
+  will-change: transform;
   pointer-events: none;
   z-index: -1;
 }
 
 @keyframes sweepGlassGlow {
-
   0%,
   70% {
-    left: -100%;
+    transform: translateX(-200%) skewX(-25deg);
   }
 
   90%,
   100% {
-    left: 200%;
+    transform: translateX(400%) skewX(-25deg);
   }
 }
 
@@ -581,16 +624,30 @@ li {
   /* Use background-image so it does not override background-position animated property */
   background-image:
     linear-gradient(135deg, #050505, #000000),
-    linear-gradient(90deg, var(--color-pinball-red), var(--color-pinball-yellow), var(--color-pinball-red)) !important;
+    linear-gradient(
+      90deg,
+      var(--color-pinball-red),
+      var(--color-pinball-yellow),
+      var(--color-pinball-red)
+    ) !important;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
-
 .btn-retro-rgb {
   background:
     linear-gradient(135deg, #1a0505, #080305) padding-box,
-    conic-gradient(from var(--angle), #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000) border-box;
+    conic-gradient(
+        from var(--angle),
+        #ff0000,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #ff00ff,
+        #ff0000
+      )
+      border-box;
   color: white;
   animation: rotateGlow 3s linear infinite;
 }
@@ -622,47 +679,40 @@ li {
   /* Solid fill with neon glow */
   color: var(--color-pinball-red);
 
-  /* Continuous pulsing color animation */
+  /* Continuous pulsing opacity animation (GPU-composited) */
   animation: neon-inner-pulse 3s ease-in-out infinite;
+  will-change: opacity;
 }
 
 @keyframes neon-inner-pulse {
-
   0%,
   100% {
     opacity: 1;
-    color: var(--color-pinball-yellow);
-    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
   }
 
   50% {
-    opacity: 0.8;
-    color: var(--color-pinball-red);
-    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.8);
+    opacity: 0.7;
   }
 }
 
-
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 60%;
   height: 3px;
-  background: linear-gradient(90deg,
-      transparent,
-      var(--color-pinball-red),
-      var(--color-pinball-yellow),
-      var(--color-pinball-red),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-pinball-red),
+    var(--color-pinball-yellow),
+    var(--color-pinball-red),
+    transparent
+  );
   border-radius: 2px;
 }
-
-
-
-
 
 @keyframes glitch-anim-1 {
   0% {
@@ -760,9 +810,19 @@ li {
 
 /* CRT Overlay Static Backgrounds */
 .crt-scanlines-bg {
-  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0px, rgba(0, 0, 0, 0.06) 1px, transparent 1px, transparent 3px);
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.06) 0px,
+    rgba(0, 0, 0, 0.06) 1px,
+    transparent 1px,
+    transparent 3px
+  );
 }
 
 .crt-vignette-bg {
-  background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
 }

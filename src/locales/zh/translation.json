@@ -1,201 +1,266 @@
 {
-    "navbar": {
-        "home": "首页",
-        "atmosphere": "氛围",
-        "bar": "美式酒吧",
-        "machines": "游戏机",
-        "media": "媒体",
-        "tickets": "门票",
-        "contact": "联系我们",
-        "buy_online": "在线购票",
-        "sound_on": "开启声音",
-        "sound_off": "关闭声音",
-        "menu": "菜单",
-        "events": "活动"
+  "navbar": {
+    "home": "首页",
+    "atmosphere": "氛围",
+    "bar": "美式酒吧",
+    "machines": "游戏机",
+    "media": "媒体",
+    "tickets": "门票",
+    "contact": "联系我们",
+    "buy_online": "在线购票",
+    "sound_on": "开启声音",
+    "sound_off": "关闭声音",
+    "menu": "菜单",
+    "events": "活动"
+  },
+  "footer": {
+    "brand_description": "拉丁美洲最佳的弹球和街机空间。在圣保罗体验独特的怀旧之旅。",
+    "links_title": "链接",
+    "social_title": "社交",
+    "address": "Teodoro Sampaio 街 2038号 - Pinheiros\n圣保罗 - SP, 05406-150",
+    "payment_info": "支持Pix、借记卡和信用卡支付",
+    "copyright": "© 2026 Old School Pinball. 保留所有权利。",
+    "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
+    "developer_credit": "由 TUTANKHAMAL DEV 开发"
+  },
+  "hero": {
+    "title_part1": "纯正的",
+    "title_highlight": "复古",
+    "title_part2": "体验",
+    "award_text": "TWIPY奖得主 • 拉丁美洲最佳街机厅",
+    "btn_tickets": "通行证",
+    "btn_more": "了解更多"
+  },
+  "atmosphere": {
+    "title": "氛围",
+    "description": "Old School的每个角落都经过精心设计，带您重返街机的黄金时代。",
+    "areas": {
+      "batman": {
+        "title": "蝙蝠侠角",
+        "desc": "献给黑暗骑士的角落，展示收藏品、艺术品和哥谭市的阴暗氛围。"
+      },
+      "geek": {
+        "title": "极客与星球大战",
+        "desc": "复古海报、霓虹灯和80、90年代的所有流行文化。"
+      },
+      "dance": {
+        "title": "舞池与DJ",
+        "desc": "随着现场DJ播放的80、90年代最热门金曲起舞！"
+      }
+    }
+  },
+  "american_bar": {
+    "title": "美式酒吧",
+    "description": "位于Old School内的美式复古餐厅。吃喝玩乐，一应俱全！",
+    "hint_desktop": "点击或拖拽翻页",
+    "hint_mobile": "滑动翻页",
+    "zoom_btn": "放大菜单",
+    "zoom_page": "页",
+    "zoom_hint": "双指缩放",
+    "zoom_pages": "页",
+    "zoom_close": "关闭",
+    "zoom_top": "回到顶部"
+  },
+  "machines": {
+    "title": "我们的机器",
+    "description": "超过30台经典弹球和街机游戏。所有游戏免费畅玩！",
+    "filters": {
+      "all": "全部",
+      "pinball": "弹球机",
+      "arcade": "街机"
     },
-    "footer": {
-        "brand_description": "拉丁美洲最佳的弹球和街机空间。在圣保罗体验独特的怀旧之旅。",
-        "links_title": "链接",
-        "social_title": "社交",
-        "address": "Teodoro Sampaio 街 2038号 - Pinheiros\n圣保罗 - SP, 05406-150",
-        "payment_info": "支持Pix、借记卡和信用卡支付",
-        "copyright": "© 2026 Old School Pinball. 保留所有权利。",
-        "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
-        "developer_credit": "由 TUTANKHAMAL DEV 开发"
+    "groups": {
+      "arcades": "街机及其他",
+      "pinballs": "弹球机"
     },
-    "hero": {
-        "title_part1": "纯正的",
-        "title_highlight": "复古",
-        "title_part2": "体验",
-        "award_text": "TWIPY奖得主 • 拉丁美洲最佳街机厅",
-        "btn_tickets": "通行证",
-        "btn_more": "了解更多"
+    "count_machines": "台机器",
+    "count_of": "/",
+    "count_total": "总计",
+    "list_label": "游戏机列表",
+    "machine_details": {
+      "sobriety_test": "清醒度测试",
+      "shooting_arcade": "射击街机",
+      "multi_game_3x": "3合1多游戏",
+      "multi_game_2x": "2合1多游戏",
+      "multi_game": "多游戏",
+      "foosball": "桌上足球",
+      "digital_ping_pong": "数字乒乓球",
+      "punch": "拳击机",
+      "reflex_test": "反应测试"
+    }
+  },
+  "media": {
+    "title": "媒体",
+    "description": "观看来自Old School Pinball的精彩瞬间和虚拟导览。"
+  },
+  "events": {
+    "title": "活动与场地租赁",
+    "description": "生日派对、企业活动、播客录制、广告拍摄等！",
+    "types": {
+      "birthday": {
+        "title": "生日派对",
+        "description": "用特别的方式庆祝您的生日！配备游戏机、DJ和酒吧的专属空间。"
+      },
+      "corporate": {
+        "title": "企业活动",
+        "description": "独特的团队建设！放松的社交氛围。"
+      },
+      "podcast": {
+        "title": "录音与播客",
+        "description": "提供真实的复古场景用于影音制作。"
+      },
+      "media": {
+        "title": "媒体制作",
+        "description": "以80年代街机为主题的拍摄和制作。"
+      }
     },
-    "atmosphere": {
-        "title": "氛围",
-        "description": "Old School的每个角落都经过精心设计，带您重返街机的黄金时代。",
-        "areas": {
-            "batman": {
-                "title": "蝙蝠侠角",
-                "desc": "献给黑暗骑士的角落，展示收藏品、艺术品和哥谭市的阴暗氛围。"
-            },
-            "geek": {
-                "title": "极客与星球大战",
-                "desc": "复古海报、霓虹灯和80、90年代的所有流行文化。"
-            },
-            "dance": {
-                "title": "舞池与DJ",
-                "desc": "随着现场DJ播放的80、90年代最热门金曲起舞！"
-            }
+    "btn_reserve": "WhatsApp 预订"
+  },
+  "tickets": {
+    "title": "购票",
+    "description": "每个周四和周六晚上6点至午夜，所有游戏免费畅玩。",
+    "plans": {
+      "online": {
+        "name": "全价",
+        "discount": "9折优惠",
+        "description": "仅限网站购买享受10%折扣！无游戏币限制畅玩所有机器。",
+        "features": {
+          "f1": "无限出入",
+          "f2": "所有机器",
+          "f3": "无需游戏币",
+          "f4": "当日有效"
         }
-    },
-    "american_bar": {
-        "title": "美式酒吧",
-        "description": "位于Old School内的美式复古餐厅。吃喝玩乐，一应俱全！",
-        "hint_desktop": "点击或拖拽翻页",
-        "hint_mobile": "滑动翻页",
-        "zoom_btn": "放大菜单",
-        "zoom_page": "页",
-        "zoom_hint": "双指缩放",
-        "zoom_pages": "页",
-        "zoom_close": "关闭",
-        "zoom_top": "回到顶部"
-    },
-    "machines": {
-        "title": "我们的机器",
-        "description": "超过30台经典弹球和街机游戏。所有游戏免费畅玩！",
-        "filters": {
-            "all": "全部",
-            "pinball": "弹球机",
-            "arcade": "街机"
-        },
-        "groups": {
-            "arcades": "街机及其他",
-            "pinballs": "弹球机"
-        },
-        "count_machines": "台机器",
-        "count_of": "/",
-        "count_total": "总计",
-        "list_label": "游戏机列表",
-        "machine_details": {
-            "sobriety_test": "清醒度测试",
-            "shooting_arcade": "射击街机",
-            "multi_game_3x": "3合1多游戏",
-            "multi_game_2x": "2合1多游戏",
-            "multi_game": "多游戏",
-            "foosball": "桌上足球",
-            "digital_ping_pong": "数字乒乓球",
-            "punch": "拳击机",
-            "reflex_test": "反应测试"
+      },
+      "door": {
+        "name": "现场",
+        "description": "在入口处购票，享受整个夜晚。",
+        "features": {
+          "f1": "无限出入",
+          "f2": "所有机器",
+          "f3": "无需游戏币",
+          "f4": "支持信用卡"
         }
+      },
+      "kids": {
+        "name": "儿童",
+        "discount": "12岁以下",
+        "description": "周六12岁以下儿童专享票价 R$ 63。",
+        "features": {
+          "f1": "无限出入",
+          "f2": "所有机器",
+          "f3": "无需游戏币",
+          "f4": "需成人陪同"
+        }
+      }
     },
-    "media": {
-        "title": "媒体",
-        "description": "观看来自Old School Pinball的精彩瞬间和虚拟导览。"
+    "btn_buy": "在线购票",
+    "btn_more": "了解更多",
+    "btn_map": "打开地图"
+  },
+  "contact": {
+    "title": "联系我们",
+    "description": "欢迎来访或随时与我们联系！",
+    "info": {
+      "address_label": "地址",
+      "address_value": "R. Teodureto Souto, 292a - Cambuci, 圣保罗 - SP",
+      "whatsapp_label": "WhatsApp",
+      "email_label": "电子邮箱",
+      "hours_label": "营业时间",
+      "hours_value": "周四和周六 - 18:00 至 00:00"
     },
-    "events": {
-        "title": "活动与场地租赁",
-        "description": "生日派对、企业活动、播客录制、广告拍摄等！",
-        "types": {
-            "birthday": {
-                "title": "生日派对",
-                "description": "用特别的方式庆祝您的生日！配备游戏机、DJ和酒吧的专属空间。"
-            },
-            "corporate": {
-                "title": "企业活动",
-                "description": "独特的团队建设！放松的社交氛围。"
-            },
-            "podcast": {
-                "title": "录音与播客",
-                "description": "提供真实的复古场景用于影音制作。"
-            },
-            "media": {
-                "title": "媒体制作",
-                "description": "以80年代街机为主题的拍摄和制作。"
-            }
-        },
-        "btn_reserve": "WhatsApp 预订"
+    "btn_contact": "联系我们在线客服"
+  },
+  "chatbot": {
+    "tooltip": "需要帮助？请联系我们！",
+    "aria_open": "打开支持",
+    "aria_close": "关闭",
+    "aria_send": "发送",
+    "status_online": "在线",
+    "title": "OSB 支持",
+    "welcome": "你好！我能帮您什么？",
+    "placeholder": "您的消息...",
+    "fallback": "WhatsApp: +55 11 91562-0127。",
+    "answers": {
+      "tickets": "在线购票享10%折扣！",
+      "location": "R. Teodureto Souto, 292a. 周四和周六开放！",
+      "games": "30多台免费畅玩的游戏机！"
     },
-    "tickets": {
-        "title": "购票",
-        "description": "每个周四和周六晚上6点至午夜，所有游戏免费畅玩。",
-        "plans": {
-            "online": {
-                "name": "在线",
-                "discount": "9折优惠",
-                "description": "仅限网站购买享受10%折扣！无游戏币限制畅玩所有机器。",
-                "features": {
-                    "f1": "无限出入",
-                    "f2": "所有机器",
-                    "f3": "无需游戏币",
-                    "f4": "当日有效"
-                }
-            },
-            "door": {
-                "name": "现场",
-                "description": "在入口处购票，享受整个夜晚。",
-                "features": {
-                    "f1": "无限出入",
-                    "f2": "所有机器",
-                    "f3": "无需游戏币",
-                    "f4": "支持信用卡"
-                }
-            },
-            "kids": {
-                "name": "儿童",
-                "discount": "12岁以下",
-                "description": "周六12岁以下儿童专享票价 R$ 63。",
-                "features": {
-                    "f1": "无限出入",
-                    "f2": "所有机器",
-                    "f3": "无需游戏币",
-                    "f4": "需成人陪同"
-                }
-            }
-        },
-        "btn_buy": "在线购票",
-        "btn_more": "了解更多"
+    "options": {
+      "tickets": "门票",
+      "location": "地点",
+      "games": "游戏"
+    }
+  },
+  "cookies": {
+    "title": "Privacy Policies",
+    "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
+    "accept": "I AGREE",
+    "info_btn": "INFORMATION",
+    "modal_title": "Cookie Policy & Privacy",
+    "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+  },
+  "forms": {
+    "captcha_title": "Security Check",
+    "captcha_desc": "Complete the verification to continue.",
+    "captcha_ok": "Successfully verified!",
+    "back": "返回",
+    "next": "下一步",
+    "close": "关闭",
+    "ticket": {
+      "step_plan": "Choose Your Plan",
+      "step_cart": "Build Your Order",
+      "cart_desc": "Add the quantity of each ticket type:",
+      "per_person": "person",
+      "ticket_singular": "ticket",
+      "ticket_plural": "tickets",
+      "step_guests": "票务详情",
+      "step_promo": "Promo & Summary",
+      "step_preview": "Message Preview",
+      "quantity": "Quantity",
+      "guest": "Ticket",
+      "name": "Full name",
+      "age": "Age range",
+      "years": "years",
+      "promo_label": "Promo Code",
+      "promo_placeholder": "E.g.: RETRO10",
+      "promo_apply": "Apply",
+      "promo_added": "Promo code added to message",
+      "summary": "Order Summary",
+      "preview_desc": "This is the message that will be sent via WhatsApp:",
+      "send": "Send via WhatsApp",
+      "wa_title": "Passport Booking - Old School Pinball",
+      "wa_plan": "Plan",
+      "wa_qty": "Quantity",
+      "wa_promo": "Promo",
+      "wa_none": "None",
+      "wa_guests": "票",
+      "wa_footer": "Message sent from oldschool.tutankhamal.com",
+      "cpf_placeholder": "CPF（可选）",
+      "rg_placeholder": "RG（可选）"
     },
     "contact": {
-        "title": "联系我们",
-        "description": "欢迎来访或随时与我们联系！",
-        "info": {
-            "address_label": "地址",
-            "address_value": "R. Teodureto Souto, 292a - Cambuci, 圣保罗 - SP",
-            "whatsapp_label": "WhatsApp",
-            "email_label": "电子邮箱",
-            "hours_label": "营业时间",
-            "hours_value": "周四和周六 - 18:00 至 00:00"
-        },
-        "btn_contact": "联系我们在线客服"
-    },
-    "chatbot": {
-        "tooltip": "需要帮助？请联系我们！",
-        "aria_open": "打开支持",
-        "aria_close": "关闭",
-        "aria_send": "发送",
-        "status_online": "在线",
-        "title": "OSB 支持",
-        "welcome": "你好！我能帮您什么？",
-        "placeholder": "您的消息...",
-        "fallback": "WhatsApp: +55 11 91562-0127。",
-        "answers": {
-            "tickets": "在线购票享10%折扣！",
-            "location": "R. Teodureto Souto, 292a. 周四和周六开放！",
-            "games": "30多台免费畅玩的游戏机！"
-        },
-        "options": {
-            "tickets": "门票",
-            "location": "地点",
-            "games": "游戏"
-        }
-    },
-    "cookies": {
-        "title": "Privacy Policies",
-        "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
-        "accept": "I AGREE",
-        "info_btn": "INFORMATION",
-        "modal_title": "Cookie Policy & Privacy",
-        "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+      "step_reason": "Reason for Contact",
+      "step_info": "Your Details",
+      "step_preview": "Message Preview",
+      "reasons": {
+        "general": "General Questions",
+        "events": "Event Booking",
+        "partnerships": "Partnerships",
+        "feedback": "Compliments / Suggestions",
+        "other": "Other"
+      },
+      "name": "Your name",
+      "email": "Email (optional)",
+      "phone": "Phone (optional)",
+      "description": "Describe your message...",
+      "preview_desc": "This is the message that will be sent via WhatsApp:",
+      "send": "Send via WhatsApp",
+      "wa_title": "Contact - Old School Pinball",
+      "wa_reason": "Reason",
+      "wa_name": "Name",
+      "wa_phone": "Phone",
+      "wa_message": "Message",
+      "wa_footer": "Message sent from oldschool.tutankhamal.com"
     }
+  }
 }

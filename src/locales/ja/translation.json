@@ -1,201 +1,266 @@
 {
-    "navbar": {
-        "home": "ホーム",
-        "atmosphere": "雰囲気",
-        "bar": "アメリカンバー",
-        "machines": "マシン",
-        "media": "メディア",
-        "tickets": "チケット",
-        "contact": "お問い合わせ",
-        "buy_online": "オンライン予約",
-        "sound_on": "音声オン",
-        "sound_off": "音声オフ",
-        "menu": "メニュー",
-        "events": "イベント"
+  "navbar": {
+    "home": "ホーム",
+    "atmosphere": "雰囲気",
+    "bar": "アメリカンバー",
+    "machines": "マシン",
+    "media": "メディア",
+    "tickets": "チケット",
+    "contact": "お問い合わせ",
+    "buy_online": "オンライン予約",
+    "sound_on": "音声オン",
+    "sound_off": "音声オフ",
+    "menu": "メニュー",
+    "events": "イベント"
+  },
+  "footer": {
+    "brand_description": "ラテンアメリカ最高のピンボール＆アーケードスペース。サンパウロでのユニークなノスタルジック体験。",
+    "links_title": "リンク",
+    "social_title": "ソーシャル",
+    "address": "Teodoro Sampaio通り 2038 - Pinheiros\nサンパウロ - SP, 05406-150",
+    "payment_info": "Pix、デビットカード、クレジットカード対応",
+    "copyright": "© 2026 Old School Pinball. 無断複写・転載を禁じます。",
+    "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
+    "developer_credit": "DEVELOPED BY: TUTANKHAMAL DEV"
+  },
+  "hero": {
+    "title_part1": "本物の",
+    "title_highlight": "レトロ",
+    "title_part2": "体験",
+    "award_text": "TWIPY Awards 受賞 • ラテンアメリカ最高のアーケード",
+    "btn_tickets": "パスポート",
+    "btn_more": "詳細を見る"
+  },
+  "atmosphere": {
+    "title": "雰囲気",
+    "description": "Old Schoolの隅々まで、アーケードの黄金時代にタイムスリップするようにデザインされています。",
+    "areas": {
+      "batman": {
+        "title": "バットマンのコーナー",
+        "desc": "ゴッサム・シティの陰鬱な雰囲気を持つ、ダークナイトに捧げられたコーナー。"
+      },
+      "geek": {
+        "title": "ギーク＆スター・ウォーズ環境",
+        "desc": "80年代と90年代のポップカルチャーが詰まった銀河系のテーマスペース。"
+      },
+      "dance": {
+        "title": "ダンスフロア＆DJ",
+        "desc": "ライブDJによる80年代と90年代の最高のヒット曲で踊りましょう！"
+      }
+    }
+  },
+  "american_bar": {
+    "title": "アメリカンバー",
+    "description": "Old School内のアメリカンレトロダイナー。食べて、飲んで、遊んで！",
+    "hint_desktop": "クリックでページをめくる",
+    "hint_mobile": "スワイプでページをめくる",
+    "zoom_btn": "メニュー拡大",
+    "zoom_page": "ページ",
+    "zoom_hint": "ピンチで拡大",
+    "zoom_pages": "ページ",
+    "zoom_close": "閉じる",
+    "zoom_top": "トップに戻る"
+  },
+  "machines": {
+    "title": "最新のマシン",
+    "description": "30台以上のクラシックなピンボールとアーケード。全ゲームフリープレイです！",
+    "filters": {
+      "all": "すべて",
+      "pinball": "ピンボール",
+      "arcade": "アーケード"
     },
-    "footer": {
-        "brand_description": "ラテンアメリカ最高のピンボール＆アーケードスペース。サンパウロでのユニークなノスタルジック体験。",
-        "links_title": "リンク",
-        "social_title": "ソーシャル",
-        "address": "Teodoro Sampaio通り 2038 - Pinheiros\nサンパウロ - SP, 05406-150",
-        "payment_info": "Pix、デビットカード、クレジットカード対応",
-        "copyright": "© 2026 Old School Pinball. 無断複写・転載を禁じます。",
-        "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
-        "developer_credit": "DEVELOPED BY: TUTANKHAMAL DEV"
+    "groups": {
+      "arcades": "アーケード＆その他",
+      "pinballs": "ピンボールマシン"
     },
-    "hero": {
-        "title_part1": "本物の",
-        "title_highlight": "レトロ",
-        "title_part2": "体験",
-        "award_text": "TWIPY Awards 受賞 • ラテンアメリカ最高のアーケード",
-        "btn_tickets": "パスポート",
-        "btn_more": "詳細を見る"
+    "count_machines": "台",
+    "count_of": "/",
+    "count_total": "合計",
+    "list_label": "マシン一覧",
+    "machine_details": {
+      "sobriety_test": "飲酒テスト",
+      "shooting_arcade": "シューティングアーケード",
+      "multi_game_3x": "3x マルチゲーム",
+      "multi_game_2x": "2x マルチゲーム",
+      "multi_game": "マルチゲーム",
+      "foosball": "テーブルサッカー",
+      "digital_ping_pong": "デジタル卓球",
+      "punch": "パンチマシン",
+      "reflex_test": "反射テスト"
+    }
+  },
+  "media": {
+    "title": "メディア",
+    "description": "Old School Pinballでのハイライト、トーナメント、バーチャルツアーをご覧ください。"
+  },
+  "events": {
+    "title": "イベント＆レンタル",
+    "description": "誕生日パーティー、企業イベント、Podcastの録音など！",
+    "types": {
+      "birthday": {
+        "title": "誕生日パーティー",
+        "description": "マシン、DJ、フルバーを備えた専用スペースでお祝い！"
+      },
+      "corporate": {
+        "title": "企業イベント",
+        "description": "ユニークなチームビルディングのために。"
+      },
+      "podcast": {
+        "title": "録音とPodcast",
+        "description": "本物のレトロな風景での録音に。"
+      },
+      "media": {
+        "title": "メディア制作",
+        "description": "80年代のアーケードをテーマにした撮影に。"
+      }
     },
-    "atmosphere": {
-        "title": "雰囲気",
-        "description": "Old Schoolの隅々まで、アーケードの黄金時代にタイムスリップするようにデザインされています。",
-        "areas": {
-            "batman": {
-                "title": "バットマンのコーナー",
-                "desc": "ゴッサム・シティの陰鬱な雰囲気を持つ、ダークナイトに捧げられたコーナー。"
-            },
-            "geek": {
-                "title": "ギーク＆スター・ウォーズ環境",
-                "desc": "80年代と90年代のポップカルチャーが詰まった銀河系のテーマスペース。"
-            },
-            "dance": {
-                "title": "ダンスフロア＆DJ",
-                "desc": "ライブDJによる80年代と90年代の最高のヒット曲で踊りましょう！"
-            }
+    "btn_reserve": "WhatsAppで予約"
+  },
+  "tickets": {
+    "title": "チケット",
+    "description": "毎週木曜日と土曜日の午後6時から深夜までフリープレイ。",
+    "plans": {
+      "online": {
+        "name": "一般",
+        "discount": "10% OFF",
+        "description": "オンライン限定10%割引！",
+        "features": {
+          "f1": "無制限アクセス",
+          "f2": "すべてのマシン",
+          "f3": "トークン不要",
+          "f4": "当日有効"
         }
-    },
-    "american_bar": {
-        "title": "アメリカンバー",
-        "description": "Old School内のアメリカンレトロダイナー。食べて、飲んで、遊んで！",
-        "hint_desktop": "クリックでページをめくる",
-        "hint_mobile": "スワイプでページをめくる",
-        "zoom_btn": "メニュー拡大",
-        "zoom_page": "ページ",
-        "zoom_hint": "ピンチで拡大",
-        "zoom_pages": "ページ",
-        "zoom_close": "閉じる",
-        "zoom_top": "トップに戻る"
-    },
-    "machines": {
-        "title": "最新のマシン",
-        "description": "30台以上のクラシックなピンボールとアーケード。全ゲームフリープレイです！",
-        "filters": {
-            "all": "すべて",
-            "pinball": "ピンボール",
-            "arcade": "アーケード"
-        },
-        "groups": {
-            "arcades": "アーケード＆その他",
-            "pinballs": "ピンボールマシン"
-        },
-        "count_machines": "台",
-        "count_of": "/",
-        "count_total": "合計",
-        "list_label": "マシン一覧",
-        "machine_details": {
-            "sobriety_test": "飲酒テスト",
-            "shooting_arcade": "シューティングアーケード",
-            "multi_game_3x": "3x マルチゲーム",
-            "multi_game_2x": "2x マルチゲーム",
-            "multi_game": "マルチゲーム",
-            "foosball": "テーブルサッカー",
-            "digital_ping_pong": "デジタル卓球",
-            "punch": "パンチマシン",
-            "reflex_test": "反射テスト"
+      },
+      "door": {
+        "name": "当日券",
+        "description": "入口でお支払いください。",
+        "features": {
+          "f1": "無制限アクセス",
+          "f2": "すべてのマシン",
+          "f3": "トークン不要",
+          "f4": "カード利用可"
         }
+      },
+      "kids": {
+        "name": "キッズ",
+        "discount": "12歳まで",
+        "description": "土曜日のみ、12歳以下の子供向け。",
+        "features": {
+          "f1": "無制限アクセス",
+          "f2": "すべてのマシン",
+          "f3": "トークン不要",
+          "f4": "大人の同伴が必要"
+        }
+      }
     },
-    "media": {
-        "title": "メディア",
-        "description": "Old School Pinballでのハイライト、トーナメント、バーチャルツアーをご覧ください。"
+    "btn_buy": "オンライン購入",
+    "btn_more": "詳細",
+    "btn_map": "地図を開く"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "お問い合わせはお気軽にどうぞ！",
+    "info": {
+      "address_label": "住所",
+      "address_value": "R. Teodureto Souto, 292a - Cambuci, サンパウロ - SP",
+      "whatsapp_label": "WhatsApp",
+      "email_label": "メール",
+      "hours_label": "営業時間",
+      "hours_value": "木曜日・土曜日 18:00 - 0:00"
     },
-    "events": {
-        "title": "イベント＆レンタル",
-        "description": "誕生日パーティー、企業イベント、Podcastの録音など！",
-        "types": {
-            "birthday": {
-                "title": "誕生日パーティー",
-                "description": "マシン、DJ、フルバーを備えた専用スペースでお祝い！"
-            },
-            "corporate": {
-                "title": "企業イベント",
-                "description": "ユニークなチームビルディングのために。"
-            },
-            "podcast": {
-                "title": "録音とPodcast",
-                "description": "本物のレトロな風景での録音に。"
-            },
-            "media": {
-                "title": "メディア制作",
-                "description": "80年代のアーケードをテーマにした撮影に。"
-            }
-        },
-        "btn_reserve": "WhatsAppで予約"
+    "btn_contact": "お問い合わせ"
+  },
+  "chatbot": {
+    "tooltip": "ヘルプが必要ですか？",
+    "aria_open": "サポートを開く",
+    "aria_close": "閉じる",
+    "aria_send": "送信",
+    "status_online": "オンライン",
+    "title": "OSB サポート",
+    "welcome": "ようこそ！AIアシスタントです。",
+    "placeholder": "メッセージ...",
+    "fallback": "WhatsApp：+55 11 91562-0127。",
+    "answers": {
+      "tickets": "サイトで10％割引のチケットを入手！",
+      "location": "R. Teodureto Souto, 292a. 木曜と土曜の夜営業！",
+      "games": "30台以上のフリープレイマシン！"
     },
-    "tickets": {
-        "title": "チケット",
-        "description": "毎週木曜日と土曜日の午後6時から深夜までフリープレイ。",
-        "plans": {
-            "online": {
-                "name": "オンライン",
-                "discount": "10% OFF",
-                "description": "オンライン限定10%割引！",
-                "features": {
-                    "f1": "無制限アクセス",
-                    "f2": "すべてのマシン",
-                    "f3": "トークン不要",
-                    "f4": "当日有効"
-                }
-            },
-            "door": {
-                "name": "当日券",
-                "description": "入口でお支払いください。",
-                "features": {
-                    "f1": "無制限アクセス",
-                    "f2": "すべてのマシン",
-                    "f3": "トークン不要",
-                    "f4": "カード利用可"
-                }
-            },
-            "kids": {
-                "name": "キッズ",
-                "discount": "12歳まで",
-                "description": "土曜日のみ、12歳以下の子供向け。",
-                "features": {
-                    "f1": "無制限アクセス",
-                    "f2": "すべてのマシン",
-                    "f3": "トークン不要",
-                    "f4": "大人の同伴が必要"
-                }
-            }
-        },
-        "btn_buy": "オンライン購入",
-        "btn_more": "詳細"
+    "options": {
+      "tickets": "チケット",
+      "location": "場所",
+      "games": "ゲーム"
+    }
+  },
+  "cookies": {
+    "title": "Privacy Policies",
+    "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
+    "accept": "I AGREE",
+    "info_btn": "INFORMATION",
+    "modal_title": "Cookie Policy & Privacy",
+    "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+  },
+  "forms": {
+    "captcha_title": "Security Check",
+    "captcha_desc": "Complete the verification to continue.",
+    "captcha_ok": "Successfully verified!",
+    "back": "戻る",
+    "next": "次へ",
+    "close": "閉じる",
+    "ticket": {
+      "step_plan": "Choose Your Plan",
+      "step_cart": "Build Your Order",
+      "cart_desc": "Add the quantity of each ticket type:",
+      "per_person": "person",
+      "ticket_singular": "ticket",
+      "ticket_plural": "tickets",
+      "step_guests": "チケット詳細",
+      "step_promo": "Promo & Summary",
+      "step_preview": "Message Preview",
+      "quantity": "Quantity",
+      "guest": "Ticket",
+      "name": "Full name",
+      "age": "Age range",
+      "years": "years",
+      "promo_label": "Promo Code",
+      "promo_placeholder": "E.g.: RETRO10",
+      "promo_apply": "Apply",
+      "promo_added": "Promo code added to message",
+      "summary": "Order Summary",
+      "preview_desc": "This is the message that will be sent via WhatsApp:",
+      "send": "Send via WhatsApp",
+      "wa_title": "Passport Booking - Old School Pinball",
+      "wa_plan": "Plan",
+      "wa_qty": "Quantity",
+      "wa_promo": "Promo",
+      "wa_none": "None",
+      "wa_guests": "チケット",
+      "wa_footer": "Message sent from oldschool.tutankhamal.com",
+      "cpf_placeholder": "CPF（任意）",
+      "rg_placeholder": "RG（任意）"
     },
     "contact": {
-        "title": "お問い合わせ",
-        "description": "お問い合わせはお気軽にどうぞ！",
-        "info": {
-            "address_label": "住所",
-            "address_value": "R. Teodureto Souto, 292a - Cambuci, サンパウロ - SP",
-            "whatsapp_label": "WhatsApp",
-            "email_label": "メール",
-            "hours_label": "営業時間",
-            "hours_value": "木曜日・土曜日 18:00 - 0:00"
-        },
-        "btn_contact": "お問い合わせ"
-    },
-    "chatbot": {
-        "tooltip": "ヘルプが必要ですか？",
-        "aria_open": "サポートを開く",
-        "aria_close": "閉じる",
-        "aria_send": "送信",
-        "status_online": "オンライン",
-        "title": "OSB サポート",
-        "welcome": "ようこそ！AIアシスタントです。",
-        "placeholder": "メッセージ...",
-        "fallback": "WhatsApp：+55 11 91562-0127。",
-        "answers": {
-            "tickets": "サイトで10％割引のチケットを入手！",
-            "location": "R. Teodureto Souto, 292a. 木曜と土曜の夜営業！",
-            "games": "30台以上のフリープレイマシン！"
-        },
-        "options": {
-            "tickets": "チケット",
-            "location": "場所",
-            "games": "ゲーム"
-        }
-    },
-    "cookies": {
-        "title": "Privacy Policies",
-        "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
-        "accept": "I AGREE",
-        "info_btn": "INFORMATION",
-        "modal_title": "Cookie Policy & Privacy",
-        "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+      "step_reason": "Reason for Contact",
+      "step_info": "Your Details",
+      "step_preview": "Message Preview",
+      "reasons": {
+        "general": "General Questions",
+        "events": "Event Booking",
+        "partnerships": "Partnerships",
+        "feedback": "Compliments / Suggestions",
+        "other": "Other"
+      },
+      "name": "Your name",
+      "email": "Email (optional)",
+      "phone": "Phone (optional)",
+      "description": "Describe your message...",
+      "preview_desc": "This is the message that will be sent via WhatsApp:",
+      "send": "Send via WhatsApp",
+      "wa_title": "Contact - Old School Pinball",
+      "wa_reason": "Reason",
+      "wa_name": "Name",
+      "wa_phone": "Phone",
+      "wa_message": "Message",
+      "wa_footer": "Message sent from oldschool.tutankhamal.com"
     }
+  }
 }

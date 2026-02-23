@@ -1,201 +1,266 @@
 {
-    "navbar": {
-        "home": "Hem",
-        "atmosphere": "Atmosfär",
-        "bar": "American Bar",
-        "machines": "Maskiner",
-        "media": "Media",
-        "tickets": "Biljetter",
-        "contact": "Kontakt",
-        "buy_online": "Köp Online",
-        "sound_on": "Ljud På",
-        "sound_off": "Ljud Av",
-        "menu": "Meny",
-        "events": "Evenemang"
+  "navbar": {
+    "home": "Hem",
+    "atmosphere": "Atmosfär",
+    "bar": "American Bar",
+    "machines": "Maskiner",
+    "media": "Media",
+    "tickets": "Biljetter",
+    "contact": "Kontakt",
+    "buy_online": "Köp Online",
+    "sound_on": "Ljud På",
+    "sound_off": "Ljud Av",
+    "menu": "Meny",
+    "events": "Evenemang"
+  },
+  "footer": {
+    "brand_description": "Den bästa flipper- och arkadplatsen i Latinamerika. En unik nostalgisk upplevelse i São Paulo.",
+    "links_title": "LÄNKAR",
+    "social_title": "SOCIALT",
+    "address": "Teodoro Sampaio St, 2038 - Pinheiros\nSão Paulo - SP, 05406-150",
+    "payment_info": "Vi accepterar Pix, kredit- och betalkort",
+    "copyright": "© 2026 Old School Pinball. Alla rättigheter förbehållna.",
+    "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
+    "developer_credit": "UTVECKLAD AV: TUTANKHAMAL DEV"
+  },
+  "hero": {
+    "title_part1": "Den Autentiska ",
+    "title_highlight": "Retro",
+    "title_part2": " Upplevelsen",
+    "award_text": "Vinnare av TWIPY Awards • Bästa spelarkaden i Latinamerika",
+    "btn_tickets": "PASS",
+    "btn_more": "Läs Mer"
+  },
+  "atmosphere": {
+    "title": "Atmosfären",
+    "description": "Varje hörn av Old School har designats för att transportera dig tillbaka till arkadens guldålder.",
+    "areas": {
+      "batman": {
+        "title": "Batmans Hörna",
+        "desc": "En hörna tillägnad The Dark Knight."
+      },
+      "geek": {
+        "title": "Geek- och Star Wars-miljö",
+        "desc": "Actionfigurer, vintage-affischer och all popkultur från 80- och 90-talet."
+      },
+      "dance": {
+        "title": "Dansgolv & DJ",
+        "desc": "Dansa till de största hitsen från 80- och 90-talet med vår live-DJ!"
+      }
+    }
+  },
+  "american_bar": {
+    "title": "American Bar",
+    "description": "En retro amerikansk diner inne i Old School.",
+    "hint_desktop": "KLICKA ELLER DRA",
+    "hint_mobile": "DRA FÖR ATT VÄNDA BLAD",
+    "zoom_btn": "FÖRSTORA MENY",
+    "zoom_page": "SIDA",
+    "zoom_hint": "NYPA FÖR ATT ZOOMA",
+    "zoom_pages": "sidor",
+    "zoom_close": "Stäng",
+    "zoom_top": "Tillbaka upp"
+  },
+  "machines": {
+    "title": "Våra Maskiner",
+    "description": "Över 30 klassiska flipper- och arkadmaskiner. Spela hur mycket du vill!",
+    "filters": {
+      "all": "Alla",
+      "pinball": "Flipper",
+      "arcade": "Arkad"
     },
-    "footer": {
-        "brand_description": "Den bästa flipper- och arkadplatsen i Latinamerika. En unik nostalgisk upplevelse i São Paulo.",
-        "links_title": "LÄNKAR",
-        "social_title": "SOCIALT",
-        "address": "Teodoro Sampaio St, 2038 - Pinheiros\nSão Paulo - SP, 05406-150",
-        "payment_info": "Vi accepterar Pix, kredit- och betalkort",
-        "copyright": "© 2026 Old School Pinball. Alla rättigheter förbehållna.",
-        "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
-        "developer_credit": "UTVECKLAD AV: TUTANKHAMAL DEV"
+    "groups": {
+      "arcades": "Arkad",
+      "pinballs": "Flipperspel"
     },
-    "hero": {
-        "title_part1": "Den Autentiska ",
-        "title_highlight": "Retro",
-        "title_part2": " Upplevelsen",
-        "award_text": "Vinnare av TWIPY Awards • Bästa spelarkaden i Latinamerika",
-        "btn_tickets": "PASS",
-        "btn_more": "Läs Mer"
+    "count_machines": "maskiner",
+    "count_of": "av",
+    "count_total": "totalt",
+    "list_label": "Maskinlista",
+    "machine_details": {
+      "sobriety_test": "Nykterhetsprov",
+      "shooting_arcade": "Skjutspel",
+      "multi_game_3x": "3x Multispel",
+      "multi_game_2x": "2x Multispel",
+      "multi_game": "Multispel",
+      "foosball": "Fotbollsspel",
+      "digital_ping_pong": "Digitalt Pingis",
+      "punch": "Boxningsautomat",
+      "reflex_test": "Reflextest"
+    }
+  },
+  "media": {
+    "title": "Media",
+    "description": "Se höjdpunkter, turneringar och virtuella turer från Old School Pinball."
+  },
+  "events": {
+    "title": "Evenemang & Uthyrning",
+    "description": "Födelsedagsfester, företagsevent, podcast-inspelningar med mera!",
+    "types": {
+      "birthday": {
+        "title": "Födelsedagsfester",
+        "description": "Fira på ett helt annat sätt!"
+      },
+      "corporate": {
+        "title": "Företagsevent",
+        "description": "En unik teambuilding-upplevelse."
+      },
+      "podcast": {
+        "title": "Inspelningar",
+        "description": "En autentisk retroscen för videoproduktion."
+      },
+      "media": {
+        "title": "Mediaproduktion",
+        "description": "Fotografering och filmning."
+      }
     },
-    "atmosphere": {
-        "title": "Atmosfären",
-        "description": "Varje hörn av Old School har designats för att transportera dig tillbaka till arkadens guldålder.",
-        "areas": {
-            "batman": {
-                "title": "Batmans Hörna",
-                "desc": "En hörna tillägnad The Dark Knight."
-            },
-            "geek": {
-                "title": "Geek- och Star Wars-miljö",
-                "desc": "Actionfigurer, vintage-affischer och all popkultur från 80- och 90-talet."
-            },
-            "dance": {
-                "title": "Dansgolv & DJ",
-                "desc": "Dansa till de största hitsen från 80- och 90-talet med vår live-DJ!"
-            }
+    "btn_reserve": "Boka via WhatsApp"
+  },
+  "tickets": {
+    "title": "Biljetter",
+    "description": "Varje torsdag och lördag från kl. 18.00 till midnatt.",
+    "plans": {
+      "online": {
+        "name": "Fullpris",
+        "discount": "10% RABATT",
+        "description": "10% rabatt endast online!",
+        "features": {
+          "f1": "Obegränsad tillgång",
+          "f2": "Alla maskiner",
+          "f3": "Inga polletter",
+          "f4": "Giltigt hela dagen"
         }
-    },
-    "american_bar": {
-        "title": "American Bar",
-        "description": "En retro amerikansk diner inne i Old School.",
-        "hint_desktop": "KLICKA ELLER DRA",
-        "hint_mobile": "DRA FÖR ATT VÄNDA BLAD",
-        "zoom_btn": "FÖRSTORA MENY",
-        "zoom_page": "SIDA",
-        "zoom_hint": "NYPA FÖR ATT ZOOMA",
-        "zoom_pages": "sidor",
-        "zoom_close": "Stäng",
-        "zoom_top": "Tillbaka upp"
-    },
-    "machines": {
-        "title": "Våra Maskiner",
-        "description": "Över 30 klassiska flipper- och arkadmaskiner. Spela hur mycket du vill!",
-        "filters": {
-            "all": "Alla",
-            "pinball": "Flipper",
-            "arcade": "Arkad"
-        },
-        "groups": {
-            "arcades": "Arkad",
-            "pinballs": "Flipperspel"
-        },
-        "count_machines": "maskiner",
-        "count_of": "av",
-        "count_total": "totalt",
-        "list_label": "Maskinlista",
-        "machine_details": {
-            "sobriety_test": "Nykterhetsprov",
-            "shooting_arcade": "Skjutspel",
-            "multi_game_3x": "3x Multispel",
-            "multi_game_2x": "2x Multispel",
-            "multi_game": "Multispel",
-            "foosball": "Fotbollsspel",
-            "digital_ping_pong": "Digitalt Pingis",
-            "punch": "Boxningsautomat",
-            "reflex_test": "Reflextest"
+      },
+      "door": {
+        "name": "Vid Dörren",
+        "description": "Betala i entrén och njut av hela natten.",
+        "features": {
+          "f1": "Obegränsad tillgång",
+          "f2": "Alla maskiner",
+          "f3": "Inga polletter",
+          "f4": "Kort accepteras"
         }
+      },
+      "kids": {
+        "name": "Barn",
+        "discount": "Upp till 12 år",
+        "description": "För barn upp till 12 år på lördagar.",
+        "features": {
+          "f1": "Obegränsad tillgång",
+          "f2": "Alla maskiner",
+          "f3": "Inga polletter",
+          "f4": "Kräver förälders uppsyn"
+        }
+      }
     },
-    "media": {
-        "title": "Media",
-        "description": "Se höjdpunkter, turneringar och virtuella turer från Old School Pinball."
+    "btn_buy": "Köp Online",
+    "btn_more": "Läs Mer",
+    "btn_map": "Öppna Karta"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Besök oss eller kontakta oss!",
+    "info": {
+      "address_label": "Adress",
+      "address_value": "R. Teodureto Souto, 292a - Cambuci, São Paulo",
+      "whatsapp_label": "WhatsApp",
+      "email_label": "E-post",
+      "hours_label": "Tider",
+      "hours_value": "Torsdagar och Lördagar - 18.00 till Midnatt"
     },
-    "events": {
-        "title": "Evenemang & Uthyrning",
-        "description": "Födelsedagsfester, företagsevent, podcast-inspelningar med mera!",
-        "types": {
-            "birthday": {
-                "title": "Födelsedagsfester",
-                "description": "Fira på ett helt annat sätt!"
-            },
-            "corporate": {
-                "title": "Företagsevent",
-                "description": "En unik teambuilding-upplevelse."
-            },
-            "podcast": {
-                "title": "Inspelningar",
-                "description": "En autentisk retroscen för videoproduktion."
-            },
-            "media": {
-                "title": "Mediaproduktion",
-                "description": "Fotografering och filmning."
-            }
-        },
-        "btn_reserve": "Boka via WhatsApp"
+    "btn_contact": "Kontakta Oss"
+  },
+  "chatbot": {
+    "tooltip": "Behöver du hjälp? Chatta!",
+    "aria_open": "Öppna support",
+    "aria_close": "Stäng",
+    "aria_send": "Skicka",
+    "status_online": "Online",
+    "title": "OSB Support",
+    "welcome": "Hej! Vad kan jag hjälpa till med?",
+    "placeholder": "Meddelande...",
+    "fallback": "WhatsApp: +55 11 91562-0127.",
+    "answers": {
+      "tickets": "Köp biljetter online med 10 % rabatt!",
+      "location": "R. Teodureto Souto, 292a. Torsdag och lördag!",
+      "games": "Över 30 maskiner i free play!"
     },
-    "tickets": {
-        "title": "Biljetter",
-        "description": "Varje torsdag och lördag från kl. 18.00 till midnatt.",
-        "plans": {
-            "online": {
-                "name": "Online",
-                "discount": "10% RABATT",
-                "description": "10% rabatt endast online!",
-                "features": {
-                    "f1": "Obegränsad tillgång",
-                    "f2": "Alla maskiner",
-                    "f3": "Inga polletter",
-                    "f4": "Giltigt hela dagen"
-                }
-            },
-            "door": {
-                "name": "Vid Dörren",
-                "description": "Betala i entrén och njut av hela natten.",
-                "features": {
-                    "f1": "Obegränsad tillgång",
-                    "f2": "Alla maskiner",
-                    "f3": "Inga polletter",
-                    "f4": "Kort accepteras"
-                }
-            },
-            "kids": {
-                "name": "Barn",
-                "discount": "Upp till 12 år",
-                "description": "För barn upp till 12 år på lördagar.",
-                "features": {
-                    "f1": "Obegränsad tillgång",
-                    "f2": "Alla maskiner",
-                    "f3": "Inga polletter",
-                    "f4": "Kräver förälders uppsyn"
-                }
-            }
-        },
-        "btn_buy": "Köp Online",
-        "btn_more": "Läs Mer"
+    "options": {
+      "tickets": "Biljetter",
+      "location": "Plats",
+      "games": "Spel"
+    }
+  },
+  "cookies": {
+    "title": "Privacy Policies",
+    "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
+    "accept": "I AGREE",
+    "info_btn": "INFORMATION",
+    "modal_title": "Cookie Policy & Privacy",
+    "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+  },
+  "forms": {
+    "captcha_title": "Security Check",
+    "captcha_desc": "Complete the verification to continue.",
+    "captcha_ok": "Successfully verified!",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "close": "Stäng",
+    "ticket": {
+      "step_plan": "Choose Your Plan",
+      "step_cart": "Build Your Order",
+      "cart_desc": "Add the quantity of each ticket type:",
+      "per_person": "person",
+      "ticket_singular": "ticket",
+      "ticket_plural": "tickets",
+      "step_guests": "Biljettuppgifter",
+      "step_promo": "Promo & Summary",
+      "step_preview": "Message Preview",
+      "quantity": "Quantity",
+      "guest": "Ticket",
+      "name": "Full name",
+      "age": "Age range",
+      "years": "years",
+      "promo_label": "Promo Code",
+      "promo_placeholder": "E.g.: RETRO10",
+      "promo_apply": "Apply",
+      "promo_added": "Promo code added to message",
+      "summary": "Order Summary",
+      "preview_desc": "This is the message that will be sent via WhatsApp:",
+      "send": "Send via WhatsApp",
+      "wa_title": "Passport Booking - Old School Pinball",
+      "wa_plan": "Plan",
+      "wa_qty": "Quantity",
+      "wa_promo": "Promo",
+      "wa_none": "None",
+      "wa_guests": "Biljetter",
+      "wa_footer": "Message sent from oldschool.tutankhamal.com",
+      "cpf_placeholder": "CPF (valfritt)",
+      "rg_placeholder": "RG (valfritt)"
     },
     "contact": {
-        "title": "Kontakt",
-        "description": "Besök oss eller kontakta oss!",
-        "info": {
-            "address_label": "Adress",
-            "address_value": "R. Teodureto Souto, 292a - Cambuci, São Paulo",
-            "whatsapp_label": "WhatsApp",
-            "email_label": "E-post",
-            "hours_label": "Tider",
-            "hours_value": "Torsdagar och Lördagar - 18.00 till Midnatt"
-        },
-        "btn_contact": "Kontakta Oss"
-    },
-    "chatbot": {
-        "tooltip": "Behöver du hjälp? Chatta!",
-        "aria_open": "Öppna support",
-        "aria_close": "Stäng",
-        "aria_send": "Skicka",
-        "status_online": "Online",
-        "title": "OSB Support",
-        "welcome": "Hej! Vad kan jag hjälpa till med?",
-        "placeholder": "Meddelande...",
-        "fallback": "WhatsApp: +55 11 91562-0127.",
-        "answers": {
-            "tickets": "Köp biljetter online med 10 % rabatt!",
-            "location": "R. Teodureto Souto, 292a. Torsdag och lördag!",
-            "games": "Över 30 maskiner i free play!"
-        },
-        "options": {
-            "tickets": "Biljetter",
-            "location": "Plats",
-            "games": "Spel"
-        }
-    },
-    "cookies": {
-        "title": "Privacy Policies",
-        "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
-        "accept": "I AGREE",
-        "info_btn": "INFORMATION",
-        "modal_title": "Cookie Policy & Privacy",
-        "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+      "step_reason": "Reason for Contact",
+      "step_info": "Your Details",
+      "step_preview": "Message Preview",
+      "reasons": {
+        "general": "General Questions",
+        "events": "Event Booking",
+        "partnerships": "Partnerships",
+        "feedback": "Compliments / Suggestions",
+        "other": "Other"
+      },
+      "name": "Your name",
+      "email": "Email (optional)",
+      "phone": "Phone (optional)",
+      "description": "Describe your message...",
+      "preview_desc": "This is the message that will be sent via WhatsApp:",
+      "send": "Send via WhatsApp",
+      "wa_title": "Contact - Old School Pinball",
+      "wa_reason": "Reason",
+      "wa_name": "Name",
+      "wa_phone": "Phone",
+      "wa_message": "Message",
+      "wa_footer": "Message sent from oldschool.tutankhamal.com"
     }
+  }
 }

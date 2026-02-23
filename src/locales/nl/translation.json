@@ -1,201 +1,266 @@
 {
-    "navbar": {
-        "home": "Home",
-        "atmosphere": "Sfeer",
-        "bar": "American Bar",
-        "machines": "Machines",
-        "media": "Media",
-        "tickets": "Tickets",
-        "contact": "Contact",
-        "buy_online": "Koop Online",
-        "sound_on": "Geluid Aan",
-        "sound_off": "Geluid Uit",
-        "menu": "Menu",
-        "events": "Evenementen"
+  "navbar": {
+    "home": "Home",
+    "atmosphere": "Sfeer",
+    "bar": "American Bar",
+    "machines": "Machines",
+    "media": "Media",
+    "tickets": "Tickets",
+    "contact": "Contact",
+    "buy_online": "Koop Online",
+    "sound_on": "Geluid Aan",
+    "sound_off": "Geluid Uit",
+    "menu": "Menu",
+    "events": "Evenementen"
+  },
+  "footer": {
+    "brand_description": "De beste flipper- en arcaderuimte in Latijns-Amerika. Een unieke nostalgische ervaring in São Paulo.",
+    "links_title": "LINKS",
+    "social_title": "SOCIAAL",
+    "address": "Teodoro Sampaio St, 2038 - Pinheiros\nSão Paulo - SP, 05406-150",
+    "payment_info": "Wij accepteren Pix, pin- en creditcards",
+    "copyright": "© 2026 Old School Pinball. Alle rechten voorbehouden.",
+    "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
+    "developer_credit": "ONTWIKKELD DOOR: TUTANKHAMAL DEV"
+  },
+  "hero": {
+    "title_part1": "De Authentieke ",
+    "title_highlight": "Retro",
+    "title_part2": " Ervaring",
+    "award_text": "Winnaar TWIPY Awards • Beste Speelhal in Latijns-Amerika",
+    "btn_tickets": "PASPOORT",
+    "btn_more": "Meer Informatie"
+  },
+  "atmosphere": {
+    "title": "De Sfeer",
+    "description": "Elke hoek van Old School is ontworpen om u terug te voeren naar het gouden tijdperk van de arcades.",
+    "areas": {
+      "batman": {
+        "title": "Batman's Hoek",
+        "desc": "Een hoek gewijd aan de Dark Knight met verzamelobjecten en de sfeer van Gotham City."
+      },
+      "geek": {
+        "title": "Geek & Star Wars Omgeving",
+        "desc": "Actiefiguren, vintage posters en neonlichten in een intergalactische themeruimte."
+      },
+      "dance": {
+        "title": "Dansvloer & DJ",
+        "desc": "Dans op de grootste hits uit de jaren '80 en '90 met onze live DJ!"
+      }
+    }
+  },
+  "american_bar": {
+    "title": "American Bar",
+    "description": "Een Amerikaanse retro diner binnen in Old School. Eten, drinken en spelen!",
+    "hint_desktop": "KLIK OF SLEEP",
+    "hint_mobile": "SLEEP OM DE PAGINA OM TE SLAAN",
+    "zoom_btn": "MENU VERGROTEN",
+    "zoom_page": "PAGINA",
+    "zoom_hint": "KNIJP OM TE ZOOMEN",
+    "zoom_pages": "pagina's",
+    "zoom_close": "Sluiten",
+    "zoom_top": "Naar boven"
+  },
+  "machines": {
+    "title": "Onze Machines",
+    "description": "Meer dan 30 klassieke flipperkasten en arcademachines. Alle spellen op free play!",
+    "filters": {
+      "all": "Alles",
+      "pinball": "Pinball",
+      "arcade": "Arcade"
     },
-    "footer": {
-        "brand_description": "De beste flipper- en arcaderuimte in Latijns-Amerika. Een unieke nostalgische ervaring in São Paulo.",
-        "links_title": "LINKS",
-        "social_title": "SOCIAAL",
-        "address": "Teodoro Sampaio St, 2038 - Pinheiros\nSão Paulo - SP, 05406-150",
-        "payment_info": "Wij accepteren Pix, pin- en creditcards",
-        "copyright": "© 2026 Old School Pinball. Alle rechten voorbehouden.",
-        "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
-        "developer_credit": "ONTWIKKELD DOOR: TUTANKHAMAL DEV"
+    "groups": {
+      "arcades": "Arcades & Andere Games",
+      "pinballs": "Flipperkasten"
     },
-    "hero": {
-        "title_part1": "De Authentieke ",
-        "title_highlight": "Retro",
-        "title_part2": " Ervaring",
-        "award_text": "Winnaar TWIPY Awards • Beste Speelhal in Latijns-Amerika",
-        "btn_tickets": "PASPOORT",
-        "btn_more": "Meer Informatie"
+    "count_machines": "machines",
+    "count_of": "van",
+    "count_total": "in totaal",
+    "list_label": "Machinelijst",
+    "machine_details": {
+      "sobriety_test": "Nuchterheidstest",
+      "shooting_arcade": "Schiet-Arcade",
+      "multi_game_3x": "3x Multispel",
+      "multi_game_2x": "2x Multispel",
+      "multi_game": "Multispel",
+      "foosball": "Tafelvoetbal",
+      "digital_ping_pong": "Digitaal Tafeltennis",
+      "punch": "Boksautomaat",
+      "reflex_test": "Reflextest"
+    }
+  },
+  "media": {
+    "title": "Media",
+    "description": "Bekijk hoogtepunten, toernooien en virtuele tours van Old School Pinball."
+  },
+  "events": {
+    "title": "Evenementen & Verhuur",
+    "description": "Verjaardagsfeesten, bedrijfsevenementen, podcastopnames en meer!",
+    "types": {
+      "birthday": {
+        "title": "Verjaardagsfeesten",
+        "description": "Vier uw verjaardag in onze exclusieve ruimte met DJ!"
+      },
+      "corporate": {
+        "title": "Bedrijfsevenementen",
+        "description": "Unieke teambuilding. Ontspannen sfeer voor evenementen."
+      },
+      "podcast": {
+        "title": "Opnames & Podcasts",
+        "description": "Een authentiek decor voor mediaproductie."
+      },
+      "media": {
+        "title": "Mediaproducties",
+        "description": "Fotoshoots en filmen met een 80s arcade thema."
+      }
     },
-    "atmosphere": {
-        "title": "De Sfeer",
-        "description": "Elke hoek van Old School is ontworpen om u terug te voeren naar het gouden tijdperk van de arcades.",
-        "areas": {
-            "batman": {
-                "title": "Batman's Hoek",
-                "desc": "Een hoek gewijd aan de Dark Knight met verzamelobjecten en de sfeer van Gotham City."
-            },
-            "geek": {
-                "title": "Geek & Star Wars Omgeving",
-                "desc": "Actiefiguren, vintage posters en neonlichten in een intergalactische themeruimte."
-            },
-            "dance": {
-                "title": "Dansvloer & DJ",
-                "desc": "Dans op de grootste hits uit de jaren '80 en '90 met onze live DJ!"
-            }
+    "btn_reserve": "Boek via WhatsApp"
+  },
+  "tickets": {
+    "title": "Tickets",
+    "description": "Speel zoveel u wilt! Elke donderdag en zaterdag van 18:00 tot middernacht.",
+    "plans": {
+      "online": {
+        "name": "Vol Tarief",
+        "discount": "10% KORTING",
+        "description": "Speel op alle machines zonder munten.",
+        "features": {
+          "f1": "Onbeperkte toegang",
+          "f2": "Alle machines",
+          "f3": "Geen munten nodig",
+          "f4": "Geldig voor de dag"
         }
-    },
-    "american_bar": {
-        "title": "American Bar",
-        "description": "Een Amerikaanse retro diner binnen in Old School. Eten, drinken en spelen!",
-        "hint_desktop": "KLIK OF SLEEP",
-        "hint_mobile": "SLEEP OM DE PAGINA OM TE SLAAN",
-        "zoom_btn": "MENU VERGROTEN",
-        "zoom_page": "PAGINA",
-        "zoom_hint": "KNIJP OM TE ZOOMEN",
-        "zoom_pages": "pagina's",
-        "zoom_close": "Sluiten",
-        "zoom_top": "Naar boven"
-    },
-    "machines": {
-        "title": "Onze Machines",
-        "description": "Meer dan 30 klassieke flipperkasten en arcademachines. Alle spellen op free play!",
-        "filters": {
-            "all": "Alles",
-            "pinball": "Pinball",
-            "arcade": "Arcade"
-        },
-        "groups": {
-            "arcades": "Arcades & Andere Games",
-            "pinballs": "Flipperkasten"
-        },
-        "count_machines": "machines",
-        "count_of": "van",
-        "count_total": "in totaal",
-        "list_label": "Machinelijst",
-        "machine_details": {
-            "sobriety_test": "Nuchterheidstest",
-            "shooting_arcade": "Schiet-Arcade",
-            "multi_game_3x": "3x Multispel",
-            "multi_game_2x": "2x Multispel",
-            "multi_game": "Multispel",
-            "foosball": "Tafelvoetbal",
-            "digital_ping_pong": "Digitaal Tafeltennis",
-            "punch": "Boksautomaat",
-            "reflex_test": "Reflextest"
+      },
+      "door": {
+        "name": "Aan de deur",
+        "description": "Betaal bij de ingang en geniet van de hele avond.",
+        "features": {
+          "f1": "Onbeperkte toegang",
+          "f2": "Alle machines",
+          "f3": "Geen munten nodig",
+          "f4": "Pix en Kaarten"
         }
+      },
+      "kids": {
+        "name": "Kinderen",
+        "discount": "Tot 12 jaar",
+        "description": "Op zaterdag betalen kinderen t/m 12 jaar 63 R$.",
+        "features": {
+          "f1": "Onbeperkte toegang",
+          "f2": "Alle machines",
+          "f3": "Geen munten nodig",
+          "f4": "Toezicht van ouder vereist"
+        }
+      }
     },
-    "media": {
-        "title": "Media",
-        "description": "Bekijk hoogtepunten, toernooien en virtuele tours van Old School Pinball."
+    "btn_buy": "Koop Online",
+    "btn_more": "Meer Informatie",
+    "btn_map": "Kaart Openen"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Kom ons bezoeken of neem contact op. We wachten op je!",
+    "info": {
+      "address_label": "Adres",
+      "address_value": "R. Teodureto Souto, 292a - Cambuci, São Paulo - SP",
+      "whatsapp_label": "WhatsApp",
+      "email_label": "E-mail",
+      "hours_label": "Openingstijden",
+      "hours_value": "Donderdag en zaterdag - 18:00 tot Middernacht"
     },
-    "events": {
-        "title": "Evenementen & Verhuur",
-        "description": "Verjaardagsfeesten, bedrijfsevenementen, podcastopnames en meer!",
-        "types": {
-            "birthday": {
-                "title": "Verjaardagsfeesten",
-                "description": "Vier uw verjaardag in onze exclusieve ruimte met DJ!"
-            },
-            "corporate": {
-                "title": "Bedrijfsevenementen",
-                "description": "Unieke teambuilding. Ontspannen sfeer voor evenementen."
-            },
-            "podcast": {
-                "title": "Opnames & Podcasts",
-                "description": "Een authentiek decor voor mediaproductie."
-            },
-            "media": {
-                "title": "Mediaproducties",
-                "description": "Fotoshoots en filmen met een 80s arcade thema."
-            }
-        },
-        "btn_reserve": "Boek via WhatsApp"
+    "btn_contact": "Praat met Ons"
+  },
+  "chatbot": {
+    "tooltip": "Hulp nodig? Chat met ons!",
+    "aria_open": "Support openen",
+    "aria_close": "Sluiten",
+    "aria_send": "Verzenden",
+    "status_online": "Online",
+    "title": "OSB Support",
+    "welcome": "Welkom! Hoe kan ik helpen?",
+    "placeholder": "Bericht...",
+    "fallback": "WhatsApp: +55 11 91562-0127.",
+    "answers": {
+      "tickets": "Koop tickets online met 10% korting!",
+      "location": "R. Teodureto Souto, 292a. Donderdag en zaterdag open!",
+      "games": "30+ free play machines!"
     },
-    "tickets": {
-        "title": "Tickets",
-        "description": "Speel zoveel u wilt! Elke donderdag en zaterdag van 18:00 tot middernacht.",
-        "plans": {
-            "online": {
-                "name": "Online",
-                "discount": "10% KORTING",
-                "description": "Speel op alle machines zonder munten.",
-                "features": {
-                    "f1": "Onbeperkte toegang",
-                    "f2": "Alle machines",
-                    "f3": "Geen munten nodig",
-                    "f4": "Geldig voor de dag"
-                }
-            },
-            "door": {
-                "name": "Aan de deur",
-                "description": "Betaal bij de ingang en geniet van de hele avond.",
-                "features": {
-                    "f1": "Onbeperkte toegang",
-                    "f2": "Alle machines",
-                    "f3": "Geen munten nodig",
-                    "f4": "Pix en Kaarten"
-                }
-            },
-            "kids": {
-                "name": "Kinderen",
-                "discount": "Tot 12 jaar",
-                "description": "Op zaterdag betalen kinderen t/m 12 jaar 63 R$.",
-                "features": {
-                    "f1": "Onbeperkte toegang",
-                    "f2": "Alle machines",
-                    "f3": "Geen munten nodig",
-                    "f4": "Toezicht van ouder vereist"
-                }
-            }
-        },
-        "btn_buy": "Koop Online",
-        "btn_more": "Meer Informatie"
+    "options": {
+      "tickets": "Tickets",
+      "location": "Locatie",
+      "games": "Spellen"
+    }
+  },
+  "cookies": {
+    "title": "Privacy Policies",
+    "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
+    "accept": "I AGREE",
+    "info_btn": "INFORMATION",
+    "modal_title": "Cookie Policy & Privacy",
+    "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+  },
+  "forms": {
+    "captcha_title": "Security Check",
+    "captcha_desc": "Complete the verification to continue.",
+    "captcha_ok": "Successfully verified!",
+    "back": "Terug",
+    "next": "Volgende",
+    "close": "Sluiten",
+    "ticket": {
+      "step_plan": "Choose Your Plan",
+      "step_cart": "Build Your Order",
+      "cart_desc": "Add the quantity of each ticket type:",
+      "per_person": "person",
+      "ticket_singular": "ticket",
+      "ticket_plural": "tickets",
+      "step_guests": "Ticketgegevens",
+      "step_promo": "Promo & Summary",
+      "step_preview": "Message Preview",
+      "quantity": "Quantity",
+      "guest": "Ticket",
+      "name": "Full name",
+      "age": "Age range",
+      "years": "years",
+      "promo_label": "Promo Code",
+      "promo_placeholder": "E.g.: RETRO10",
+      "promo_apply": "Apply",
+      "promo_added": "Promo code added to message",
+      "summary": "Order Summary",
+      "preview_desc": "This is the message that will be sent via WhatsApp:",
+      "send": "Send via WhatsApp",
+      "wa_title": "Passport Booking - Old School Pinball",
+      "wa_plan": "Plan",
+      "wa_qty": "Quantity",
+      "wa_promo": "Promo",
+      "wa_none": "None",
+      "wa_guests": "Tickets",
+      "wa_footer": "Message sent from oldschool.tutankhamal.com",
+      "cpf_placeholder": "CPF (optioneel)",
+      "rg_placeholder": "RG (optioneel)"
     },
     "contact": {
-        "title": "Contact",
-        "description": "Kom ons bezoeken of neem contact op. We wachten op je!",
-        "info": {
-            "address_label": "Adres",
-            "address_value": "R. Teodureto Souto, 292a - Cambuci, São Paulo - SP",
-            "whatsapp_label": "WhatsApp",
-            "email_label": "E-mail",
-            "hours_label": "Openingstijden",
-            "hours_value": "Donderdag en zaterdag - 18:00 tot Middernacht"
-        },
-        "btn_contact": "Praat met Ons"
-    },
-    "chatbot": {
-        "tooltip": "Hulp nodig? Chat met ons!",
-        "aria_open": "Support openen",
-        "aria_close": "Sluiten",
-        "aria_send": "Verzenden",
-        "status_online": "Online",
-        "title": "OSB Support",
-        "welcome": "Welkom! Hoe kan ik helpen?",
-        "placeholder": "Bericht...",
-        "fallback": "WhatsApp: +55 11 91562-0127.",
-        "answers": {
-            "tickets": "Koop tickets online met 10% korting!",
-            "location": "R. Teodureto Souto, 292a. Donderdag en zaterdag open!",
-            "games": "30+ free play machines!"
-        },
-        "options": {
-            "tickets": "Tickets",
-            "location": "Locatie",
-            "games": "Spellen"
-        }
-    },
-    "cookies": {
-        "title": "Privacy Policies",
-        "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
-        "accept": "I AGREE",
-        "info_btn": "INFORMATION",
-        "modal_title": "Cookie Policy & Privacy",
-        "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+      "step_reason": "Reason for Contact",
+      "step_info": "Your Details",
+      "step_preview": "Message Preview",
+      "reasons": {
+        "general": "General Questions",
+        "events": "Event Booking",
+        "partnerships": "Partnerships",
+        "feedback": "Compliments / Suggestions",
+        "other": "Other"
+      },
+      "name": "Your name",
+      "email": "Email (optional)",
+      "phone": "Phone (optional)",
+      "description": "Describe your message...",
+      "preview_desc": "This is the message that will be sent via WhatsApp:",
+      "send": "Send via WhatsApp",
+      "wa_title": "Contact - Old School Pinball",
+      "wa_reason": "Reason",
+      "wa_name": "Name",
+      "wa_phone": "Phone",
+      "wa_message": "Message",
+      "wa_footer": "Message sent from oldschool.tutankhamal.com"
     }
+  }
 }

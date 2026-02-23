@@ -95,29 +95,6 @@
         transform: translateY(0)
       }
     }
-
-    .preload-bar {
-      width: clamp(100px, 25vw, 200px);
-      height: 2px;
-      background: rgba(255, 255, 255, .06);
-      border-radius: 4px;
-      margin-top: 20px;
-      overflow: hidden
-    }
-
-    .preload-bar-fill {
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, #c41e1e, #ff5500);
-      border-radius: 4px;
-      animation: barFill 1.6s ease-out forwards
-    }
-
-    @keyframes barFill {
-      to {
-        width: 100%
-      }
-    }
   </style>
 </head>
 
@@ -130,9 +107,6 @@
       <source media="(max-width: 767px)" srcset="/images/hero_logo-sm.webp" type="image/webp">
       <img src="/images/hero_logo.webp" alt="" width="800" height="637" fetchpriority="high">
     </picture>
-    <div class="preload-bar">
-      <div class="preload-bar-fill"></div>
-    </div>
   </div>
 
   <div id="root"></div>

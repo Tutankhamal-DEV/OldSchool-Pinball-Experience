@@ -1,201 +1,266 @@
 {
-    "navbar": {
-        "home": "الرئيسية",
-        "atmosphere": "الأجواء",
-        "bar": "البار الأمريكي",
-        "machines": "الأجهزة",
-        "media": "الوسائط",
-        "tickets": "التذاكر",
-        "contact": "اتصل بنا",
-        "buy_online": "شراء عبر الإنترنت",
-        "sound_on": "تشغيل الصوت",
-        "sound_off": "كتم الصوت",
-        "menu": "القائمة",
-        "events": "أحداث"
+  "navbar": {
+    "home": "الرئيسية",
+    "atmosphere": "الأجواء",
+    "bar": "البار الأمريكي",
+    "machines": "الأجهزة",
+    "media": "الوسائط",
+    "tickets": "التذاكر",
+    "contact": "اتصل بنا",
+    "buy_online": "شراء عبر الإنترنت",
+    "sound_on": "تشغيل الصوت",
+    "sound_off": "كتم الصوت",
+    "menu": "القائمة",
+    "events": "أحداث"
+  },
+  "footer": {
+    "brand_description": "أفضل مساحة لألعاب الآركيد في أمريكا اللاتينية. تجربة حنين فريدة في ساو باولو.",
+    "links_title": "روابط",
+    "social_title": "التواصل الاجتماعي",
+    "address": "شارع تيودورو سامبايو، 2038 - بينيروس\nساو باولو - SP، 05406-150",
+    "payment_info": "نقبل الدفع بواسطة Pix والبطاقات",
+    "copyright": "© 2026 Old School Pinball. جميع الحقوق محفوظة.",
+    "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
+    "developer_credit": "تطوير بواسطة: TUTANKHAMAL DEV"
+  },
+  "hero": {
+    "title_part1": "التجربة ",
+    "title_highlight": "الكلاسيكية",
+    "title_part2": " الأصيلة",
+    "award_text": "الفائز بجوائز TWIPY • أفضل صالة ألعاب في أمريكا اللاتينية",
+    "btn_tickets": "جواز سفر",
+    "btn_more": "اعرف المزيد"
+  },
+  "atmosphere": {
+    "title": "الأجواء",
+    "description": "تم تصميم كل زاوية لتأخذك في رحلة إلى العصر الذهبي لألعاب الآركيد.",
+    "areas": {
+      "batman": {
+        "title": "ركن باتمان",
+        "desc": "زاوية مخصصة لفارس الظلام مع مقتنيات فنية وأجواء مدينة غوثام الكئيبة."
+      },
+      "geek": {
+        "title": "بيئة المهووسين وحرب النجوم",
+        "desc": "شخصيات أكشن، ملصقات قديمة، وأضواء نيون في مساحة بموضوع مجري."
+      },
+      "dance": {
+        "title": "حلبة الرقص ودي جي",
+        "desc": "ارقص على أنغام أعظم أغاني الثمانينيات والتسعينيات!"
+      }
+    }
+  },
+  "american_bar": {
+    "title": "البار الأمريكي",
+    "description": "مطعم كلاسيكي أمريكي داخل Old School. كل، واشرب، والعب!",
+    "hint_desktop": "انقر أو اسحب",
+    "hint_mobile": "اسحب لقلب الصفحة",
+    "zoom_btn": "تكبير القائمة",
+    "zoom_page": "صفحة",
+    "zoom_hint": "ضم الأصابع للتكبير",
+    "zoom_pages": "صفحات",
+    "zoom_close": "إغلاق",
+    "zoom_top": "العودة للأعلى"
+  },
+  "machines": {
+    "title": "آلاتنا",
+    "description": "أكثر من 30 آلة بينبول وآركيد كلاسيكية. العب قدر ما تشاء مجانًا!",
+    "filters": {
+      "all": "الكل",
+      "pinball": "بينبول",
+      "arcade": "آركيد"
     },
-    "footer": {
-        "brand_description": "أفضل مساحة لألعاب الآركيد في أمريكا اللاتينية. تجربة حنين فريدة في ساو باولو.",
-        "links_title": "روابط",
-        "social_title": "التواصل الاجتماعي",
-        "address": "شارع تيودورو سامبايو، 2038 - بينيروس\nساو باولو - SP، 05406-150",
-        "payment_info": "نقبل الدفع بواسطة Pix والبطاقات",
-        "copyright": "© 2026 Old School Pinball. جميع الحقوق محفوظة.",
-        "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
-        "developer_credit": "تطوير بواسطة: TUTANKHAMAL DEV"
+    "groups": {
+      "arcades": "الآركيد والألعاب الأخرى",
+      "pinballs": "آلات البينبول"
     },
-    "hero": {
-        "title_part1": "التجربة ",
-        "title_highlight": "الكلاسيكية",
-        "title_part2": " الأصيلة",
-        "award_text": "الفائز بجوائز TWIPY • أفضل صالة ألعاب في أمريكا اللاتينية",
-        "btn_tickets": "جواز سفر",
-        "btn_more": "اعرف المزيد"
+    "count_machines": "آلة",
+    "count_of": "من",
+    "count_total": "المجموع",
+    "list_label": "قائمة الأجهزة",
+    "machine_details": {
+      "sobriety_test": "اختبار الرصانة",
+      "shooting_arcade": "آركيد إطلاق نار",
+      "multi_game_3x": "3x ألعاب متعددة",
+      "multi_game_2x": "2x ألعاب متعددة",
+      "multi_game": "ألعاب متعددة",
+      "foosball": "كرة قدم الطاولة",
+      "digital_ping_pong": "بينغ بونغ رقمي",
+      "punch": "لكمة",
+      "reflex_test": "اختبار ردة الفعل"
+    }
+  },
+  "media": {
+    "title": "الوسائط",
+    "description": "شاهد أبرز اللحظات، والبطولات، والجولات الافتراضية."
+  },
+  "events": {
+    "title": "الفعاليات والتأجير",
+    "description": "حفلات أعياد الميلاد، فعاليات الشركات، تسجيل البودكاست والمزيد!",
+    "types": {
+      "birthday": {
+        "title": "حفلات أعياد الميلاد",
+        "description": "احتفل بعيد ميلادك بطريقة مختلفة في مساحتنا الحصرية!"
+      },
+      "corporate": {
+        "title": "فعاليات الشركات",
+        "description": "بيئة مريحة وفعاليات فريدة لفرق العمل."
+      },
+      "podcast": {
+        "title": "تسجيلات وبودكاست",
+        "description": "خلفية ريترو أصلية للإنتاج الإعلامي."
+      },
+      "media": {
+        "title": "الإنتاج الإعلامي",
+        "description": "جلسات تصوير وإنتاج بأسلوب ألعاب الثمانينيات الآركيد."
+      }
     },
-    "atmosphere": {
-        "title": "الأجواء",
-        "description": "تم تصميم كل زاوية لتأخذك في رحلة إلى العصر الذهبي لألعاب الآركيد.",
-        "areas": {
-            "batman": {
-                "title": "ركن باتمان",
-                "desc": "زاوية مخصصة لفارس الظلام مع مقتنيات فنية وأجواء مدينة غوثام الكئيبة."
-            },
-            "geek": {
-                "title": "بيئة المهووسين وحرب النجوم",
-                "desc": "شخصيات أكشن، ملصقات قديمة، وأضواء نيون في مساحة بموضوع مجري."
-            },
-            "dance": {
-                "title": "حلبة الرقص ودي جي",
-                "desc": "ارقص على أنغام أعظم أغاني الثمانينيات والتسعينيات!"
-            }
+    "btn_reserve": "الحجز عبر واتساب"
+  },
+  "tickets": {
+    "title": "التذاكر",
+    "description": "العب بقدر ما تشاء! طوال أيام الخميس والسبت من 6 مساءً للـ منتصف الليل.",
+    "plans": {
+      "online": {
+        "name": "عبر الإنترنت",
+        "discount": "خصم 10%",
+        "description": "العب جميع الألعاب بلا حدود!",
+        "features": {
+          "f1": "دخول غير محدود",
+          "f2": "جميع الآلات",
+          "f3": "بدون عملات معدنية",
+          "f4": "صالح لليوم"
         }
-    },
-    "american_bar": {
-        "title": "البار الأمريكي",
-        "description": "مطعم كلاسيكي أمريكي داخل Old School. كل، واشرب، والعب!",
-        "hint_desktop": "انقر أو اسحب",
-        "hint_mobile": "اسحب لقلب الصفحة",
-        "zoom_btn": "تكبير القائمة",
-        "zoom_page": "صفحة",
-        "zoom_hint": "ضم الأصابع للتكبير",
-        "zoom_pages": "صفحات",
-        "zoom_close": "إغلاق",
-        "zoom_top": "العودة للأعلى"
-    },
-    "machines": {
-        "title": "آلاتنا",
-        "description": "أكثر من 30 آلة بينبول وآركيد كلاسيكية. العب قدر ما تشاء مجانًا!",
-        "filters": {
-            "all": "الكل",
-            "pinball": "بينبول",
-            "arcade": "آركيد"
-        },
-        "groups": {
-            "arcades": "الآركيد والألعاب الأخرى",
-            "pinballs": "آلات البينبول"
-        },
-        "count_machines": "آلة",
-        "count_of": "من",
-        "count_total": "المجموع",
-        "list_label": "قائمة الأجهزة",
-        "machine_details": {
-            "sobriety_test": "اختبار الرصانة",
-            "shooting_arcade": "آركيد إطلاق نار",
-            "multi_game_3x": "3x ألعاب متعددة",
-            "multi_game_2x": "2x ألعاب متعددة",
-            "multi_game": "ألعاب متعددة",
-            "foosball": "كرة قدم الطاولة",
-            "digital_ping_pong": "بينغ بونغ رقمي",
-            "punch": "لكمة",
-            "reflex_test": "اختبار ردة الفعل"
+      },
+      "door": {
+        "name": "على الباب",
+        "description": "ادفع عند الدخول واستمتع بالليل بأكمله.",
+        "features": {
+          "f1": "دخول غير محدود",
+          "f2": "جميع الآلات",
+          "f3": "بدون عملات معدنية",
+          "f4": "نقداً وبطاقات"
         }
+      },
+      "kids": {
+        "name": "الأطفال",
+        "discount": "حتى 12 سنة",
+        "description": "يوفر خصم للأطفال حتى سن 12 يوم السبت.",
+        "features": {
+          "f1": "دخول غير محدود",
+          "f2": "جميع الآلات",
+          "f3": "بدون عملات معدنية",
+          "f4": "تحت إشراف الكبار"
+        }
+      }
     },
-    "media": {
-        "title": "الوسائط",
-        "description": "شاهد أبرز اللحظات، والبطولات، والجولات الافتراضية."
+    "btn_buy": "شراء عبر الإنترنت",
+    "btn_more": "اعرف المزيد",
+    "btn_map": "فتح الخريطة"
+  },
+  "contact": {
+    "title": "اتصل بنا",
+    "description": "تفضل بزيارتنا أو تواصل معنا. نحن في انتظارك!",
+    "info": {
+      "address_label": "العنوان",
+      "address_value": "ساو باولو R. Teodureto Souto, 292a - Cambuci",
+      "whatsapp_label": "واتساب",
+      "email_label": "البريد الإلكتروني",
+      "hours_label": "ساعات العمل",
+      "hours_value": "الخميس والسبت - من 18:00 إلى منتصف الليل"
     },
-    "events": {
-        "title": "الفعاليات والتأجير",
-        "description": "حفلات أعياد الميلاد، فعاليات الشركات، تسجيل البودكاست والمزيد!",
-        "types": {
-            "birthday": {
-                "title": "حفلات أعياد الميلاد",
-                "description": "احتفل بعيد ميلادك بطريقة مختلفة في مساحتنا الحصرية!"
-            },
-            "corporate": {
-                "title": "فعاليات الشركات",
-                "description": "بيئة مريحة وفعاليات فريدة لفرق العمل."
-            },
-            "podcast": {
-                "title": "تسجيلات وبودكاست",
-                "description": "خلفية ريترو أصلية للإنتاج الإعلامي."
-            },
-            "media": {
-                "title": "الإنتاج الإعلامي",
-                "description": "جلسات تصوير وإنتاج بأسلوب ألعاب الثمانينيات الآركيد."
-            }
-        },
-        "btn_reserve": "الحجز عبر واتساب"
+    "btn_contact": "تحدث إلينا"
+  },
+  "chatbot": {
+    "tooltip": "هل تحتاج إلى مساعدة؟ اتصل بنا!",
+    "aria_open": "فتح محطة الدعم",
+    "aria_close": "إغلاق المحطة",
+    "aria_send": "إرسال رسالة",
+    "status_online": "متصل",
+    "title": "محطة دعم OSB",
+    "welcome": "تحياتي، اللاعب 1! أنا المساعد الذكي. كيف يمكنني مساعدتك؟",
+    "placeholder": "اكتب رسالتك...",
+    "fallback": "لم يتم التعرف على الأمر. أرسل لنا على واتساب: +55 11 91562-0127.",
+    "answers": {
+      "tickets": "اشتري تذاكر مسبقة هنا بخصم 10٪!",
+      "location": "نحن في R. Teodureto Souto, 292a - Cambuci. الخميس والسبت 18:00 - 00:00!",
+      "games": "لدينا 30+ آلة بينبول وأركيد، اللعب مجاني تمامًا!"
     },
-    "tickets": {
-        "title": "التذاكر",
-        "description": "العب بقدر ما تشاء! طوال أيام الخميس والسبت من 6 مساءً للـ منتصف الليل.",
-        "plans": {
-            "online": {
-                "name": "عبر الإنترنت",
-                "discount": "خصم 10%",
-                "description": "العب جميع الألعاب بلا حدود!",
-                "features": {
-                    "f1": "دخول غير محدود",
-                    "f2": "جميع الآلات",
-                    "f3": "بدون عملات معدنية",
-                    "f4": "صالح لليوم"
-                }
-            },
-            "door": {
-                "name": "على الباب",
-                "description": "ادفع عند الدخول واستمتع بالليل بأكمله.",
-                "features": {
-                    "f1": "دخول غير محدود",
-                    "f2": "جميع الآلات",
-                    "f3": "بدون عملات معدنية",
-                    "f4": "نقداً وبطاقات"
-                }
-            },
-            "kids": {
-                "name": "الأطفال",
-                "discount": "حتى 12 سنة",
-                "description": "يوفر خصم للأطفال حتى سن 12 يوم السبت.",
-                "features": {
-                    "f1": "دخول غير محدود",
-                    "f2": "جميع الآلات",
-                    "f3": "بدون عملات معدنية",
-                    "f4": "تحت إشراف الكبار"
-                }
-            }
-        },
-        "btn_buy": "شراء عبر الإنترنت",
-        "btn_more": "اعرف المزيد"
+    "options": {
+      "tickets": "التذاكر / الأسعار",
+      "location": "العنوان وساعات العمل",
+      "games": "الألعاب والآلات"
+    }
+  },
+  "cookies": {
+    "title": "Privacy Policies",
+    "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
+    "accept": "I AGREE",
+    "info_btn": "INFORMATION",
+    "modal_title": "Cookie Policy & Privacy",
+    "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+  },
+  "forms": {
+    "captcha_title": "التحقق الأمني",
+    "captcha_desc": "أكمل التحقق للمتابعة.",
+    "captcha_ok": "تم التحقق بنجاح!",
+    "back": "رجوع",
+    "next": "التالي",
+    "close": "إغلاق",
+    "ticket": {
+      "step_plan": "اختر خطتك",
+      "step_cart": "قم بتجميع طلبك",
+      "cart_desc": "أضف الكمية لكل نوع تذكرة:",
+      "per_person": "شخص",
+      "ticket_singular": "تذكرة",
+      "ticket_plural": "تذاكر",
+      "step_guests": "بيانات التذاكر",
+      "step_promo": "قسيمة وملخص",
+      "step_preview": "معاينة الرسالة",
+      "quantity": "الكمية",
+      "guest": "تذكرة",
+      "name": "الاسم الكامل",
+      "age": "الفئة العمرية",
+      "years": "سنوات",
+      "promo_label": "رمز ترويجي",
+      "promo_placeholder": "مثال: RETRO10",
+      "promo_apply": "تطبيق",
+      "promo_added": "تمت إضافة القسيمة",
+      "summary": "ملخص الطلب",
+      "preview_desc": "هذه هي الرسالة التي سيتم إرسالها عبر واتساب:",
+      "send": "إرسال عبر واتساب",
+      "wa_title": "حجز جواز - Old School Pinball",
+      "wa_plan": "الخطة",
+      "wa_qty": "الكمية",
+      "wa_promo": "قسيمة",
+      "wa_none": "لا شيء",
+      "wa_guests": "التذاكر",
+      "wa_footer": "رسالة مرسلة من oldschool.tutankhamal.com",
+      "cpf_placeholder": "CPF (اختياري)",
+      "rg_placeholder": "RG (اختياري)"
     },
     "contact": {
-        "title": "اتصل بنا",
-        "description": "تفضل بزيارتنا أو تواصل معنا. نحن في انتظارك!",
-        "info": {
-            "address_label": "العنوان",
-            "address_value": "ساو باولو R. Teodureto Souto, 292a - Cambuci",
-            "whatsapp_label": "واتساب",
-            "email_label": "البريد الإلكتروني",
-            "hours_label": "ساعات العمل",
-            "hours_value": "الخميس والسبت - من 18:00 إلى منتصف الليل"
-        },
-        "btn_contact": "تحدث إلينا"
-    },
-    "chatbot": {
-        "tooltip": "هل تحتاج إلى مساعدة؟ اتصل بنا!",
-        "aria_open": "فتح محطة الدعم",
-        "aria_close": "إغلاق المحطة",
-        "aria_send": "إرسال رسالة",
-        "status_online": "متصل",
-        "title": "محطة دعم OSB",
-        "welcome": "تحياتي، اللاعب 1! أنا المساعد الذكي. كيف يمكنني مساعدتك؟",
-        "placeholder": "اكتب رسالتك...",
-        "fallback": "لم يتم التعرف على الأمر. أرسل لنا على واتساب: +55 11 91562-0127.",
-        "answers": {
-            "tickets": "اشتري تذاكر مسبقة هنا بخصم 10٪!",
-            "location": "نحن في R. Teodureto Souto, 292a - Cambuci. الخميس والسبت 18:00 - 00:00!",
-            "games": "لدينا 30+ آلة بينبول وأركيد، اللعب مجاني تمامًا!"
-        },
-        "options": {
-            "tickets": "التذاكر / الأسعار",
-            "location": "العنوان وساعات العمل",
-            "games": "الألعاب والآلات"
-        }
-    },
-    "cookies": {
-        "title": "Privacy Policies",
-        "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
-        "accept": "I AGREE",
-        "info_btn": "INFORMATION",
-        "modal_title": "Cookie Policy & Privacy",
-        "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+      "step_reason": "سبب الاتصال",
+      "step_info": "بياناتك",
+      "step_preview": "معاينة الرسالة",
+      "reasons": {
+        "general": "أسئلة عامة",
+        "events": "حجز فعالية",
+        "partnerships": "شراكات",
+        "feedback": "تعليقات / اقتراحات",
+        "other": "أخرى"
+      },
+      "name": "اسمك",
+      "email": "البريد (اختياري)",
+      "phone": "هاتف (اختياري)",
+      "description": "اكتب رسالتك...",
+      "preview_desc": "هذه هي الرسالة التي سيتم إرسالها عبر واتساب:",
+      "send": "إرسال عبر واتساب",
+      "wa_title": "اتصال - Old School Pinball",
+      "wa_reason": "السبب",
+      "wa_name": "الاسم",
+      "wa_phone": "الهاتف",
+      "wa_message": "الرسالة",
+      "wa_footer": "رسالة مرسلة من oldschool.tutankhamal.com"
     }
+  }
 }

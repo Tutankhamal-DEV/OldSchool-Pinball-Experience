@@ -1,201 +1,266 @@
 {
-    "navbar": {
-        "home": "Trang chủ",
-        "atmosphere": "Bầu Không Khí",
-        "bar": "Quán Bar Mỹ",
-        "machines": "Máy Chơi Game",
-        "media": "Medias",
-        "tickets": "Vé Mua",
-        "contact": "Liên hệ",
-        "buy_online": "Mua Trực Tuyến",
-        "sound_on": "Bật Âm",
-        "sound_off": "Tắt Âm",
-        "menu": "Menu",
-        "events": "Sự kiện"
+  "navbar": {
+    "home": "Trang chủ",
+    "atmosphere": "Bầu Không Khí",
+    "bar": "Quán Bar Mỹ",
+    "machines": "Máy Chơi Game",
+    "media": "Medias",
+    "tickets": "Vé Mua",
+    "contact": "Liên hệ",
+    "buy_online": "Mua Trực Tuyến",
+    "sound_on": "Bật Âm",
+    "sound_off": "Tắt Âm",
+    "menu": "Menu",
+    "events": "Sự kiện"
+  },
+  "footer": {
+    "brand_description": "Không gian pinball và giải trí arcade tốt nhất Châu Mỹ Latinh.",
+    "links_title": "LIÊN KẾT",
+    "social_title": "MẠNG XÃ HỘI",
+    "address": "Đường Teodoro Sampaio, 2038 - Pinheiros\nSão Paulo - SP, 05406-150",
+    "payment_info": "Chúng tôi chấp nhận thẻ tín dụng và ghi nợ",
+    "copyright": "© 2026 Old School Pinball. Mọi quyền được bảo lưu.",
+    "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
+    "developer_credit": "PHÁT TRIỂN BỞI: TUTANKHAMAL DEV"
+  },
+  "hero": {
+    "title_part1": "Trải Nghiệm ",
+    "title_highlight": "Retro",
+    "title_part2": " Đích Thực",
+    "award_text": "Giải thưởng TWIPY • Arcade Tốt nhất tại Châu Mỹ Latinh",
+    "btn_tickets": "VÉ PASS",
+    "btn_more": "Tìm Hiểu Thêm"
+  },
+  "atmosphere": {
+    "title": "Bầu Không Khí",
+    "description": "Mọi góc nhỏ của Old School được thiết kế để đưa bạn về kỷ nguyên vàng của arcade.",
+    "areas": {
+      "batman": {
+        "title": "Góc Người Dơi",
+        "desc": "Môi trường tĩnh lặng của Thành phố Gotham."
+      },
+      "geek": {
+        "title": "Môi Trường Geek",
+        "desc": "Văn hóa đại chúng của những năm 80 và 90."
+      },
+      "dance": {
+        "title": "Sàn Nhảy và DJ",
+        "desc": "Nhảy cùng DJ sống!"
+      }
+    }
+  },
+  "american_bar": {
+    "title": "Quán Bar Mỹ",
+    "description": "Nhà hàng kiểu Mỹ bên trong Old School. Ăn, uống và vui chơi!",
+    "hint_desktop": "NHẤP CHUỘT HOẶC KÉO",
+    "hint_mobile": "KÉO ĐỂ LẬT TRANG",
+    "zoom_btn": "PHÓNG TO THỰC ĐƠN",
+    "zoom_page": "TRANG",
+    "zoom_hint": "CHỤM ĐỂ PHÓNG TO",
+    "zoom_pages": "trang",
+    "zoom_close": "Đóng",
+    "zoom_top": "Lên đầu trang"
+  },
+  "machines": {
+    "title": "Máy Của Chúng Tôi",
+    "description": "Hơn 30 máy pinball và arcade cổ điển. Miễn phí xu!",
+    "filters": {
+      "all": "Tất Cả",
+      "pinball": "Pinball",
+      "arcade": "Arcade"
     },
-    "footer": {
-        "brand_description": "Không gian pinball và giải trí arcade tốt nhất Châu Mỹ Latinh.",
-        "links_title": "LIÊN KẾT",
-        "social_title": "MẠNG XÃ HỘI",
-        "address": "Đường Teodoro Sampaio, 2038 - Pinheiros\nSão Paulo - SP, 05406-150",
-        "payment_info": "Chúng tôi chấp nhận thẻ tín dụng và ghi nợ",
-        "copyright": "© 2026 Old School Pinball. Mọi quyền được bảo lưu.",
-        "company_info": "Ricardo Massato Kobe Kuroki ME - CNPJ: 05.775.189/0001-92",
-        "developer_credit": "PHÁT TRIỂN BỞI: TUTANKHAMAL DEV"
+    "groups": {
+      "arcades": "Arcades",
+      "pinballs": "Pinball Máy"
     },
-    "hero": {
-        "title_part1": "Trải Nghiệm ",
-        "title_highlight": "Retro",
-        "title_part2": " Đích Thực",
-        "award_text": "Giải thưởng TWIPY • Arcade Tốt nhất tại Châu Mỹ Latinh",
-        "btn_tickets": "VÉ PASS",
-        "btn_more": "Tìm Hiểu Thêm"
+    "count_machines": "máy",
+    "count_of": "/ ",
+    "count_total": "tổng cộng",
+    "list_label": "Danh Sách Máy",
+    "machine_details": {
+      "sobriety_test": "Kiểm Tra Tỉnh Táo",
+      "shooting_arcade": "Arcade Bắn Súng",
+      "multi_game_3x": "3x Đa Trò Chơi",
+      "multi_game_2x": "2x Đa Trò Chơi",
+      "multi_game": "Đa Trò Chơi",
+      "foosball": "Bi Lắc",
+      "digital_ping_pong": "Bóng Bàn Kỹ Thuật Số",
+      "punch": "Máy Đấm Bốc",
+      "reflex_test": "Kiểm Tra Phản Xạ"
+    }
+  },
+  "media": {
+    "title": "Truyền Thông",
+    "description": "Xem các khoảnh khắc, trò chơi, giải đấu."
+  },
+  "events": {
+    "title": "Sự Kiện & Cho Thuê",
+    "description": "Các buổi tiệc sinh nhật, sự kiện công ty!",
+    "types": {
+      "birthday": {
+        "title": "Tiệc Sinh Nhật",
+        "description": "Không gian riêng với đủ tiện nghi."
+      },
+      "corporate": {
+        "title": "Sự Kiện Công Ty",
+        "description": "Đội ngũ sáng tạo."
+      },
+      "podcast": {
+        "title": "Podcast",
+        "description": "Cảnh quay video hấp dẫn."
+      },
+      "media": {
+        "title": "Chụp Ảnh",
+        "description": "Bối cảnh những năm 80."
+      }
     },
-    "atmosphere": {
-        "title": "Bầu Không Khí",
-        "description": "Mọi góc nhỏ của Old School được thiết kế để đưa bạn về kỷ nguyên vàng của arcade.",
-        "areas": {
-            "batman": {
-                "title": "Góc Người Dơi",
-                "desc": "Môi trường tĩnh lặng của Thành phố Gotham."
-            },
-            "geek": {
-                "title": "Môi Trường Geek",
-                "desc": "Văn hóa đại chúng của những năm 80 và 90."
-            },
-            "dance": {
-                "title": "Sàn Nhảy và DJ",
-                "desc": "Nhảy cùng DJ sống!"
-            }
+    "btn_reserve": "Đặt Ngay Qua Zalo/WhatsApp"
+  },
+  "tickets": {
+    "title": "Mua Vé",
+    "description": "Chơi thả ga! Mỗi tối thứ 5 và thứ 7 từ 6 giờ chiều đến 12 giờ đêm.",
+    "plans": {
+      "online": {
+        "name": "Giá Đầy Đủ",
+        "discount": "GIẢM 10%",
+        "description": "Chỉ ưu đãi trên web!",
+        "features": {
+          "f1": "Không giới hạn",
+          "f2": "Tất cả các máy",
+          "f3": "Không cần xu",
+          "f4": "Áp dụng trong ngày"
         }
-    },
-    "american_bar": {
-        "title": "Quán Bar Mỹ",
-        "description": "Nhà hàng kiểu Mỹ bên trong Old School. Ăn, uống và vui chơi!",
-        "hint_desktop": "NHẤP CHUỘT HOẶC KÉO",
-        "hint_mobile": "KÉO ĐỂ LẬT TRANG",
-        "zoom_btn": "PHÓNG TO THỰC ĐƠN",
-        "zoom_page": "TRANG",
-        "zoom_hint": "CHỤM ĐỂ PHÓNG TO",
-        "zoom_pages": "trang",
-        "zoom_close": "Đóng",
-        "zoom_top": "Lên đầu trang"
-    },
-    "machines": {
-        "title": "Máy Của Chúng Tôi",
-        "description": "Hơn 30 máy pinball và arcade cổ điển. Miễn phí xu!",
-        "filters": {
-            "all": "Tất Cả",
-            "pinball": "Pinball",
-            "arcade": "Arcade"
-        },
-        "groups": {
-            "arcades": "Arcades",
-            "pinballs": "Pinball Máy"
-        },
-        "count_machines": "máy",
-        "count_of": "/ ",
-        "count_total": "tổng cộng",
-        "list_label": "Danh Sách Máy",
-        "machine_details": {
-            "sobriety_test": "Kiểm Tra Tỉnh Táo",
-            "shooting_arcade": "Arcade Bắn Súng",
-            "multi_game_3x": "3x Đa Trò Chơi",
-            "multi_game_2x": "2x Đa Trò Chơi",
-            "multi_game": "Đa Trò Chơi",
-            "foosball": "Bi Lắc",
-            "digital_ping_pong": "Bóng Bàn Kỹ Thuật Số",
-            "punch": "Máy Đấm Bốc",
-            "reflex_test": "Kiểm Tra Phản Xạ"
+      },
+      "door": {
+        "name": "Tại Quầy",
+        "description": "Thanh toán tại quầy.",
+        "features": {
+          "f1": "Không giới hạn",
+          "f2": "Tất cả các máy",
+          "f3": "Không cần xu",
+          "f4": "Sử dụng Thẻ"
         }
+      },
+      "kids": {
+        "name": "Trẻ Em",
+        "discount": "Đến 12 tuổi",
+        "description": "Vào Thứ Bảy.",
+        "features": {
+          "f1": "Không giới hạn",
+          "f2": "Tất cả các máy",
+          "f3": "Không cần xu",
+          "f4": "Có phụ huynh đi kèm"
+        }
+      }
     },
-    "media": {
-        "title": "Truyền Thông",
-        "description": "Xem các khoảnh khắc, trò chơi, giải đấu."
+    "btn_buy": "Mua Tuyến",
+    "btn_more": "Tìm Hiểu",
+    "btn_map": "Mở Bản Đồ"
+  },
+  "contact": {
+    "title": "Liên Lạc",
+    "description": "Ghé thăm chúng tôi. Rất mong được tiếp đón!",
+    "info": {
+      "address_label": "Địa chỉ",
+      "address_value": "R. Teodureto Souto, 292a - Cambuci, São Paulo",
+      "whatsapp_label": "WhatsApp",
+      "email_label": "Email",
+      "hours_label": "Giờ Mở Cửa",
+      "hours_value": "Thứ Năm và Thứ Bảy - 6 PM - 12 AM"
     },
-    "events": {
-        "title": "Sự Kiện & Cho Thuê",
-        "description": "Các buổi tiệc sinh nhật, sự kiện công ty!",
-        "types": {
-            "birthday": {
-                "title": "Tiệc Sinh Nhật",
-                "description": "Không gian riêng với đủ tiện nghi."
-            },
-            "corporate": {
-                "title": "Sự Kiện Công Ty",
-                "description": "Đội ngũ sáng tạo."
-            },
-            "podcast": {
-                "title": "Podcast",
-                "description": "Cảnh quay video hấp dẫn."
-            },
-            "media": {
-                "title": "Chụp Ảnh",
-                "description": "Bối cảnh những năm 80."
-            }
-        },
-        "btn_reserve": "Đặt Ngay Qua Zalo/WhatsApp"
+    "btn_contact": "Gửi Tin Nhắn"
+  },
+  "chatbot": {
+    "tooltip": "Cần trợ giúp? Trò chuyện ngay!",
+    "aria_open": "Mở Hỗ trợ",
+    "aria_close": "Đóng",
+    "aria_send": "Gửi",
+    "status_online": "Trực tuyến",
+    "title": "Hỗ trợ OSB",
+    "welcome": "Xin chào! Tôi có thể giúp gì?",
+    "placeholder": "Tin nhắn...",
+    "fallback": "WhatsApp: +55 11 91562-0127.",
+    "answers": {
+      "tickets": "Mua vé trực tuyến giảm 10%!",
+      "location": "R. Teodureto Souto, 292a. Thứ Năm và thứ Bảy!",
+      "games": "Hơn 30 trò chơi free play!"
     },
-    "tickets": {
-        "title": "Mua Vé",
-        "description": "Chơi thả ga! Mỗi tối thứ 5 và thứ 7 từ 6 giờ chiều đến 12 giờ đêm.",
-        "plans": {
-            "online": {
-                "name": "Trực Tuyến",
-                "discount": "GIẢM 10%",
-                "description": "Chỉ ưu đãi trên web!",
-                "features": {
-                    "f1": "Không giới hạn",
-                    "f2": "Tất cả các máy",
-                    "f3": "Không cần xu",
-                    "f4": "Áp dụng trong ngày"
-                }
-            },
-            "door": {
-                "name": "Tại Quầy",
-                "description": "Thanh toán tại quầy.",
-                "features": {
-                    "f1": "Không giới hạn",
-                    "f2": "Tất cả các máy",
-                    "f3": "Không cần xu",
-                    "f4": "Sử dụng Thẻ"
-                }
-            },
-            "kids": {
-                "name": "Trẻ Em",
-                "discount": "Đến 12 tuổi",
-                "description": "Vào Thứ Bảy.",
-                "features": {
-                    "f1": "Không giới hạn",
-                    "f2": "Tất cả các máy",
-                    "f3": "Không cần xu",
-                    "f4": "Có phụ huynh đi kèm"
-                }
-            }
-        },
-        "btn_buy": "Mua Tuyến",
-        "btn_more": "Tìm Hiểu"
+    "options": {
+      "tickets": "Vé",
+      "location": "Địa điểm",
+      "games": "Trò chơi"
+    }
+  },
+  "cookies": {
+    "title": "Privacy Policies",
+    "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
+    "accept": "I AGREE",
+    "info_btn": "INFORMATION",
+    "modal_title": "Cookie Policy & Privacy",
+    "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+  },
+  "forms": {
+    "captcha_title": "Security Check",
+    "captcha_desc": "Complete the verification to continue.",
+    "captcha_ok": "Successfully verified!",
+    "back": "Quay lại",
+    "next": "Tiếp",
+    "close": "Đóng",
+    "ticket": {
+      "step_plan": "Choose Your Plan",
+      "step_cart": "Build Your Order",
+      "cart_desc": "Add the quantity of each ticket type:",
+      "per_person": "person",
+      "ticket_singular": "ticket",
+      "ticket_plural": "tickets",
+      "step_guests": "Chi Tiết Vé",
+      "step_promo": "Promo & Summary",
+      "step_preview": "Message Preview",
+      "quantity": "Quantity",
+      "guest": "Ticket",
+      "name": "Full name",
+      "age": "Age range",
+      "years": "years",
+      "promo_label": "Promo Code",
+      "promo_placeholder": "E.g.: RETRO10",
+      "promo_apply": "Apply",
+      "promo_added": "Promo code added to message",
+      "summary": "Order Summary",
+      "preview_desc": "This is the message that will be sent via WhatsApp:",
+      "send": "Send via WhatsApp",
+      "wa_title": "Passport Booking - Old School Pinball",
+      "wa_plan": "Plan",
+      "wa_qty": "Quantity",
+      "wa_promo": "Promo",
+      "wa_none": "None",
+      "wa_guests": "Vé",
+      "wa_footer": "Message sent from oldschool.tutankhamal.com",
+      "cpf_placeholder": "CPF (tùy chọn)",
+      "rg_placeholder": "RG (tùy chọn)"
     },
     "contact": {
-        "title": "Liên Lạc",
-        "description": "Ghé thăm chúng tôi. Rất mong được tiếp đón!",
-        "info": {
-            "address_label": "Địa chỉ",
-            "address_value": "R. Teodureto Souto, 292a - Cambuci, São Paulo",
-            "whatsapp_label": "WhatsApp",
-            "email_label": "Email",
-            "hours_label": "Giờ Mở Cửa",
-            "hours_value": "Thứ Năm và Thứ Bảy - 6 PM - 12 AM"
-        },
-        "btn_contact": "Gửi Tin Nhắn"
-    },
-    "chatbot": {
-        "tooltip": "Cần trợ giúp? Trò chuyện ngay!",
-        "aria_open": "Mở Hỗ trợ",
-        "aria_close": "Đóng",
-        "aria_send": "Gửi",
-        "status_online": "Trực tuyến",
-        "title": "Hỗ trợ OSB",
-        "welcome": "Xin chào! Tôi có thể giúp gì?",
-        "placeholder": "Tin nhắn...",
-        "fallback": "WhatsApp: +55 11 91562-0127.",
-        "answers": {
-            "tickets": "Mua vé trực tuyến giảm 10%!",
-            "location": "R. Teodureto Souto, 292a. Thứ Năm và thứ Bảy!",
-            "games": "Hơn 30 trò chơi free play!"
-        },
-        "options": {
-            "tickets": "Vé",
-            "location": "Địa điểm",
-            "games": "Trò chơi"
-        }
-    },
-    "cookies": {
-        "title": "Privacy Policies",
-        "message": "We only use basic cookies to keep your language preferences saved locally. We do not track or sell your personal data. By continuing to navigate, you agree to our terms.",
-        "accept": "I AGREE",
-        "info_btn": "INFORMATION",
-        "modal_title": "Cookie Policy & Privacy",
-        "modal_content": "Old School Pinball values your privacy in accordance with data protection laws.\n\nWe do not maintain server databases to store user profiles, passwords, or tracking behaviors.\n\nWe exclusively use browser 'Local Storage' to remember your language choice (such as English or Portuguese) in future visits and to hide this consent notice.\n\nNo personal information is transferred, sold, or mapped by our online service.\n\nIf you have questions regarding our digital or physical operations, feel free to contact us via WhatsApp."
+      "step_reason": "Reason for Contact",
+      "step_info": "Your Details",
+      "step_preview": "Message Preview",
+      "reasons": {
+        "general": "General Questions",
+        "events": "Event Booking",
+        "partnerships": "Partnerships",
+        "feedback": "Compliments / Suggestions",
+        "other": "Other"
+      },
+      "name": "Your name",
+      "email": "Email (optional)",
+      "phone": "Phone (optional)",
+      "description": "Describe your message...",
+      "preview_desc": "This is the message that will be sent via WhatsApp:",
+      "send": "Send via WhatsApp",
+      "wa_title": "Contact - Old School Pinball",
+      "wa_reason": "Reason",
+      "wa_name": "Name",
+      "wa_phone": "Phone",
+      "wa_message": "Message",
+      "wa_footer": "Message sent from oldschool.tutankhamal.com"
     }
+  }
 }
