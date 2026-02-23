@@ -9,25 +9,30 @@ export default function Hero() {
     const logoContainerRef = useRef<HTMLDivElement>(null)
     const inView = useInView(ref, { once: true })
 
-    // Adopt preloader image into hero container to prevent double-LCP
-    // The preloader <img> is already painted as the LCP element.
-    // Moving it (same DOM node) into the hero keeps that LCP measurement.
+    // Adopt preloader image into hero container to prevent double-LCP.
+    // CRITICAL ORDER: adopt image FIRST (stays visible), THEN fade preloader overlay.
     useEffect(() => {
         const container = logoContainerRef.current;
         const preloader = document.getElementById('preloader');
         if (!container || !preloader) return;
 
-        const img = preloader.querySelector('img') || preloader.querySelector('picture img');
+        const picture = preloader.querySelector('picture');
+        const img = picture || preloader.querySelector('img');
         if (img) {
-            // Style the preloader image to match hero layout
-            img.className = 'hero-logo-shadow w-[72%] sm:w-60 md:w-64 lg:w-80 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300';
-            img.alt = 'Old School Pinball & Arcade';
-            // Move (not clone) the same DOM element — no new LCP
+            // Style to match hero layout
+            const imgEl = (img.tagName === 'PICTURE' ? img.querySelector('img') : img) as HTMLImageElement | null;
+            if (imgEl) {
+                imgEl.className = 'hero-logo-shadow w-[72%] sm:w-60 md:w-64 lg:w-80 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300';
+                imgEl.alt = 'Old School Pinball & Arcade';
+            }
+            // Move the entire picture/img element (same DOM node = no new LCP)
             container.appendChild(img);
         }
 
-        // Remove preloader container (progress bar, overlay)
-        preloader.remove();
+        // NOW hide the preloader overlay (image is already in hero, still visible)
+        document.documentElement.setAttribute('data-loaded', '');
+        // Clean up preloader DOM after fade transition
+        setTimeout(() => preloader.remove(), 500);
     }, []);
 
     return (

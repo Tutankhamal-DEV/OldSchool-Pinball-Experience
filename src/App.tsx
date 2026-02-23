@@ -23,11 +23,7 @@ export default function App() {
     const [activeSection, setActiveSection] = useState('home');
     const activeSectionRef = useRef(activeSection);
 
-    // Signal that React has mounted (hides preloader overlay via CSS)
-    // Hero.tsx adopts the preloader image and removes the container
-    useEffect(() => {
-        document.documentElement.setAttribute('data-loaded', '');
-    }, []);
+    // Preloader handoff is managed by Hero.tsx (adopts image, then hides overlay)
 
     // Sync ref when state changes
     useEffect(() => {
