@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { motion, useInView } from 'motion/react'
 import { Award, Ticket, Info } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -6,7 +6,29 @@ import { useTranslation } from 'react-i18next'
 export default function Hero() {
     const { t } = useTranslation();
     const ref = useRef<HTMLElement>(null)
+    const logoContainerRef = useRef<HTMLDivElement>(null)
     const inView = useInView(ref, { once: true })
+
+    // Adopt preloader image into hero container to prevent double-LCP
+    // The preloader <img> is already painted as the LCP element.
+    // Moving it (same DOM node) into the hero keeps that LCP measurement.
+    useEffect(() => {
+        const container = logoContainerRef.current;
+        const preloader = document.getElementById('preloader');
+        if (!container || !preloader) return;
+
+        const img = preloader.querySelector('img') || preloader.querySelector('picture img');
+        if (img) {
+            // Style the preloader image to match hero layout
+            img.className = 'hero-logo-shadow w-[72%] sm:w-60 md:w-64 lg:w-80 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300';
+            img.alt = 'Old School Pinball & Arcade';
+            // Move (not clone) the same DOM element — no new LCP
+            container.appendChild(img);
+        }
+
+        // Remove preloader container (progress bar, overlay)
+        preloader.remove();
+    }, []);
 
     return (
         <section
@@ -17,28 +39,15 @@ export default function Hero() {
         >
             <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
 
-                {/* ── Logo ── */}
+                {/* ── Logo — adopted from preloader, no new <img> = no new LCP ── */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8, y: 30, filter: 'blur(10px)' }}
                     animate={inView ? { opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' } : {}}
                     transition={{ duration: 1, ease: 'easeOut' }}
                     className="mb-6 relative"
+                    ref={logoContainerRef}
                 >
-                    {/* Background glow removed as per user request */}
-
-                    <picture>
-                        <source media="(max-width: 767px)" srcSet="/images/hero_logo-sm.webp" type="image/webp" />
-                        <img
-                            src="/images/hero_logo.webp"
-                            alt="Old School Pinball & Arcade"
-                            width={800}
-                            height={637}
-                            fetchPriority="high"
-                            loading="eager"
-                            decoding="async"
-                            className="hero-logo-shadow w-[72%] sm:w-60 md:w-64 lg:w-80 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300"
-                        />
-                    </picture>
+                    {/* Preloader image will be moved here by useEffect */}
                 </motion.div>
 
                 <motion.div
