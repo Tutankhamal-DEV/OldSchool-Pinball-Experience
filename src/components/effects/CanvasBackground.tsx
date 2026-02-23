@@ -241,7 +241,7 @@ export default function CanvasBackground({ activeSection }: { activeSection: str
 
             {/* 2. Feathered shadow — dark center strip between image and canvas */}
             <div
-                className="fixed inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-6xl pointer-events-none bg-feathered-shadow z-[25]"
+                className="fixed inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-[90vw] pointer-events-none bg-feathered-shadow z-[25]"
                 aria-hidden="true"
             />
 

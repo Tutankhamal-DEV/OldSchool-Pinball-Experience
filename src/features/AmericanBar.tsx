@@ -179,29 +179,49 @@ export default function AmericanBar() {
                     transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
                     className="flex flex-col items-center max-w-5xl mx-auto w-full relative"
                 >
-                    {/* Visual Hint for Desktop */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={inView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ delay: 1, duration: 0.8 }}
-                        className={`hidden md:flex absolute top-1/2 left-[5%] xl:left-0 -translate-y-1/2 flex-col items-center gap-2 pointer-events-none z-10 transition-opacity duration-500`}
-                    >
-                        <div className="text-pinball-yellow/80 font-pixel text-xs tracking-widest animate-pulse whitespace-nowrap rotate-180" style={{ writingMode: 'vertical-rl' }}>
-                            {t('american_bar.hint_desktop')}
-                        </div>
-                        <div className="animate-bounce mt-2 text-pinball-yellow/80">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M5 12h14" />
-                                <path d="m12 5 7 7-7 7" />
+                    {/* Zoom / expand button — above the magazine */}
+                    <div className="mb-6 flex justify-center">
+                        <button
+                            onClick={() => setZoomOpen(true)}
+                            className="flex items-center gap-2 px-4 py-2 rounded-lg
+                                bg-pinball-red/15 border border-pinball-red/30 text-pinball-cream/80
+                                hover:bg-pinball-red/25 hover:text-pinball-cream
+                                active:scale-95 transition-all duration-200
+                                font-pixel text-[0.65rem] tracking-widest uppercase"
+                        >
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                <line x1="11" y1="8" x2="11" y2="14" />
+                                <line x1="8" y1="11" x2="14" y2="11" />
                             </svg>
-                        </div>
-                    </motion.div>
+                            {t('american_bar.zoom_btn', 'Ampliar Cardápio')}
+                        </button>
+                    </div>
 
                     <motion.div
                         className="w-full relative flex justify-center perspective-[1500px] px-2 sm:px-0"
                         whileHover={{ y: -10, scale: 1.02 }}
                         transition={{ duration: 0.4, ease: "easeOut" }}
                     >
+                        {/* Visual Hint — inside the container, pointing left, behind the cover */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={inView ? { opacity: 1 } : {}}
+                            transition={{ delay: 1.5, duration: 0.8 }}
+                            className="hidden md:flex absolute top-1/2 left-[5%] xl:left-[8%] -translate-y-1/2 items-center gap-2 pointer-events-none z-0"
+                        >
+                            <div className="animate-bounce text-pinball-yellow/60">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M19 12H5" />
+                                    <path d="m12 19-7-7 7-7" />
+                                </svg>
+                            </div>
+                            <div className="text-pinball-yellow/60 font-pixel text-[10px] tracking-widest whitespace-nowrap">
+                                {t('american_bar.hint_desktop')}
+                            </div>
+                        </motion.div>
+
                         {/* 
                           We force type overriding because react-pageflip typings are occasionally
                           clunky with React 19+. Wait, TS might complain about HTMLFlipBook. 
@@ -230,32 +250,6 @@ export default function AmericanBar() {
                             ))}
                         </HTMLFlipBook>
                     </motion.div>
-
-                    {/* Zoom / expand button + hint */}
-                    <div className="mt-6 flex flex-col items-center gap-3">
-                        <button
-                            onClick={() => setZoomOpen(true)}
-                            className="flex items-center gap-2 px-4 py-2 rounded-lg
-                                bg-pinball-red/15 border border-pinball-red/30 text-pinball-cream/80
-                                hover:bg-pinball-red/25 hover:text-pinball-cream
-                                active:scale-95 transition-all duration-200
-                                font-pixel text-[0.65rem] tracking-widest uppercase"
-                        >
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                                <line x1="11" y1="8" x2="11" y2="14" />
-                                <line x1="8" y1="11" x2="14" y2="11" />
-                            </svg>
-                            {t('american_bar.zoom_btn', 'Ampliar Cardápio')}
-                        </button>
-
-                        <div className="text-pinball-cream/50 font-pixel text-xs tracking-widest animate-pulse flex items-center gap-3">
-                            <span className="w-8 h-px bg-pinball-red/50" />
-                            {t('american_bar.hint_mobile')}
-                            <span className="w-8 h-px bg-pinball-red/50" />
-                        </div>
-                    </div>
                 </motion.div>
 
             </div>

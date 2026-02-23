@@ -129,11 +129,11 @@ export default function Media() {
                         if (!playerRef.current && isApiReady) {
                             // Create player on first click to avoid auto-loading heavy iframe unnecessarily
                             playerRef.current = new window.YT.Player('yt-player-container', {
-                                videoId: 'MnEW0hY-T3U',
+                                videoId: 'atA3FOKr8C8',
                                 playerVars: {
                                     autoplay: 1,
                                     loop: 1,
-                                    playlist: 'MnEW0hY-T3U', // required for loop
+                                    playlist: 'atA3FOKr8C8', // required for loop
                                     controls: 0,
                                     disablekb: 1,
                                     fs: 0,

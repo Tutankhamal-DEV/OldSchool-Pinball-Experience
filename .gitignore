@@ -1,1 +1,16 @@
 node_modules
+dist
+
+# Residual/generated files
+*.txt
+!README.md
+reference-files/
+
+# Lighthouse reports
+lh-*.json
+lighthouse-report.json
+
+# ESLint reports
+eslint-report*.txt
+eslint_*.txt
+eslint_*.json

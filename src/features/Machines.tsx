@@ -2,8 +2,6 @@ import { useRef, useState, useEffect } from 'react'
 import { motion, useInView } from 'motion/react'
 import { useTranslation } from 'react-i18next'
 
-type Category = 'all' | 'pinball' | 'arcade'
-
 interface Machine {
     name: string
     category: 'pinball' | 'arcade'
@@ -53,12 +51,6 @@ const MACHINES: Machine[] = [
     { name: 'Vortex', category: 'arcade', detail: 'Teste de Reflexo' },
 ]
 
-const FILTERS: { label: string; value: Category }[] = [
-    { label: 'Todas', value: 'all' },
-    { label: 'Pinball', value: 'pinball' },
-    { label: 'Arcade', value: 'arcade' },
-]
-
 const BANNER_SLIDES = [
     { src: '/images/ambiente_04.webp', mobile: '/images/ambiente_04-sm.webp' },
     { src: '/images/pinball_machines_1.webp' },
@@ -79,21 +71,12 @@ export default function Machines() {
         return () => clearInterval(timer)
     }, [])
 
-    const [filter, setFilter] = useState<Category>('all')
-
     const sortedMachines = [...MACHINES].sort((a, b) => a.name.localeCompare(b.name))
-    const filtered = filter === 'all'
-        ? sortedMachines
-        : sortedMachines.filter((m) => m.category === filter)
 
-    const groupedMachines = filter === 'all'
-        ? {
-            [t('machines.groups.arcades')]: filtered.filter(m => m.category === 'arcade'),
-            [t('machines.groups.pinballs')]: filtered.filter(m => m.category === 'pinball'),
-        }
-        : {
-            [filter === 'pinball' ? t('machines.groups.pinballs') : t('machines.groups.arcades')]: filtered
-        }
+    const groupedMachines = {
+        [t('machines.groups.arcades')]: sortedMachines.filter(m => m.category === 'arcade'),
+        [t('machines.groups.pinballs')]: sortedMachines.filter(m => m.category === 'pinball'),
+    }
 
     return (
         <section id="maquinas" ref={ref} className="relative py-24 px-4 z-1">
@@ -156,41 +139,30 @@ export default function Machines() {
                     </div>
                 </motion.div>
 
-                {/* Filter tabs */}
+                {/* Static label */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={inView ? { opacity: 1 } : {}}
                     transition={{ delay: 0.3, duration: 0.4 }}
-                    className="flex justify-center gap-2 mb-10"
+                    className="flex justify-center mb-10"
                 >
-                    {FILTERS.map((f) => (
-                        <button
-                            key={f.value}
-                            onClick={() => setFilter(f.value)}
-                            className={`px-5 py-2 rounded-full font-tech text-sm transition-all duration-300 ${filter === f.value
-                                ? 'bg-pinball-red text-white shadow-lg shadow-pinball-red/30'
-                                : 'bg-pinball-dark text-pinball-cream/60 hover:text-pinball-cream hover:bg-pinball-dark/80'
-                                }`}
-                        >
-                            {t(`machines.filters.${f.value}`)}
-                        </button>
-                    ))}
+                    <span className="px-5 py-2 rounded-full font-tech text-sm bg-pinball-red text-white shadow-lg shadow-pinball-red/30">
+                        {t('machines.list_label', 'Lista de Máquinas')}
+                    </span>
                 </motion.div>
 
-                {/* Compact Machine List */}
+                {/* Machine List */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.1, duration: 0.6 }}
-                    className="glass-panel p-4 md:p-8 max-w-5xl mx-auto"
+                    className="glass-panel p-4 md:p-8 max-w-5xl w-full mx-auto"
                 >
                     {Object.entries(groupedMachines).map(([catName, machines]) => machines.length > 0 && (
                         <div key={catName} className="mb-6 last:mb-0">
-                            {filter === 'all' && (
-                                <h3 className="font-pixel text-sm sm:text-base text-pinball-yellow mb-3 border-b border-white/10 pb-2">
-                                    {catName}
-                                </h3>
-                            )}
+                            <h3 className="font-pixel text-sm sm:text-base text-pinball-yellow mb-3 border-b border-white/10 pb-2">
+                                {catName}
+                            </h3>
                             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-2 sm:gap-x-6 gap-y-1">
                                 {machines.map((machine, i) => (
                                     <div
@@ -218,7 +190,7 @@ export default function Machines() {
                     transition={{ delay: 1, duration: 0.4 }}
                     className="text-center mt-8 font-mono text-sm text-pinball-cream/40"
                 >
-                    {filtered.length} {t('machines.count_machines')} {filter !== 'all' ? `${t('machines.count_of')} ${t(`machines.filters.${filter}`)}` : t('machines.count_total')}
+                    {sortedMachines.length} {t('machines.count_machines')} {t('machines.count_total')}
                 </motion.p>
             </div>
         </section>
