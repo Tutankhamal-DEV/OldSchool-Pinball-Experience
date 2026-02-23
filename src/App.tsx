@@ -1,4 +1,5 @@
 import { useEffect, useState, Suspense, lazy, useRef } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { useContentProtection } from './hooks/useContentProtection'
 const CRTOverlay = lazy(() => import('./components/effects/CRTOverlay'))
 const CookieConsent = lazy(() => import('./components/CookieConsent'))
@@ -136,6 +137,7 @@ export default function App() {
             </Suspense>
 
             <CookieConsent />
+            <Analytics />
         </div>
     )
 }

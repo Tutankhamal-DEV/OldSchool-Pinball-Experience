@@ -355,10 +355,14 @@ li {
 .bg-feathered-shadow {
   background: linear-gradient(90deg,
       transparent 0%,
-      rgba(8, 3, 5, 0.55) 5%,
-      rgba(8, 3, 5, 0.85) 25%,
-      rgba(8, 3, 5, 0.85) 75%,
-      rgba(8, 3, 5, 0.55) 95%,
+      rgba(8, 3, 5, 0.08) 4%,
+      rgba(8, 3, 5, 0.2) 10%,
+      rgba(8, 3, 5, 0.45) 20%,
+      rgba(8, 3, 5, 0.75) 35%,
+      rgba(8, 3, 5, 0.75) 65%,
+      rgba(8, 3, 5, 0.45) 80%,
+      rgba(8, 3, 5, 0.2) 90%,
+      rgba(8, 3, 5, 0.08) 96%,
       transparent 100%);
 }
 
