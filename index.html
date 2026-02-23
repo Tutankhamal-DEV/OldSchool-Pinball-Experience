@@ -35,10 +35,9 @@
   </noscript>
 
   <title>Old School · Pinball · Arcade · Bar · São Paulo</title>
-</head>
 
-<body style="background-color:#080305">
   <style>
+    /* Skip-to-content */
     .skip-link {
       position: absolute;
       left: -9999px;
@@ -56,8 +55,80 @@
       font-size: 14px;
       text-decoration: none
     }
+
+    /* Preloader — renders before React, becomes LCP */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #080305;
+      transition: opacity .4s ease-out, visibility .4s ease-out
+    }
+
+    html[data-loaded] #preloader {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none
+    }
+
+    #preloader img {
+      width: clamp(140px, 35vw, 280px);
+      height: auto;
+      animation: preloaderFade .8s ease-out both
+    }
+
+    @keyframes preloaderFade {
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .preload-bar {
+      width: clamp(100px, 25vw, 200px);
+      height: 2px;
+      background: rgba(255, 255, 255, .06);
+      border-radius: 4px;
+      margin-top: 20px;
+      overflow: hidden
+    }
+
+    .preload-bar-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #c41e1e, #ff5500);
+      border-radius: 4px;
+      animation: barFill 1.6s ease-out forwards
+    }
+
+    @keyframes barFill {
+      to {
+        width: 100%
+      }
+    }
   </style>
+</head>
+
+<body style="background-color:#080305">
   <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Preloader: hero logo painted before React = instant LCP -->
+  <div id="preloader" aria-hidden="true">
+    <img src="/images/hero_logo.webp" alt="" width="400" height="320" fetchpriority="high">
+    <div class="preload-bar">
+      <div class="preload-bar-fill"></div>
+    </div>
+  </div>
+
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>

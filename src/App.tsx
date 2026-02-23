@@ -22,6 +22,15 @@ export default function App() {
     const [activeSection, setActiveSection] = useState('home');
     const activeSectionRef = useRef(activeSection);
 
+    // Dismiss HTML preloader once React is mounted
+    useEffect(() => {
+        document.documentElement.setAttribute('data-loaded', '');
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            setTimeout(() => preloader.remove(), 600);
+        }
+    }, []);
+
     // Sync ref when state changes
     useEffect(() => {
         activeSectionRef.current = activeSection;
