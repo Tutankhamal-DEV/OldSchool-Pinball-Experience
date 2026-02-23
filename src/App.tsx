@@ -1,7 +1,7 @@
 import { useEffect, useState, Suspense, lazy, useRef } from 'react'
 import { useContentProtection } from './hooks/useContentProtection'
-import CRTOverlay from './components/effects/CRTOverlay'
-import CookieConsent from './components/CookieConsent'
+const CRTOverlay = lazy(() => import('./components/effects/CRTOverlay'))
+const CookieConsent = lazy(() => import('./components/CookieConsent'))
 import Navbar from './components/Navbar'
 import Hero from './features/Hero'
 
@@ -91,7 +91,7 @@ export default function App() {
                 {/* Background Magic */}
                 <CanvasBackground activeSection={activeSection} />
 
-                <main className="relative z-50 w-full flex flex-col items-center">
+                <main id="main-content" className="relative z-50 w-full flex flex-col items-center">
                     <Hero />
                     <Atmosphere />
                     <AmericanBar />

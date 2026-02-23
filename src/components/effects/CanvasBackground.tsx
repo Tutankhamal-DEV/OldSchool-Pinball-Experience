@@ -17,14 +17,13 @@ const BG_MAP: Record<string, string | null> = {
     footer: null,
 };
 
-// Preload all background images so crossfade is instant
-if (typeof window !== 'undefined') {
-    Object.values(BG_MAP).forEach(src => {
-        if (src) {
-            const img = new Image();
-            img.src = src;
-        }
-    });
+// On-demand preloader — only fetches images as needed (current + adjacent sections)
+const preloadedImages = new Set<string>();
+function preloadImage(src: string | null) {
+    if (!src || preloadedImages.has(src)) return;
+    preloadedImages.add(src);
+    const img = new Image();
+    img.src = src;
 }
 
 // ══════════════════════════════════════════
@@ -189,6 +188,19 @@ export default function CanvasBackground({ activeSection }: { activeSection: str
     const lastFrameRef = useRef(0);
 
     const bgSrc = BG_MAP[activeSection] ?? null;
+
+    // Pre-load current + adjacent section images on demand
+    useEffect(() => {
+        const sections = Object.keys(BG_MAP);
+        const idx = sections.indexOf(activeSection);
+        // Preload current
+        preloadImage(BG_MAP[activeSection] ?? null);
+        // Preload adjacent
+        const prev = idx > 0 ? sections[idx - 1] : undefined;
+        const next = idx < sections.length - 1 ? sections[idx + 1] : undefined;
+        if (prev) preloadImage(BG_MAP[prev] ?? null);
+        if (next) preloadImage(BG_MAP[next] ?? null);
+    }, [activeSection]);
 
     useEffect(() => {
         const canvas = canvasRef.current;

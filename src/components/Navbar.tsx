@@ -96,6 +96,7 @@ export default function Navbar({ activeSection = 'home' }: NavbarProps) {
 
     return (
         <nav
+            aria-label="Main navigation"
             className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled
                 ? 'bg-pinball-black/90 backdrop-blur-md shadow-lg shadow-pinball-red/10'
                 : 'bg-transparent'
@@ -111,6 +112,8 @@ export default function Navbar({ activeSection = 'home' }: NavbarProps) {
                         <img
                             src="/images/nav_logo.webp"
                             alt="Old School Pinball"
+                            width={134}
+                            height={107}
                             className="h-10 w-auto object-contain
                 group-hover:brightness-125 transition-all duration-300"
                         />

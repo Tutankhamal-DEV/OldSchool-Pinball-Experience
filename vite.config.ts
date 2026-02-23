@@ -13,7 +13,9 @@ export default defineConfig({
     },
     build: {
         minify: 'esbuild',
+        cssMinify: true,
         target: 'es2020',
+        reportCompressedSize: false,
         rollupOptions: {
             output: {
                 manualChunks: {

@@ -32,6 +32,7 @@ export default function Hero() {
                         width={400}
                         height={320}
                         fetchPriority="high"
+                        loading="eager"
                         decoding="async"
                         className="hero-logo-shadow w-40 sm:w-48 md:w-60 lg:w-80 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300"
                     />
