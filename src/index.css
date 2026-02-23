@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./fonts.css";
 
 /* ===========================
    Old School Pinball — Design System
@@ -143,8 +144,7 @@ li {
 }
 
 .hero-logo-shadow {
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8))
-    drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
 }
 
 /* ===========================
@@ -173,6 +173,7 @@ li {
    =========================== */
 
 @keyframes neonPulse {
+
   0%,
   100% {
     box-shadow:
@@ -191,6 +192,7 @@ li {
 }
 
 @keyframes neonPulseYellow {
+
   0%,
   100% {
     box-shadow:
@@ -297,6 +299,7 @@ li {
 }
 
 @keyframes floatBounce {
+
   0%,
   100% {
     transform: translateY(0);
@@ -350,28 +353,24 @@ li {
    =========================== */
 
 .bg-radial-vignette {
-  background: radial-gradient(
-    ellipse at center,
-    transparent 30%,
-    rgba(8, 3, 5, 0.8) 90%,
-    rgba(8, 3, 5, 1) 100%
-  );
+  background: radial-gradient(ellipse at center,
+      transparent 30%,
+      rgba(8, 3, 5, 0.8) 90%,
+      rgba(8, 3, 5, 1) 100%);
 }
 
 .bg-feathered-shadow {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(8, 3, 5, 0.08) 4%,
-    rgba(8, 3, 5, 0.2) 10%,
-    rgba(8, 3, 5, 0.45) 20%,
-    rgba(8, 3, 5, 0.75) 35%,
-    rgba(8, 3, 5, 0.75) 65%,
-    rgba(8, 3, 5, 0.45) 80%,
-    rgba(8, 3, 5, 0.2) 90%,
-    rgba(8, 3, 5, 0.08) 96%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(8, 3, 5, 0.08) 4%,
+      rgba(8, 3, 5, 0.2) 10%,
+      rgba(8, 3, 5, 0.45) 20%,
+      rgba(8, 3, 5, 0.75) 35%,
+      rgba(8, 3, 5, 0.75) 65%,
+      rgba(8, 3, 5, 0.45) 80%,
+      rgba(8, 3, 5, 0.2) 90%,
+      rgba(8, 3, 5, 0.08) 96%,
+      transparent 100%);
 }
 
 .animate-neon-pulse {
@@ -431,16 +430,14 @@ li {
   inset: 0;
   border-radius: 8px;
   padding: 2px;
-  background: conic-gradient(
-    from var(--angle),
-    #ff0000,
-    #ffff00,
-    #00ff00,
-    #00ffff,
-    #0000ff,
-    #ff00ff,
-    #ff0000
-  );
+  background: conic-gradient(from var(--angle),
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -496,16 +493,14 @@ li {
   /* Pull it slightly to cover the 2px border */
   border-radius: 8px;
   padding: 2px;
-  background: conic-gradient(
-    from var(--angle),
-    #ff0000,
-    #ffff00,
-    #00ff00,
-    #00ffff,
-    #0000ff,
-    #ff00ff,
-    #ff0000
-  );
+  background: conic-gradient(from var(--angle),
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -552,13 +547,10 @@ li {
   border: 2px solid transparent;
   background:
     linear-gradient(135deg, #1a0505, #080305) padding-box,
-    linear-gradient(
-        90deg,
-        var(--color-pinball-red),
-        var(--color-pinball-yellow),
-        var(--color-pinball-red)
-      )
-      border-box;
+    linear-gradient(90deg,
+      var(--color-pinball-red),
+      var(--color-pinball-yellow),
+      var(--color-pinball-red)) border-box;
   background-size:
     100% 100%,
     200% 100%;
@@ -593,12 +585,10 @@ li {
   left: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transform: translateX(-200%) skewX(-25deg);
   animation: sweepGlassGlow 6s infinite ease-in-out;
   will-change: transform;
@@ -607,6 +597,7 @@ li {
 }
 
 @keyframes sweepGlassGlow {
+
   0%,
   70% {
     transform: translateX(-200%) skewX(-25deg);
@@ -624,12 +615,10 @@ li {
   /* Use background-image so it does not override background-position animated property */
   background-image:
     linear-gradient(135deg, #050505, #000000),
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       var(--color-pinball-red),
       var(--color-pinball-yellow),
-      var(--color-pinball-red)
-    ) !important;
+      var(--color-pinball-red)) !important;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
@@ -637,17 +626,14 @@ li {
 .btn-retro-rgb {
   background:
     linear-gradient(135deg, #1a0505, #080305) padding-box,
-    conic-gradient(
-        from var(--angle),
-        #ff0000,
-        #ffff00,
-        #00ff00,
-        #00ffff,
-        #0000ff,
-        #ff00ff,
-        #ff0000
-      )
-      border-box;
+    conic-gradient(from var(--angle),
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000) border-box;
   color: white;
   animation: rotateGlow 3s linear infinite;
 }
@@ -685,6 +671,7 @@ li {
 }
 
 @keyframes neon-inner-pulse {
+
   0%,
   100% {
     opacity: 1;
@@ -703,14 +690,12 @@ li {
   transform: translateX(-50%);
   width: 60%;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-pinball-red),
-    var(--color-pinball-yellow),
-    var(--color-pinball-red),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      var(--color-pinball-red),
+      var(--color-pinball-yellow),
+      var(--color-pinball-red),
+      transparent);
   border-radius: 2px;
 }
 
@@ -810,19 +795,15 @@ li {
 
 /* CRT Overlay Static Backgrounds */
 .crt-scanlines-bg {
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.06) 0px,
-    rgba(0, 0, 0, 0.06) 1px,
-    transparent 1px,
-    transparent 3px
-  );
+  background: repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.06) 0px,
+      rgba(0, 0, 0, 0.06) 1px,
+      transparent 1px,
+      transparent 3px);
 }
 
 .crt-vignette-bg {
-  background: radial-gradient(
-    ellipse at center,
-    transparent 50%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
+  background: radial-gradient(ellipse at center,
+      transparent 50%,
+      rgba(0, 0, 0, 0.4) 100%);
 }
