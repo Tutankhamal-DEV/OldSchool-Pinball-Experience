@@ -18,8 +18,11 @@
   <!-- Theme Color -->
   <meta name="theme-color" content="#ff5500" />
 
-  <!-- LCP Preloads -->
-  <link rel="preload" as="image" href="/images/hero_logo.webp" fetchpriority="high" type="image/webp" />
+  <!-- LCP Preloads — responsive: mobile gets smaller image -->
+  <link rel="preload" as="image" href="/images/hero_logo-sm.webp" fetchpriority="high" type="image/webp"
+    media="(max-width: 767px)" />
+  <link rel="preload" as="image" href="/images/hero_logo.webp" fetchpriority="high" type="image/webp"
+    media="(min-width: 768px)" />
 
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -123,7 +126,10 @@
 
   <!-- Preloader: hero logo painted before React = instant LCP -->
   <div id="preloader" aria-hidden="true">
-    <img src="/images/hero_logo.webp" alt="" width="800" height="637" fetchpriority="high">
+    <picture>
+      <source media="(max-width: 767px)" srcset="/images/hero_logo-sm.webp" type="image/webp">
+      <img src="/images/hero_logo.webp" alt="" width="800" height="637" fetchpriority="high">
+    </picture>
     <div class="preload-bar">
       <div class="preload-bar-fill"></div>
     </div>

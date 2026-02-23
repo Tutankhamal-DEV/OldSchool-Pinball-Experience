@@ -26,16 +26,19 @@ export default function Hero() {
                 >
                     {/* Background glow removed as per user request */}
 
-                    <img
-                        src="/images/hero_logo.webp"
-                        alt="Old School Pinball & Arcade"
-                        width={800}
-                        height={637}
-                        fetchPriority="high"
-                        loading="eager"
-                        decoding="async"
-                        className="hero-logo-shadow w-[72%] sm:w-60 md:w-64 lg:w-80 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300"
-                    />
+                    <picture>
+                        <source media="(max-width: 767px)" srcSet="/images/hero_logo-sm.webp" type="image/webp" />
+                        <img
+                            src="/images/hero_logo.webp"
+                            alt="Old School Pinball & Arcade"
+                            width={800}
+                            height={637}
+                            fetchPriority="high"
+                            loading="eager"
+                            decoding="async"
+                            className="hero-logo-shadow w-[72%] sm:w-60 md:w-64 lg:w-80 mx-auto relative z-10 animate-float cursor-pointer hover:scale-110 transition-transform duration-300"
+                        />
+                    </picture>
                 </motion.div>
 
                 <motion.div

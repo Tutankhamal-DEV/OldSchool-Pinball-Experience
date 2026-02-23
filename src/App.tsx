@@ -101,7 +101,7 @@ export default function App() {
                 {/* Background Magic */}
                 <CanvasBackground activeSection={activeSection} />
 
-                <main id="main-content" className="relative z-50 w-full flex flex-col items-center">
+                <main id="main-content" tabIndex={-1} className="relative z-50 w-full flex flex-col items-center">
                     <Hero />
                     <Atmosphere />
                     <AmericanBar />
