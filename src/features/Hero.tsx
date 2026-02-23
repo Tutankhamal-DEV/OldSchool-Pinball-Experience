@@ -55,17 +55,13 @@ export default function Hero() {
                     {/* Preloader image will be moved here by useEffect */}
                 </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.5, duration: 0.7, ease: 'easeOut' }}
-                    className="mb-6 mt-2"
-                >
+                {/* Hero title — uses CSS animation (not Framer Motion) so LCP text paints immediately on first render */}
+                <div className="mb-6 mt-2 animate-hero-title-in">
                     <h1 className="sr-only">Old School Pinball and Arcade Bar</h1>
                     <p className="font-elegant text-pinball-cream tracking-wide text-2xl leading-tight sm:text-3xl md:text-4xl lg:text-5xl px-2">
                         {t('hero.title_part1')}<span>{t('hero.title_highlight')}</span>{t('hero.title_part2', '')}
                     </p>
-                </motion.div>
+                </div>
 
                 {/* ── Award Badge ── */}
                 <motion.div

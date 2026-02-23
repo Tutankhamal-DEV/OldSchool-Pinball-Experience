@@ -169,6 +169,8 @@ export default function Media() {
                     <img
                         src={isPlaying ? "/images/tv-frame-on.avif" : "/images/tv-frame-off.avif"}
                         alt="TV Retro Frame"
+                        width={981}
+                        height={588}
                         className="relative block w-full h-auto z-30 drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] pointer-events-none transition-none"
                     />
 
