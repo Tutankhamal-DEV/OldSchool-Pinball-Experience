@@ -47,17 +47,15 @@ export default function Hero() {
     >
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
         {/* ── Logo — adopted from preloader, no new <img> = no new LCP ── */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, y: 30, filter: "blur(10px)" }}
-          animate={
-            inView ? { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" } : {}
-          }
-          transition={{ duration: 1, ease: "easeOut" }}
+        {/* Plain div (NOT motion.div) so the adopted image paints immediately.
+            The preloader handles the entrance animation — a second Framer Motion
+            opacity:0 → 1 on this container was adding ~980ms of LCP render delay. */}
+        <div
           className="mb-6 relative"
           ref={logoContainerRef}
         >
           {/* Preloader image will be moved here by useEffect */}
-        </motion.div>
+        </div>
 
         {/* Hero title — uses CSS animation (not Framer Motion) so LCP text paints immediately on first render */}
         <div className="mb-6 mt-2 animate-hero-title-in">
