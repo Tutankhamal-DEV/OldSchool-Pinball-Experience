@@ -1,6 +1,10 @@
 node_modules
 dist
 
+# Environment variables (secrets)
+.env
+.env.local
+
 # Residual/generated files
 *.txt
 !README.md

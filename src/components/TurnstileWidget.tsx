@@ -10,7 +10,8 @@ declare global {
           callback: (token: string) => void;
           "error-callback"?: () => void;
           theme?: "light" | "dark" | "auto";
-          size?: "normal" | "compact";
+          size?: "normal" | "compact" | "flexible";
+          appearance?: "always" | "execute" | "interaction-only";
         },
       ) => string;
       remove: (id: string) => void;
@@ -20,8 +21,9 @@ declare global {
 
 const TURNSTILE_SCRIPT =
   "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-// Test key — replace with real key before deploy
-const SITE_KEY = "1x00000000000000000000AA";
+
+const SITE_KEY =
+  import.meta.env.VITE_TURNSTILE_SITE_KEY || "1x00000000000000000000AA";
 
 interface Props {
   onVerify: (token: string) => void;
@@ -38,6 +40,7 @@ export default function TurnstileWidget({ onVerify }: Props) {
       callback: onVerify,
       theme: "dark",
       size: "normal",
+      appearance: "interaction-only",
     });
   }, [onVerify]);
 

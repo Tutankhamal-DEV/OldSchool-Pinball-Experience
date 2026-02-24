@@ -42,15 +42,41 @@ export default function ContactFormModal({
   // State
   const [step, setStep] = useState(0);
   const [captchaOk, setCaptchaOk] = useState(false);
+  const [captchaVerifying, setCaptchaVerifying] = useState(false);
+  const [captchaError, setCaptchaError] = useState("");
   const [reason, setReason] = useState(preselectedReason || "general");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [description, setDescription] = useState("");
 
+  const handleTurnstileVerify = async (token: string) => {
+    setCaptchaVerifying(true);
+    setCaptchaError("");
+    try {
+      const res = await fetch("/api/verify-turnstile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setCaptchaOk(true);
+      } else {
+        setCaptchaError(t("forms.captcha_fail", "Verificação falhou. Tente novamente."));
+      }
+    } catch {
+      setCaptchaError(t("forms.captcha_fail", "Verificação falhou. Tente novamente."));
+    } finally {
+      setCaptchaVerifying(false);
+    }
+  };
+
   const handleClose = () => {
     setStep(0);
     setCaptchaOk(false);
+    setCaptchaVerifying(false);
+    setCaptchaError("");
     setReason(preselectedReason || "general");
     setName("");
     setEmail("");
@@ -96,10 +122,20 @@ export default function ContactFormModal({
           <p className="font-body text-sm text-pinball-cream/70 text-center">
             {t("forms.captcha_desc", "Complete a verificação para continuar.")}
           </p>
-          <TurnstileWidget onVerify={() => setCaptchaOk(true)} />
+          <TurnstileWidget onVerify={handleTurnstileVerify} />
+          {captchaVerifying && (
+            <p className="font-tech text-xs text-pinball-cream/50 animate-pulse">
+              {t("forms.captcha_verifying", "Verificando...")}
+            </p>
+          )}
           {captchaOk && (
             <p className="font-tech text-xs text-green-400">
               ✓ {t("forms.captcha_ok", "Verificado com sucesso!")}
+            </p>
+          )}
+          {captchaError && (
+            <p className="font-tech text-xs text-red-400">
+              ✗ {captchaError}
             </p>
           )}
         </div>
@@ -115,11 +151,10 @@ export default function ContactFormModal({
             <button
               key={r.id}
               onClick={() => setReason(r.id)}
-              className={`w-full p-4 rounded-lg border text-left transition-all duration-200 ${
-                reason === r.id
+              className={`w-full p-4 rounded-lg border text-left transition-all duration-200 ${reason === r.id
                   ? "border-pinball-red bg-pinball-red/10 shadow-[0_0_15px_rgba(196,30,42,0.2)]"
                   : "border-white/10 bg-white/5 hover:border-white/20"
-              }`}
+                }`}
             >
               <span className="font-tech text-sm text-pinball-cream">
                 {r.label}

@@ -71,6 +71,8 @@ export default function TicketFormModal({
   // State
   const [step, setStep] = useState(0);
   const [captchaOk, setCaptchaOk] = useState(false);
+  const [captchaVerifying, setCaptchaVerifying] = useState(false);
+  const [captchaError, setCaptchaError] = useState("");
   const [cart, setCart] = useState<CartItem[]>(() => {
     const initial = preselectedPlan || "online";
     return [{ planId: initial, guests: [emptyGuest(initial)] }];
@@ -80,9 +82,33 @@ export default function TicketFormModal({
   // Track which cart item's guests we're editing
   const [editingIdx, setEditingIdx] = useState(0);
 
+  const handleTurnstileVerify = async (token: string) => {
+    setCaptchaVerifying(true);
+    setCaptchaError("");
+    try {
+      const res = await fetch("/api/verify-turnstile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setCaptchaOk(true);
+      } else {
+        setCaptchaError(t("forms.captcha_fail", "Verificação falhou. Tente novamente."));
+      }
+    } catch {
+      setCaptchaError(t("forms.captcha_fail", "Verificação falhou. Tente novamente."));
+    } finally {
+      setCaptchaVerifying(false);
+    }
+  };
+
   const handleClose = () => {
     setStep(0);
     setCaptchaOk(false);
+    setCaptchaVerifying(false);
+    setCaptchaError("");
     setCart([
       {
         planId: preselectedPlan || "online",
@@ -132,11 +158,11 @@ export default function TicketFormModal({
       prev.map((c, ci) =>
         ci === cartIdx
           ? {
-              ...c,
-              guests: c.guests.map((g, gi) =>
-                gi === guestIdx ? { ...g, [field]: value } : g,
-              ),
-            }
+            ...c,
+            guests: c.guests.map((g, gi) =>
+              gi === guestIdx ? { ...g, [field]: value } : g,
+            ),
+          }
           : c,
       ),
     );
@@ -200,10 +226,20 @@ export default function TicketFormModal({
           <p className="font-body text-sm text-pinball-cream/70 text-center">
             {t("forms.captcha_desc", "Complete a verificação para continuar.")}
           </p>
-          <TurnstileWidget onVerify={() => setCaptchaOk(true)} />
+          <TurnstileWidget onVerify={handleTurnstileVerify} />
+          {captchaVerifying && (
+            <p className="font-tech text-xs text-pinball-cream/50 animate-pulse">
+              {t("forms.captcha_verifying", "Verificando...")}
+            </p>
+          )}
           {captchaOk && (
             <p className="font-tech text-xs text-green-400">
               ✓ {t("forms.captcha_ok", "Verificado com sucesso!")}
+            </p>
+          )}
+          {captchaError && (
+            <p className="font-tech text-xs text-red-400">
+              ✗ {captchaError}
             </p>
           )}
         </div>
@@ -227,11 +263,10 @@ export default function TicketFormModal({
             return (
               <div
                 key={p.id}
-                className={`flex items-center justify-between p-4 rounded-lg border transition-all duration-200 ${
-                  qty > 0
+                className={`flex items-center justify-between p-4 rounded-lg border transition-all duration-200 ${qty > 0
                     ? "border-pinball-red bg-pinball-red/10"
                     : "border-white/10 bg-white/5"
-                }`}
+                  }`}
               >
                 <div>
                   <p className="font-pixel text-xs text-pinball-cream">
@@ -305,11 +340,10 @@ export default function TicketFormModal({
                 <button
                   key={c.planId}
                   onClick={() => setEditingIdx(ci)}
-                  className={`flex-1 py-2 px-3 rounded-lg font-tech text-xs transition-colors ${
-                    editingIdx === ci
+                  className={`flex-1 py-2 px-3 rounded-lg font-tech text-xs transition-colors ${editingIdx === ci
                       ? "bg-pinball-red text-white"
                       : "bg-white/5 text-pinball-cream/60 hover:bg-white/10"
-                  }`}
+                    }`}
                 >
                   {getPlan(c.planId).name} ({c.guests.length})
                 </button>
