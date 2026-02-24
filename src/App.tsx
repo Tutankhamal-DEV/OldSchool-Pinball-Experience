@@ -144,6 +144,10 @@ export default function App() {
           <Footer />
         </section>
 
+      </Suspense>
+
+      {/* Chatbot in its own Suspense so loading its chunk doesn't flash the main content */}
+      <Suspense fallback={null}>
         {chatbotReady && <Chatbot />}
       </Suspense>
 
