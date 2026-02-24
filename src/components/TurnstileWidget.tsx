@@ -40,7 +40,7 @@ export default function TurnstileWidget({ onVerify }: Props) {
       callback: onVerify,
       theme: "dark",
       size: "normal",
-      appearance: "interaction-only",
+      appearance: "always",
     });
   }, [onVerify]);
 
