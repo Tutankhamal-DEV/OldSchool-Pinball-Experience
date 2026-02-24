@@ -8,11 +8,14 @@ import { useEffect, useRef, useState } from "react";
 type BgEntry = { sm: string; lg: string } | null;
 
 const BG_MAP: Record<string, BgEntry> = {
-  home: { sm: "/images/ambiente_04-sm.webp", lg: "/images/ambiente_04.webp" },
+  home: {
+    sm: "/images/ambiente_04_bg-sm.webp",
+    lg: "/images/ambiente_04_bg.webp",
+  },
   sobre: { sm: "/images/ambiente_05-sm.webp", lg: "/images/ambiente_05.webp" },
   maquinas: {
-    sm: "/images/ambiente_04-sm.webp",
-    lg: "/images/ambiente_04.webp",
+    sm: "/images/ambiente_04_bg-sm.webp",
+    lg: "/images/ambiente_04_bg.webp",
   },
   bar: {
     sm: "/images/ambiente_do_bar-sm.webp",
@@ -28,8 +31,8 @@ const BG_MAP: Record<string, BgEntry> = {
     lg: "/images/ambiente_01.webp",
   },
   contato: {
-    sm: "/images/ambiente_04-sm.webp",
-    lg: "/images/ambiente_04.webp",
+    sm: "/images/ambiente_04_bg-sm.webp",
+    lg: "/images/ambiente_04_bg.webp",
   },
   footer: null,
 };
@@ -309,28 +312,26 @@ export default function CanvasBackground({
     };
   }, []);
 
-  // Layer order: image (z-20) → dark shadow (z-25) → canvas (z-35) → vignette (z-39) → content (z-50)
+  // Layer order: image (z-20) → center shadow (z-25) → canvas (z-35) → content (z-50)
   return (
     <>
       {/* 1. Background image — crossfade between sections */}
       <CrossfadeImage entry={bgEntry} />
 
-      {/* 2. Feathered shadow — dark center strip between image and canvas */}
+      {/* 2. Center shadow — darker center fading to transparent edges */}
       <div
-        className="fixed inset-y-0 left-1/2 -translate-x-1/2 w-full max-w-[90vw] pointer-events-none bg-feathered-shadow z-[25]"
+        className="fixed inset-0 w-full h-full pointer-events-none z-[25]"
         aria-hidden="true"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(8,3,5,0.15) 0%, rgba(8,3,5,0.65) 30%, rgba(8,3,5,0.8) 50%, rgba(8,3,5,0.65) 70%, rgba(8,3,5,0.15) 100%)",
+        }}
       />
 
       {/* 3. Canvas animation — checkerboard pattern */}
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 w-full h-full pointer-events-none mix-blend-screen transition-opacity duration-1000 ease-in-out z-[35]"
-        aria-hidden="true"
-      />
-
-      {/* 4. Radial vignette — darkens screen edges */}
-      <div
-        className="fixed inset-0 w-full h-full pointer-events-none bg-radial-vignette z-[39]"
+        className="fixed inset-0 w-full h-full pointer-events-none mix-blend-screen transition-opacity duration-1000 ease-in-out z-[22]"
         aria-hidden="true"
       />
     </>

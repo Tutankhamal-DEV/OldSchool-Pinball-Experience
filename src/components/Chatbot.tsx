@@ -16,27 +16,14 @@ export default function Chatbot() {
   const [inputValue, setInputValue] = useState("");
   const [messages, setMessages] = useState<MessageType[]>([]);
   const [showTooltip, setShowTooltip] = useState(true);
-  const [isAtBottom, setIsAtBottom] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const msgIdRef = useRef(0);
   const nextId = () => (++msgIdRef.current).toString();
 
   // Tooltip timeout
   useEffect(() => {
-    const timer = setTimeout(() => setShowTooltip(false), 4000);
+    const timer = setTimeout(() => setShowTooltip(false), 5000);
     return () => clearTimeout(timer);
-  }, []);
-
-  // Scroll listener to prevent footer overlap
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.innerHeight + window.scrollY;
-      const documentHeight = document.documentElement.scrollHeight;
-      setIsAtBottom(documentHeight - scrollPosition < 280);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Initialize bot welcome message when opened for the first time
@@ -137,7 +124,7 @@ export default function Chatbot() {
     <>
       {/* Floating CTA Button */}
       <div
-        className={`fixed right-6 z-[100] flex flex-col items-end gap-2 transition-all duration-300 ${isAtBottom ? "bottom-40 sm:bottom-48" : "bottom-6"}`}
+        className={`fixed right-6 bottom-6 z-[100] flex flex-col items-end gap-2 transition-all duration-300`}
       >
         <AnimatePresence>
           {!isOpen && showTooltip && (

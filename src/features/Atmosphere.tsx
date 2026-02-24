@@ -60,7 +60,7 @@ export default function Atmosphere() {
           </p>
         </motion.div>
 
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {AREAS.map((area, i) => {
             const Icon = area.icon;
             return (
@@ -113,7 +113,7 @@ export default function Atmosphere() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 p-8 md:p-12 flex flex-col md:flex-row items-start md:items-center gap-6">
+                <div className="relative z-10 p-6 md:p-8 flex flex-col items-center text-center gap-4">
                   <div
                     className={`p-4 rounded-lg bg-pinball-black/50 border-2 border-current/20 backdrop-blur-sm ${area.accent}`}
                   >

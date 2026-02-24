@@ -18,11 +18,9 @@
   <!-- Theme Color -->
   <meta name="theme-color" content="#ff5500" />
 
-  <!-- LCP Preloads — responsive: mobile gets smaller image -->
-  <link rel="preload" as="image" href="/images/hero_logo-sm.webp" fetchpriority="high" type="image/webp"
-    media="(max-width: 767px)" />
-  <link rel="preload" as="image" href="/images/hero_logo.webp" fetchpriority="high" type="image/webp"
-    media="(min-width: 768px)" />
+  <!-- LCP Preload — single SVG logo used everywhere -->
+  <link rel="preload" as="image" href="/images/logo_oldschool_vector_600p.svg" fetchpriority="high"
+    type="image/svg+xml" />
 
 
   <!-- Fonts: self-hosted, loaded non-render-blocking -->
@@ -99,10 +97,7 @@
 
   <!-- Preloader: hero logo painted before React = instant LCP -->
   <div id="preloader" aria-hidden="true">
-    <picture>
-      <source media="(max-width: 767px)" srcset="/images/hero_logo-sm.webp" type="image/webp">
-      <img src="/images/hero_logo.webp" alt="" width="800" height="637" fetchpriority="high">
-    </picture>
+    <img src="/images/logo_oldschool_vector_600p.svg" alt="" width="600" height="478" fetchpriority="high">
   </div>
 
   <div id="root"></div>

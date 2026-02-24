@@ -6,17 +6,17 @@ import { useTranslation } from "react-i18next";
 
 // The 11 pages of the menu
 const MENU_PAGES = [
-  "/american-bar-menu/page1.avif",
-  "/american-bar-menu/page2.avif",
-  "/american-bar-menu/page3.avif",
-  "/american-bar-menu/page4.avif",
-  "/american-bar-menu/page5.avif",
-  "/american-bar-menu/page6.avif",
-  "/american-bar-menu/page7.avif",
-  "/american-bar-menu/page8.avif",
-  "/american-bar-menu/page9.avif",
-  "/american-bar-menu/page10.avif",
-  "/american-bar-menu/page11.avif",
+  "/american-bar-menu/page1.webp",
+  "/american-bar-menu/page2.webp",
+  "/american-bar-menu/page3.webp",
+  "/american-bar-menu/page4.webp",
+  "/american-bar-menu/page5.webp",
+  "/american-bar-menu/page6.webp",
+  "/american-bar-menu/page7.webp",
+  "/american-bar-menu/page8.webp",
+  "/american-bar-menu/page9.webp",
+  "/american-bar-menu/page10.webp",
+  "/american-bar-menu/page11.webp",
 ];
 
 // ForwardRef component required by react-pageflip for each page
@@ -248,29 +248,33 @@ export default function AmericanBar() {
             whileHover={{ y: -10, scale: 1.02 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            {/* Visual Hint — inside the container, pointing left, behind the cover */}
+            {/* Visual Hint — large chevron pointing right, lateral bounce */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 1.5, duration: 0.8 }}
-              className="hidden md:flex absolute top-1/2 left-[5%] xl:left-[8%] -translate-y-1/2 items-center gap-2 pointer-events-none z-0"
+              className="hidden md:flex absolute top-1/2 left-[18%] xl:left-[22%] -translate-y-1/2 flex-col items-center gap-1 pointer-events-none z-0"
             >
-              <div className="animate-bounce text-pinball-yellow/60">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M19 12H5" />
-                  <path d="m12 19-7-7 7-7" />
-                </svg>
-              </div>
-              <div className="text-pinball-yellow/60 font-pixel text-[10px] tracking-widest whitespace-nowrap">
+              <motion.svg
+                animate={{ x: [0, -14, 0] }}
+                transition={{
+                  duration: 1.4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                width="100"
+                height="100"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-pinball-yellow/50"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </motion.svg>
+              <div className="text-pinball-yellow/50 font-pixel text-[11px] tracking-widest whitespace-nowrap">
                 {t("american_bar.hint_desktop")}
               </div>
             </motion.div>

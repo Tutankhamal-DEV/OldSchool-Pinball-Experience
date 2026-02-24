@@ -121,23 +121,16 @@ export default function App() {
 
           {/* Pre-footer Logo */}
           <div className="flex justify-center py-12 relative z-[100]">
-            <picture>
-              <source
-                media="(max-width: 767px)"
-                srcSet="/images/hero_logo-sm.webp"
-                type="image/webp"
-              />
-              <img
-                src="/images/hero_logo.webp"
-                alt="Old School Pinball"
-                className="h-24 md:h-32 w-auto object-contain hover:scale-105 transition-transform duration-300 cursor-pointer"
-                width={800}
-                height={637}
-                loading="lazy"
-                decoding="async"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              />
-            </picture>
+            <img
+              src="/images/logo_oldschool_vector_600p.svg"
+              alt="Old School Pinball"
+              className="h-24 md:h-32 w-auto object-contain hover:scale-105 transition-transform duration-300 cursor-pointer"
+              width={600}
+              height={478}
+              loading="lazy"
+              decoding="async"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            />
           </div>
 
           {/* Footer */}

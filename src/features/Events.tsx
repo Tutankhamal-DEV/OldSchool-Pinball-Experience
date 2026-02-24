@@ -56,7 +56,7 @@ export default function Events() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {EVENT_TYPES.map((event, i) => {
             const Icon = event.icon;
             return (

@@ -101,8 +101,9 @@ export default function WhatsAppModal({
               {steps.map((_, i) => (
                 <div
                   key={i}
-                  className={`h-1 flex-1 rounded-full transition-colors duration-300 ${i <= currentStep ? "bg-pinball-red" : "bg-white/10"
-                    }`}
+                  className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
+                    i <= currentStep ? "bg-pinball-red" : "bg-white/10"
+                  }`}
                 />
               ))}
             </div>

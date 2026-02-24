@@ -150,9 +150,9 @@ export default function Machines() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: 0.2, duration: 0.7 }}
-          className="relative overflow-hidden rounded-lg border-2 border-pinball-red/20 mb-10 group bg-pinball-black"
+          className="glass-panel relative rounded-lg mb-10 bg-pinball-black"
         >
-          <div className="aspect-[21/9] relative">
+          <div className="aspect-[21/9] relative overflow-hidden rounded-lg">
             {BANNER_SLIDES.map((slide, index) => (
               <div
                 key={index}

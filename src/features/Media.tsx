@@ -211,8 +211,8 @@ export default function Media() {
           <img
             src={
               isPlaying
-                ? "/images/tv-frame-on.avif"
-                : "/images/tv-frame-off.avif"
+                ? "/images/tv-frame-on.webp"
+                : "/images/tv-frame-off.webp"
             }
             alt="TV Retro Frame"
             width={981}

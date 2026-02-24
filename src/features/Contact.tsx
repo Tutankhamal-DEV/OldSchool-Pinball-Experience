@@ -113,19 +113,21 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="glass-panel overflow-hidden h-[350px] lg:h-auto transition-all duration-300 hover:border-pinball-neon-red hover:shadow-[0_0_15px_rgba(255,42,42,0.3)] cursor-crosshair"
+            className="glass-panel h-[350px] lg:h-auto transition-all duration-300 hover:border-pinball-neon-red hover:shadow-[0_0_15px_rgba(255,42,42,0.3)] cursor-crosshair"
           >
-            <iframe
-              title="Old School Pinball — Localização"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1234!2d-46.6234!3d-23.5689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.+Teodureto+Souto%2C+292a+-+Cambuci%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1"
-              className="w-full h-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              style={{
-                filter:
-                  "invert(0.9) hue-rotate(180deg) saturate(0.3) brightness(0.7)",
-              }}
-            />
+            <div className="w-full h-full overflow-hidden rounded-lg">
+              <iframe
+                title="Old School Pinball — Localização"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1234!2d-46.6234!3d-23.5689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.+Teodureto+Souto%2C+292a+-+Cambuci%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1"
+                className="w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                style={{
+                  filter:
+                    "invert(0.9) hue-rotate(180deg) saturate(0.3) brightness(0.7)",
+                }}
+              />
+            </div>
           </motion.div>
         </div>
 

@@ -116,7 +116,7 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
         scrolled
           ? "bg-pinball-black/90 backdrop-blur-md shadow-lg shadow-pinball-red/10"
-          : "bg-transparent"
+          : "bg-gradient-to-b from-black/80 via-black/40 to-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -131,10 +131,10 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
             data-nav-logo
           >
             <img
-              src="/images/nav_logo.webp"
+              src="/images/logo_oldschool_vector_600p.svg"
               alt="Old School Pinball"
-              width={134}
-              height={107}
+              width={600}
+              height={478}
               className="h-10 w-auto object-contain
                 group-hover:brightness-125 transition-all duration-300"
             />
