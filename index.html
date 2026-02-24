@@ -25,7 +25,13 @@
     media="(min-width: 768px)" />
 
 
-  <!-- Fonts are self-hosted in /fonts/ — no Google Fonts CDN needed -->
+  <!-- Fonts: self-hosted, loaded non-render-blocking -->
+  <link rel="preload" as="font" href="/fonts/6aez4K2oVqwIvtU2Hw.woff2" crossorigin type="font/woff2">
+  <link rel="preload" as="font" href="/fonts/6ae84K2oVqwItm4TCpAy2g.woff2" crossorigin type="font/woff2">
+  <link rel="stylesheet" href="/fonts.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="/fonts.css" />
+  </noscript>
 
   <title>Old School · Pinball · Arcade · Bar · São Paulo</title>
 
