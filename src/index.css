@@ -143,8 +143,7 @@ li {
 }
 
 .hero-logo-shadow {
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8))
-    drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 30px rgba(0, 0, 0, 0.5));
 }
 
 /* ===========================
@@ -172,37 +171,29 @@ li {
    Animations
    =========================== */
 
-@keyframes neonPulse {
+/* GPU-composited neon pulse: animate opacity on a pseudo-element
+   instead of box-shadow on the element itself */
+@keyframes neonPulseOpacity {
+
   0%,
   100% {
-    box-shadow:
-      0 0 5px var(--color-pinball-red),
-      0 0 10px var(--color-pinball-red),
-      0 0 20px rgba(196, 30, 42, 0.4);
+    opacity: 0.5;
   }
 
   50% {
-    box-shadow:
-      0 0 10px var(--color-pinball-red),
-      0 0 20px var(--color-pinball-red),
-      0 0 40px rgba(196, 30, 42, 0.6),
-      0 0 60px rgba(196, 30, 42, 0.3);
+    opacity: 1;
   }
 }
 
-@keyframes neonPulseYellow {
+@keyframes neonPulseYellowOpacity {
+
   0%,
   100% {
-    box-shadow:
-      0 0 5px var(--color-pinball-yellow),
-      0 0 10px rgba(255, 0, 255, 0.3);
+    opacity: 0.4;
   }
 
   50% {
-    box-shadow:
-      0 0 10px var(--color-pinball-yellow),
-      0 0 25px rgba(255, 0, 255, 0.5),
-      0 0 50px rgba(0, 243, 255, 0.4);
+    opacity: 0.8;
   }
 }
 
@@ -297,6 +288,7 @@ li {
 }
 
 @keyframes floatBounce {
+
   0%,
   100% {
     transform: translateY(0);
@@ -350,23 +342,61 @@ li {
    =========================== */
 
 .animate-neon-pulse {
-  animation: neonPulse 3s ease-in-out infinite;
+  position: relative;
+  box-shadow:
+    0 0 10px var(--color-pinball-red),
+    0 0 20px var(--color-pinball-red),
+    0 0 40px rgba(196, 30, 42, 0.6);
+}
+
+.animate-neon-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    0 0 10px var(--color-pinball-red),
+    0 0 30px var(--color-pinball-red),
+    0 0 60px rgba(196, 30, 42, 0.5);
+  animation: neonPulseOpacity 3s ease-in-out infinite;
+  will-change: opacity;
+  pointer-events: none;
 }
 
 .animate-neon-pulse-yellow {
-  animation: neonPulseYellow 3s ease-in-out infinite;
+  position: relative;
+  box-shadow:
+    0 0 5px var(--color-pinball-yellow),
+    0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+.animate-neon-pulse-yellow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    0 0 10px var(--color-pinball-yellow),
+    0 0 25px rgba(255, 0, 255, 0.5),
+    0 0 50px rgba(0, 243, 255, 0.4);
+  animation: neonPulseYellowOpacity 3s ease-in-out infinite;
+  will-change: opacity;
+  pointer-events: none;
 }
 
 .animate-text-flicker {
   animation: textFlicker 4s infinite;
+  will-change: opacity;
 }
 
 .animate-scanline-wipe {
   animation: scanlineWipe 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
 }
 
 .animate-float {
   animation: floatBounce 3s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-slide-in {
@@ -406,16 +436,14 @@ li {
   inset: 0;
   border-radius: 8px;
   padding: 2px;
-  background: conic-gradient(
-    from var(--angle),
-    #ff0000,
-    #ffff00,
-    #00ff00,
-    #00ffff,
-    #0000ff,
-    #ff00ff,
-    #ff0000
-  );
+  background: conic-gradient(from var(--angle),
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -471,16 +499,14 @@ li {
   /* Pull it slightly to cover the 2px border */
   border-radius: 8px;
   padding: 2px;
-  background: conic-gradient(
-    from var(--angle),
-    #ff0000,
-    #ffff00,
-    #00ff00,
-    #00ffff,
-    #0000ff,
-    #ff00ff,
-    #ff0000
-  );
+  background: conic-gradient(from var(--angle),
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -527,17 +553,15 @@ li {
   border: 2px solid transparent;
   background:
     linear-gradient(135deg, #1a0505, #080305) padding-box,
-    linear-gradient(
-        90deg,
-        var(--color-pinball-red),
-        var(--color-pinball-yellow),
-        var(--color-pinball-red)
-      )
-      border-box;
+    linear-gradient(90deg,
+      var(--color-pinball-red),
+      var(--color-pinball-yellow),
+      var(--color-pinball-red)) border-box;
   background-size:
     100% 100%,
     200% 100%;
   animation: btnBorderSlide 2s linear infinite;
+  will-change: background-position;
   box-shadow: 0 0 10px rgba(255, 42, 42, 0.3);
 }
 
@@ -568,12 +592,10 @@ li {
   left: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transform: translateX(-200%) skewX(-25deg);
   animation: sweepGlassGlow 6s infinite ease-in-out;
   will-change: transform;
@@ -582,6 +604,7 @@ li {
 }
 
 @keyframes sweepGlassGlow {
+
   0%,
   70% {
     transform: translateX(-200%) skewX(-25deg);
@@ -599,12 +622,10 @@ li {
   /* Use background-image so it does not override background-position animated property */
   background-image:
     linear-gradient(135deg, #050505, #000000),
-    linear-gradient(
-      90deg,
+    linear-gradient(90deg,
       var(--color-pinball-red),
       var(--color-pinball-yellow),
-      var(--color-pinball-red)
-    ) !important;
+      var(--color-pinball-red)) !important;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
@@ -612,17 +633,14 @@ li {
 .btn-retro-rgb {
   background:
     linear-gradient(135deg, #1a0505, #080305) padding-box,
-    conic-gradient(
-        from var(--angle),
-        #ff0000,
-        #ffff00,
-        #00ff00,
-        #00ffff,
-        #0000ff,
-        #ff00ff,
-        #ff0000
-      )
-      border-box;
+    conic-gradient(from var(--angle),
+      #ff0000,
+      #ffff00,
+      #00ff00,
+      #00ffff,
+      #0000ff,
+      #ff00ff,
+      #ff0000) border-box;
   color: white;
   animation: rotateGlow 3s linear infinite;
 }
@@ -660,6 +678,7 @@ li {
 }
 
 @keyframes neon-inner-pulse {
+
   0%,
   100% {
     opacity: 1;
@@ -678,14 +697,12 @@ li {
   transform: translateX(-50%);
   width: 60%;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-pinball-red),
-    var(--color-pinball-yellow),
-    var(--color-pinball-red),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      var(--color-pinball-red),
+      var(--color-pinball-yellow),
+      var(--color-pinball-red),
+      transparent);
   border-radius: 2px;
 }
 
@@ -785,19 +802,15 @@ li {
 
 /* CRT Overlay Static Backgrounds */
 .crt-scanlines-bg {
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.06) 0px,
-    rgba(0, 0, 0, 0.06) 1px,
-    transparent 1px,
-    transparent 3px
-  );
+  background: repeating-linear-gradient(0deg,
+      rgba(0, 0, 0, 0.06) 0px,
+      rgba(0, 0, 0, 0.06) 1px,
+      transparent 1px,
+      transparent 3px);
 }
 
 .crt-vignette-bg {
-  background: radial-gradient(
-    ellipse at center,
-    transparent 50%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
+  background: radial-gradient(ellipse at center,
+      transparent 50%,
+      rgba(0, 0, 0, 0.4) 100%);
 }
