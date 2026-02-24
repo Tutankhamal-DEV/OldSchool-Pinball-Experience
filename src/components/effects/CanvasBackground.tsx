@@ -273,8 +273,15 @@ export default function CanvasBackground({
     let cachedH = window.innerHeight;
 
     const resize = () => {
-      cachedW = window.innerWidth;
-      cachedH = window.innerHeight;
+      const newW = window.innerWidth;
+      const newH = window.innerHeight;
+      // Skip height-only changes (mobile address bar show/hide)
+      // This prevents expensive canvas re-dimensioning during normal scroll
+      if (newW === cachedW && newH !== cachedH) {
+        return;
+      }
+      cachedW = newW;
+      cachedH = newH;
       const dpr = window.devicePixelRatio || 1;
       canvas.width = cachedW * dpr;
       canvas.height = cachedH * dpr;

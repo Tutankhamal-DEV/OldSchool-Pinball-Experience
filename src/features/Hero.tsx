@@ -42,7 +42,7 @@ export default function Hero() {
     <section
       id="home"
       ref={ref}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      className="relative min-h-svh flex items-center justify-center overflow-hidden pt-16"
       style={{ zIndex: 1 }}
     >
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">

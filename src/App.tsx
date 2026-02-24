@@ -96,7 +96,7 @@ export default function App() {
   }, []); // Empty dependency array, observer never recreates
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden text-pinball-cream font-sans">
+    <div className="relative min-h-svh overflow-x-hidden text-pinball-cream font-sans">
       {/* CRT Scanline Overlay */}
       <CRTOverlay />
 

@@ -113,11 +113,10 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
   return (
     <nav
       aria-label="Main navigation"
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled
           ? "bg-pinball-black/90 backdrop-blur-md shadow-lg shadow-pinball-red/10"
           : "bg-gradient-to-b from-black/80 via-black/40 to-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
@@ -143,9 +142,8 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
           {/* Desktop Nav — hidden when overflowed */}
           <div
             ref={linksRef}
-            className={`items-center gap-1 flex-nowrap whitespace-nowrap overflow-hidden ${
-              overflowed ? "hidden" : "flex"
-            }`}
+            className={`items-center gap-1 flex-nowrap whitespace-nowrap overflow-hidden ${overflowed ? "hidden" : "flex"
+              }`}
           >
             {NAV_LINKS_BASE.map((link) => {
               const isActive = activeSection === link.sectionId;
@@ -153,17 +151,15 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`relative px-3 py-2 font-tech text-sm transition-colors duration-300 group ${
-                    isActive
+                  className={`relative px-3 py-2 font-tech text-sm transition-colors duration-300 group ${isActive
                       ? "text-pinball-red"
                       : "text-pinball-cream/80 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {t(`navbar.${link.key}`)}
                   <span
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-pinball-red rounded-full transition-all duration-300 ${
-                      isActive ? "w-4/5" : "w-0 group-hover:w-4/5"
-                    }`}
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-pinball-red rounded-full transition-all duration-300 ${isActive ? "w-4/5" : "w-0 group-hover:w-4/5"
+                      }`}
                   />
                 </a>
               );
@@ -203,13 +199,11 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
 
       {/* Mobile drawer — visible when overflowed */}
       <div
-        className={`fixed left-0 right-0 top-16 h-[calc(100vh-4rem)] bg-pinball-black/95 backdrop-blur-lg border-t border-pinball-red/20 overflow-y-auto transition-all duration-300 ${
-          !overflowed ? "hidden" : ""
-        } ${
-          mobileOpen
+        className={`fixed left-0 right-0 top-16 h-[calc(100svh-4rem)] bg-pinball-black/95 backdrop-blur-lg border-t border-pinball-red/20 overflow-y-auto transition-all duration-300 ${!overflowed ? "hidden" : ""
+          } ${mobileOpen
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-8 pointer-events-none"
-        }`}
+          }`}
       >
         <div className="flex flex-col items-center justify-start py-6 px-6 space-y-2">
           {NAV_LINKS_BASE.map((link) => {
@@ -220,11 +214,10 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className={`flex items-center justify-center w-full max-w-[250px] py-2 px-4 font-tech rounded-lg transition-colors duration-200 ${
-                  isActive
+                className={`flex items-center justify-center w-full max-w-[250px] py-2 px-4 font-tech rounded-lg transition-colors duration-200 ${isActive
                     ? "text-pinball-red bg-pinball-red/10"
                     : "text-pinball-cream/80 hover:text-pinball-yellow hover:bg-pinball-red/10"
-                }`}
+                  }`}
               >
                 <Icon className="w-5 h-5 mr-3 opacity-80" />
                 <span>{t(`navbar.${link.key}`)}</span>
