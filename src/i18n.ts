@@ -2,80 +2,57 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-// Import translation resources
+// Only bundle the fallback language (pt) upfront — all others load on demand
 import pt from "./locales/pt/translation.json";
-import en from "./locales/en/translation.json";
-import es from "./locales/es/translation.json";
-import fr from "./locales/fr/translation.json";
-import de from "./locales/de/translation.json";
-import it from "./locales/it/translation.json";
-import ja from "./locales/ja/translation.json";
-import zh from "./locales/zh/translation.json";
-import ko from "./locales/ko/translation.json";
-import ru from "./locales/ru/translation.json";
-import ar from "./locales/ar/translation.json";
-import hi from "./locales/hi/translation.json";
-import nl from "./locales/nl/translation.json";
-import tr from "./locales/tr/translation.json";
-import pl from "./locales/pl/translation.json";
-import sv from "./locales/sv/translation.json";
-import id from "./locales/id/translation.json";
-import vi from "./locales/vi/translation.json";
 
-// Configure the resources object
-const resources = {
-  pt: { translation: pt },
-  en: { translation: en },
-  es: { translation: es },
-  fr: { translation: fr },
-  de: { translation: de },
-  it: { translation: it },
-  ja: { translation: ja },
-  zh: { translation: zh },
-  ko: { translation: ko },
-  ru: { translation: ru },
-  ar: { translation: ar },
-  hi: { translation: hi },
-  nl: { translation: nl },
-  tr: { translation: tr },
-  pl: { translation: pl },
-  sv: { translation: sv },
-  id: { translation: id },
-  vi: { translation: vi },
+const SUPPORTED_LANGS = [
+  "pt", "en", "es", "fr", "de", "it", "ja", "zh",
+  "ko", "ru", "ar", "hi", "nl", "tr", "pl", "sv", "id", "vi",
+] as const;
+
+// Lazy-load map using Vite's dynamic import (each language becomes its own chunk)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const LAZY_LOADERS: Record<string, () => Promise<{ default: any }>> = {
+  en: () => import("./locales/en/translation.json"),
+  es: () => import("./locales/es/translation.json"),
+  fr: () => import("./locales/fr/translation.json"),
+  de: () => import("./locales/de/translation.json"),
+  it: () => import("./locales/it/translation.json"),
+  ja: () => import("./locales/ja/translation.json"),
+  zh: () => import("./locales/zh/translation.json"),
+  ko: () => import("./locales/ko/translation.json"),
+  ru: () => import("./locales/ru/translation.json"),
+  ar: () => import("./locales/ar/translation.json"),
+  hi: () => import("./locales/hi/translation.json"),
+  nl: () => import("./locales/nl/translation.json"),
+  tr: () => import("./locales/tr/translation.json"),
+  pl: () => import("./locales/pl/translation.json"),
+  sv: () => import("./locales/sv/translation.json"),
+  id: () => import("./locales/id/translation.json"),
+  vi: () => import("./locales/vi/translation.json"),
 };
 
+// Load a language on demand and add it to i18n
+export async function loadLanguage(lng: string | undefined) {
+  if (!lng || lng === "pt" || i18n.hasResourceBundle(lng, "translation")) return;
+  const loader = LAZY_LOADERS[lng];
+  if (!loader) return;
+  const mod = await loader();
+  i18n.addResourceBundle(lng, "translation", mod.default, true, true);
+}
+
 i18n
-  // Detect user language
   .use(LanguageDetector)
-  // Pass the i18n instance to react-i18next
   .use(initReactI18next)
-  // Initialize i18next
   .init({
-    resources,
-    fallbackLng: "pt", // Portuguese as the fallback language since the original site is in PT
-    supportedLngs: [
-      "pt",
-      "en",
-      "es",
-      "fr",
-      "de",
-      "it",
-      "ja",
-      "zh",
-      "ko",
-      "ru",
-      "ar",
-      "hi",
-      "nl",
-      "tr",
-      "pl",
-      "sv",
-      "id",
-      "vi",
-    ],
+    resources: {
+      pt: { translation: pt },
+    },
+    fallbackLng: "pt",
+    supportedLngs: [...SUPPORTED_LANGS],
 
     interpolation: {
-      escapeValue: false, // React already safe from xss
+      escapeValue: false,
     },
 
     detection: {
@@ -83,5 +60,17 @@ i18n
       caches: ["localStorage", "cookie"],
     },
   });
+
+// After init, load the detected language if it's not pt
+const detected = (i18n.language || "pt").split("-")[0];
+if (detected !== "pt") {
+  loadLanguage(detected);
+}
+
+// Load language bundles on the fly when the user switches languages
+i18n.on("languageChanged", (lng) => {
+  const base = lng.split("-")[0];
+  loadLanguage(base);
+});
 
 export default i18n;
