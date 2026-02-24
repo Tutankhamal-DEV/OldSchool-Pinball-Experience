@@ -284,7 +284,14 @@ export default function CanvasBackground({
     };
 
     resize();
-    window.addEventListener("resize", resize);
+
+    // Debounced resize to avoid forced-reflow storms
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    const debouncedResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 150);
+    };
+    window.addEventListener("resize", debouncedResize);
 
     const render = () => {
       if (document.hidden) {
@@ -308,7 +315,8 @@ export default function CanvasBackground({
 
     return () => {
       cancelAnimationFrame(animationRef.current);
-      window.removeEventListener("resize", resize);
+      clearTimeout(resizeTimer);
+      window.removeEventListener("resize", debouncedResize);
     };
   }, []);
 

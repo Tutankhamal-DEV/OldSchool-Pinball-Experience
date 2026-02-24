@@ -25,6 +25,13 @@ export default function App() {
   const [activeSection, setActiveSection] = useState("home");
   const activeSectionRef = useRef(activeSection);
 
+  // Defer Chatbot mount so its tooltip (opacity:0→1) doesn't become the LCP element
+  const [chatbotReady, setChatbotReady] = useState(false);
+  useEffect(() => {
+    const id = setTimeout(() => setChatbotReady(true), 4000);
+    return () => clearTimeout(id);
+  }, []);
+
   // Preloader handoff is managed by Hero.tsx (adopts image, then hides overlay)
 
   // Sync ref when state changes
@@ -137,7 +144,7 @@ export default function App() {
           <Footer />
         </section>
 
-        <Chatbot />
+        {chatbotReady && <Chatbot />}
       </Suspense>
 
       <CookieConsent />

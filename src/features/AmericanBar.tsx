@@ -284,27 +284,35 @@ export default function AmericanBar() {
                           clunky with React 19+. Wait, TS might complain about HTMLFlipBook. 
                           Using @ts-expect-error as safety bypass for potential mismatched types in this old lib.
                         */}
-            {/* @ts-expect-error react-pageflip type mismatch */}
-            <HTMLFlipBook
-              width={350}
-              height={500}
-              size="stretch"
-              minWidth={140}
-              maxWidth={450}
-              minHeight={200}
-              maxHeight={650}
-              maxShadowOpacity={0.6}
-              showCover={true}
-              usePortrait={false}
-              showPageCorners={false}
-              flippingTime={1000}
-              className="menu-flipbook mx-auto shadow-2xl"
-              style={{ margin: "0 auto" }}
-            >
-              {MENU_PAGES.map((pageImage, index) => (
-                <Page key={index} number={index + 1} imageUrl={pageImage} />
-              ))}
-            </HTMLFlipBook>
+            {inView ? (
+              // @ts-expect-error react-pageflip type mismatch
+              <HTMLFlipBook
+                width={350}
+                height={500}
+                size="stretch"
+                minWidth={140}
+                maxWidth={450}
+                minHeight={200}
+                maxHeight={650}
+                maxShadowOpacity={0.6}
+                showCover={true}
+                usePortrait={false}
+                showPageCorners={false}
+                flippingTime={1000}
+                className="menu-flipbook mx-auto shadow-2xl"
+                style={{ margin: "0 auto" }}
+              >
+                {MENU_PAGES.map((pageImage, index) => (
+                  <Page key={index} number={index + 1} imageUrl={pageImage} />
+                ))}
+              </HTMLFlipBook>
+            ) : (
+              <div
+                className="mx-auto shadow-2xl bg-[#111] rounded animate-pulse"
+                style={{ width: 350, height: 500, maxWidth: "100%" }}
+                aria-hidden="true"
+              />
+            )}
           </motion.div>
         </motion.div>
       </div>
