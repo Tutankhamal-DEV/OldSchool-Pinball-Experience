@@ -109,11 +109,8 @@ export default function Navbar({ activeSection = "home", className = "" }: Navba
       ro.observe(barRef.current);
     }
 
-    window.addEventListener("resize", checkOverflow);
-
     return () => {
       ro.disconnect();
-      window.removeEventListener("resize", checkOverflow);
     };
   }, [checkOverflow]);
 

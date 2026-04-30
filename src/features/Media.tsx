@@ -50,8 +50,8 @@ const TVStaticBackground = ({ isActive }: { isActive: boolean }) => {
     const pattern = oCtx ? ctx.createPattern(offscreen, "repeat") : null;
 
     const draw = (time: number) => {
-      // Throttle to 30 FPS (33ms)
-      if (time - lastTime < 33) {
+      // Throttle to 20 FPS (50ms) — matches TVPage for consistency
+      if (time - lastTime < 50) {
         frameId = requestAnimationFrame(draw);
         return;
       }
@@ -71,7 +71,12 @@ const TVStaticBackground = ({ isActive }: { isActive: boolean }) => {
       frameId = requestAnimationFrame(draw);
     };
     frameId = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(frameId);
+    return () => {
+      cancelAnimationFrame(frameId);
+      // Clean up offscreen canvas to prevent memory leak
+      offscreen.width = 0;
+      offscreen.height = 0;
+    };
   }, [isActive]);
 
   if (!isActive) return null;
@@ -80,8 +85,8 @@ const TVStaticBackground = ({ isActive }: { isActive: boolean }) => {
       ref={canvasRef}
       width={320}
       height={180}
-      style={{ imageRendering: "pixelated" }}
-      className="absolute inset-0 w-full h-full object-cover z-[15] pointer-events-none opacity-50 mix-blend-screen"
+      style={{ imageRendering: "pixelated", transform: "translateZ(0)" }}
+      className="absolute inset-0 w-full h-full object-cover z-[15] pointer-events-none opacity-50 mix-blend-screen will-change-transform transform-gpu"
       aria-hidden="true"
     />
   );

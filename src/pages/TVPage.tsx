@@ -73,7 +73,12 @@ const TVStaticBackground = ({ isActive }: { isActive: boolean }) => {
       frameId = requestAnimationFrame(draw);
     };
     frameId = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(frameId);
+    return () => {
+      cancelAnimationFrame(frameId);
+      // Clean up offscreen canvas to prevent memory leak
+      offscreen.width = 0;
+      offscreen.height = 0;
+    };
   }, [isActive]);
 
   if (!isActive) return null;
@@ -173,6 +178,7 @@ export default function TVPage() {
     if (!video) return;
 
     let hls: Hls | null = null;
+    let safariMetadataHandler: (() => void) | null = null;
 
     const handleCanPlay = () => setIsBuffering(false);
     const handleWaiting = () => setIsBuffering(true);
@@ -200,9 +206,10 @@ export default function TVPage() {
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
       // Safari support
       video.src = STREAM_URL;
-      video.addEventListener("loadedmetadata", () => {
+      safariMetadataHandler = () => {
         video.play().catch(e => console.log("Auto-play prevented", e));
-      });
+      };
+      video.addEventListener("loadedmetadata", safariMetadataHandler);
     }
 
     return () => {
@@ -210,6 +217,9 @@ export default function TVPage() {
       video.removeEventListener("waiting", handleWaiting);
       video.removeEventListener("playing", handlePlaying);
       video.removeEventListener("pause", handlePause);
+      if (safariMetadataHandler) {
+        video.removeEventListener("loadedmetadata", safariMetadataHandler);
+      }
       if (hls) {
         hls.destroy();
       }

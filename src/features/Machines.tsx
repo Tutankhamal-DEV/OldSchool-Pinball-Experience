@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import { motion, useInView } from "motion/react";
 import { useTranslation } from "react-i18next";
 
@@ -115,18 +115,22 @@ export default function Machines() {
     return () => clearInterval(timer);
   }, []);
 
-  const sortedMachines = [...MACHINES].sort((a, b) =>
-    a.name.localeCompare(b.name),
+  const sortedMachines = useMemo(
+    () => [...MACHINES].sort((a, b) => a.name.localeCompare(b.name)),
+    [],
   );
 
-  const groupedMachines = {
-    [t("machines.groups.arcades")]: sortedMachines.filter(
-      (m) => m.category === "arcade",
-    ),
-    [t("machines.groups.pinballs")]: sortedMachines.filter(
-      (m) => m.category === "pinball",
-    ),
-  };
+  const groupedMachines = useMemo(
+    () => ({
+      [t("machines.groups.arcades")]: sortedMachines.filter(
+        (m) => m.category === "arcade",
+      ),
+      [t("machines.groups.pinballs")]: sortedMachines.filter(
+        (m) => m.category === "pinball",
+      ),
+    }),
+    [t, sortedMachines],
+  );
 
   return (
     <section id="maquinas" ref={ref} className="relative py-24 px-4 z-1">
