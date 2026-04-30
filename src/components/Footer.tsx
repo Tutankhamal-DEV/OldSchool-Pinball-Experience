@@ -129,9 +129,9 @@ export default function Footer() {
           <span className="mb-2 capitalize text-[0.5rem] md:text-[0.55rem]">
             {String(t("footer.developer_credit")).split(":")[0]?.toLowerCase()}:
           </span>
-          <div className="flex flex-col items-center gap-1.5">
-            <img src="/square_logo.png" alt="Stream Builders" className="h-7 w-7 object-contain rounded" />
-            <span className="font-tech text-pinball-cream tracking-wide text-[0.7rem] md:text-xs">
+          <div className="flex flex-col items-center gap-2">
+            <img src="/square_logo.png" alt="Stream Builders" className="h-14 w-auto object-contain rounded" />
+            <span className="font-tech text-pinball-cream tracking-wide text-[0.75rem] md:text-sm">
               STREAM BUILDERS
             </span>
           </div>

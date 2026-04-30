@@ -117,21 +117,16 @@ function renderArcadeAlley(
     }
   }
 
-  // Perspective lines — also fade in from vanishing point
+  // Perspective lines
   ctx.lineWidth = 1;
+  ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
+  ctx.beginPath();
   for (let i = -30; i <= 30; i++) {
     const xAtBottom = vanishX + i * (w * 0.1);
-    // Use gradient stroke: dim at vanish, bright at bottom
-    const grad = ctx.createLinearGradient(vanishX, vanishY, xAtBottom, h);
-    grad.addColorStop(0, "rgba(255, 255, 255, 0)");
-    grad.addColorStop(0.3, "rgba(255, 255, 255, 0.05)");
-    grad.addColorStop(1, "rgba(255, 255, 255, 0.25)");
-    ctx.strokeStyle = grad;
-    ctx.beginPath();
     ctx.moveTo(vanishX, vanishY);
     ctx.lineTo(xAtBottom, h);
-    ctx.stroke();
   }
+  ctx.stroke();
 
   // Horizontal floor lines — also fade in
   for (let j = 0; j < 15; j++) {
