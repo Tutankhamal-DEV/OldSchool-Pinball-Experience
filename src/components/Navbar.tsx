@@ -28,9 +28,10 @@ const NAV_LINKS_BASE = [
 
 type NavbarProps = {
   activeSection?: string;
+  className?: string;
 };
 
-export default function Navbar({ activeSection = "home" }: NavbarProps) {
+export default function Navbar({ activeSection = "home", className = "" }: NavbarProps) {
   const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,7 +46,16 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
   });
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 60);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -117,10 +127,11 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
   return (
     <nav
       aria-label="Main navigation"
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${scrolled
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 will-change-transform transform-gpu ${scrolled
           ? "bg-pinball-black/90 backdrop-blur-md shadow-lg shadow-pinball-red/10"
           : "bg-gradient-to-b from-black/80 via-black/40 to-transparent"
-        }`}
+        } ${className}`}
+      style={{ transform: "translateZ(0)" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
@@ -155,7 +166,7 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`relative px-3 py-2 font-tech text-sm transition-colors duration-300 group ${isActive
+                  className={`relative px-1.5 lg:px-2 xl:px-3 py-2 font-tech text-[11px] lg:text-xs xl:text-sm transition-colors duration-300 group ${isActive
                       ? "text-pinball-red"
                       : "text-pinball-cream/80 hover:text-white"
                     }`}
@@ -172,7 +183,7 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
 
           {/* Right — CTA */}
           <div
-            className="flex items-center gap-1 sm:gap-3 flex-nowrap whitespace-nowrap flex-shrink-0"
+            className="flex items-center gap-1 lg:gap-2 flex-nowrap whitespace-nowrap flex-shrink-0"
             data-nav-right
           >
             <div className={`${isTVRoute ? "hidden" : "flex items-center"}`}>
@@ -181,34 +192,36 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
 
             <a
               href="#ingressos"
-              className={`btn-retro btn-retro-nav gap-2 ${(overflowed || isTVRoute) ? "!hidden" : "!inline-flex"}`}
+              className={`btn-retro btn-retro-nav gap-1.5 ${(overflowed || isTVRoute) ? "!hidden" : "!inline-flex"}`}
             >
-              <Ticket className="w-4 h-4 mr-2" />
-              {t("navbar.buy_online")}
+              <Ticket className="w-4 h-4" />
+              <span className="hidden xl:inline-block">{t("navbar.buy_online")}</span>
+              <span className="inline-block xl:hidden">{t("navbar.tickets")}</span>
             </a>
 
             {isTVRoute ? (
               <a
                 href="https://oldschool.plus"
-                className={`btn-retro btn-retro-nav gap-2 !border-pinball-red !shadow-[0_0_15px_rgba(255,42,42,0.4)] hover:!shadow-[0_0_25px_rgba(255,42,42,0.8)] !text-pinball-cream hover:!bg-pinball-red/10 ${overflowed ? "!hidden" : "!inline-flex"}`}
+                className={`btn-retro btn-retro-nav gap-1.5 !border-pinball-red !shadow-[0_0_15px_rgba(255,42,42,0.4)] hover:!shadow-[0_0_25px_rgba(255,42,42,0.8)] !text-pinball-cream hover:!bg-pinball-red/10 !inline-flex`}
               >
-                <Home className="w-4 h-4 mr-2" />
-                Old School Pinball
+                <Home className="w-4 h-4" />
+                <span>Old School Pinball</span>
               </a>
             ) : (
               <a
-                href="/tv"
-                className={`btn-retro btn-retro-nav gap-2 !border-pinball-neon-blue !shadow-[0_0_15px_rgba(0,183,255,0.4)] hover:!shadow-[0_0_25px_rgba(0,183,255,0.8)] !text-pinball-neon-blue hover:!bg-pinball-neon-blue/10 ${overflowed ? "!hidden" : "!inline-flex"}`}
+                href="https://tv.oldschool.plus"
+                className={`btn-retro btn-retro-nav gap-1.5 !border-pinball-neon-blue !shadow-[0_0_15px_rgba(0,183,255,0.4)] hover:!shadow-[0_0_25px_rgba(0,183,255,0.8)] !text-pinball-neon-blue hover:!bg-pinball-neon-blue/10 ${overflowed ? "!hidden" : "!inline-flex"}`}
               >
-                <PlaySquare className="w-4 h-4 mr-2" />
-                Old School TV
+                <PlaySquare className="w-4 h-4" />
+                <span className="hidden xl:inline-block">Old School TV</span>
+                <span className="inline-block xl:hidden">TV</span>
               </a>
             )}
 
-            {/* Mobile hamburger — visible when overflowed, hidden on TV route */}
+            {/* Mobile hamburger — visible when overflowed, but hidden on TV route because there's no page navigation needed */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`p-2 text-pinball-cream ${(overflowed && !isTVRoute) ? "" : "hidden"}`}
+              className={`p-2 text-pinball-cream ${overflowed && !isTVRoute ? "" : "hidden"}`}
               aria-label={t("navbar.menu")}
             >
               {mobileOpen ? (

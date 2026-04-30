@@ -46,12 +46,21 @@ const TVStaticBackground = ({ isActive }: { isActive: boolean }) => {
       oCtx.putImageData(imgData, 0, 0);
     }
 
-    const draw = () => {
+    let lastTime = 0;
+    const pattern = oCtx ? ctx.createPattern(offscreen, "repeat") : null;
+
+    const draw = (time: number) => {
+      // Throttle to 30 FPS (33ms)
+      if (time - lastTime < 33) {
+        frameId = requestAnimationFrame(draw);
+        return;
+      }
+      lastTime = time;
+
       const width = canvas.width;
       const height = canvas.height;
       ctx.clearRect(0, 0, width, height);
 
-      const pattern = ctx.createPattern(offscreen, "repeat");
       if (pattern) {
         ctx.fillStyle = pattern;
         ctx.save();
@@ -61,7 +70,7 @@ const TVStaticBackground = ({ isActive }: { isActive: boolean }) => {
       }
       frameId = requestAnimationFrame(draw);
     };
-    draw();
+    frameId = requestAnimationFrame(draw);
     return () => cancelAnimationFrame(frameId);
   }, [isActive]);
 

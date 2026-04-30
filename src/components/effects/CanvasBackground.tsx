@@ -216,10 +216,11 @@ function CrossfadeImage({ entry }: { entry: BgEntry }) {
             src={layer.entry.lg}
             alt=""
             aria-hidden="true"
-            className="fixed inset-0 w-full h-full object-cover pointer-events-none z-[20]"
+            className="fixed inset-0 w-full h-full object-cover pointer-events-none z-[20] will-change-transform transform-gpu"
             style={{
               opacity: layer.opacity,
               transition: `opacity ${FADE_DURATION}ms ease-in-out`,
+              transform: 'translateZ(0)'
             }}
           />
         </picture>
@@ -282,7 +283,8 @@ export default function CanvasBackground({
       }
       cachedW = newW;
       cachedH = newH;
-      const dpr = window.devicePixelRatio || 1;
+      // Cap DPR at 1.25 to drastically improve performance on Retina/4K screens
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
       canvas.width = cachedW * dpr;
       canvas.height = cachedH * dpr;
       canvas.style.width = `${cachedW}px`;
@@ -307,6 +309,12 @@ export default function CanvasBackground({
         return;
       }
       const now = performance.now();
+      // Throttle to roughly 30 FPS for the background to save CPU/GPU cycles
+      if (lastFrameRef.current && now - lastFrameRef.current < 33) {
+        animationRef.current = requestAnimationFrame(render);
+        return;
+      }
+
       const delta = lastFrameRef.current
         ? Math.min((now - lastFrameRef.current) / 1000, 0.05)
         : 0.016;
@@ -346,8 +354,9 @@ export default function CanvasBackground({
       {/* 3. Canvas animation — checkerboard pattern */}
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 w-full h-full pointer-events-none mix-blend-screen transition-opacity duration-1000 ease-in-out z-[22]"
+        className="fixed inset-0 w-full h-full pointer-events-none mix-blend-screen transition-opacity duration-1000 ease-in-out z-[22] will-change-transform transform-gpu"
         aria-hidden="true"
+        style={{ transform: 'translateZ(0)' }}
       />
     </>
   );
