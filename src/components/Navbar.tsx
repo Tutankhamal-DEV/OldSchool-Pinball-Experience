@@ -189,7 +189,7 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
 
             {isTVRoute ? (
               <a
-                href="/"
+                href="https://oldschool.plus"
                 className={`btn-retro btn-retro-nav gap-2 !border-pinball-red !shadow-[0_0_15px_rgba(255,42,42,0.4)] hover:!shadow-[0_0_25px_rgba(255,42,42,0.8)] !text-pinball-cream hover:!bg-pinball-red/10 ${overflowed ? "!hidden" : "!inline-flex"}`}
               >
                 <Home className="w-4 h-4 mr-2" />
