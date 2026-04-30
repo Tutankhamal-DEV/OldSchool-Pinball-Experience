@@ -121,23 +121,20 @@ export default function Footer() {
       {/* Developer Credit — centered, always last */}
       <div className="flex justify-center mt-8 pt-6 border-t border-white/5">
         <a
-          href="https://tutankhamal.com"
+          href="https://stream.builders"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center font-pixel text-[0.5rem] md:text-[0.6rem] text-pinball-cream/50 hover:text-pinball-cream/80 transition-all duration-300 uppercase tracking-wider group"
         >
-          <span className="mb-0.5 capitalize text-[0.5rem] md:text-[0.55rem]">
+          <span className="mb-2 capitalize text-[0.5rem] md:text-[0.55rem]">
             {String(t("footer.developer_credit")).split(":")[0]?.toLowerCase()}:
           </span>
-          <span className="font-tech text-[0.7rem] md:text-xs tracking-widest">
-            <span
-              className="glitch-text-red text-white group-hover:text-pinball-cream transition-colors duration-300"
-              data-text="TUTANKHAMAL"
-            >
-              TUTANKHAMAL
+          <div className="flex flex-col items-center gap-1.5">
+            <img src="/square_logo.png" alt="Stream Builders" className="h-7 w-7 object-contain rounded" />
+            <span className="font-tech text-pinball-cream tracking-wide text-[0.7rem] md:text-xs">
+              STREAM BUILDERS
             </span>
-            <span className="text-pinball-cream/60 ml-1">DEV</span>
-          </span>
+          </div>
         </a>
       </div>
     </footer>
