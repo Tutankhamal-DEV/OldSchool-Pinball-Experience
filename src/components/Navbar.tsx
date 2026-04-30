@@ -16,14 +16,14 @@ import LanguageSwitcher from "./LanguageSwitcher";
 
 // Removing labels from here to evaluate them dynamically inside the component via translations
 const NAV_LINKS_BASE = [
-  { href: "#home", sectionId: "home", key: "home", Icon: Home },
-  { href: "#sobre", sectionId: "sobre", key: "atmosphere", Icon: Sparkles },
-  { href: "#bar", sectionId: "bar", key: "bar", Icon: Coffee },
-  { href: "#maquinas", sectionId: "maquinas", key: "machines", Icon: Gamepad2 },
-  { href: "#midia", sectionId: "midia", key: "media", Icon: PlaySquare },
-  { href: "#eventos", sectionId: "eventos", key: "events", Icon: Calendar },
-  { href: "#ingressos", sectionId: "ingressos", key: "tickets", Icon: Ticket },
-  { href: "#contato", sectionId: "contato", key: "contact", Icon: Mail },
+  { href: "/#home", sectionId: "home", key: "home", Icon: Home },
+  { href: "/#sobre", sectionId: "sobre", key: "atmosphere", Icon: Sparkles },
+  { href: "/#bar", sectionId: "bar", key: "bar", Icon: Coffee },
+  { href: "/#maquinas", sectionId: "maquinas", key: "machines", Icon: Gamepad2 },
+  { href: "/#midia", sectionId: "midia", key: "media", Icon: PlaySquare },
+  { href: "/#eventos", sectionId: "eventos", key: "events", Icon: Calendar },
+  { href: "/#ingressos", sectionId: "ingressos", key: "tickets", Icon: Ticket },
+  { href: "/#contato", sectionId: "contato", key: "contact", Icon: Mail },
 ];
 
 type NavbarProps = {
@@ -39,6 +39,10 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
   // Refs for overflow detection
   const barRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<HTMLDivElement>(null);
+
+  const [isTVRoute] = useState(() => {
+    return typeof window !== "undefined" && (window.location.pathname === "/tv" || window.location.hostname === "tv.oldschool.plus");
+  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -125,7 +129,7 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
         >
           {/* Logo */}
           <a
-            href="#home"
+            href="/#home"
             className="flex items-center gap-2 group flex-shrink-0"
             data-nav-logo
           >
@@ -139,10 +143,10 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
             />
           </a>
 
-          {/* Desktop Nav — hidden when overflowed */}
+          {/* Desktop Nav — hidden when overflowed or on TV route */}
           <div
             ref={linksRef}
-            className={`items-center gap-1 flex-nowrap whitespace-nowrap overflow-hidden ${overflowed ? "hidden" : "flex"
+            className={`items-center gap-1 flex-nowrap whitespace-nowrap overflow-hidden ${(overflowed || isTVRoute) ? "hidden" : "flex"
               }`}
           >
             {NAV_LINKS_BASE.map((link) => {
@@ -171,20 +175,40 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
             className="flex items-center gap-1 sm:gap-3 flex-nowrap whitespace-nowrap flex-shrink-0"
             data-nav-right
           >
-            <LanguageSwitcher />
+            <div className={`${isTVRoute ? "hidden" : "flex items-center"}`}>
+              <LanguageSwitcher />
+            </div>
 
             <a
               href="#ingressos"
-              className={`btn-retro btn-retro-nav gap-2 ${overflowed ? "!hidden" : "!inline-flex"}`}
+              className={`btn-retro btn-retro-nav gap-2 ${(overflowed || isTVRoute) ? "!hidden" : "!inline-flex"}`}
             >
               <Ticket className="w-4 h-4 mr-2" />
               {t("navbar.buy_online")}
             </a>
 
-            {/* Mobile hamburger — visible when overflowed */}
+            {isTVRoute ? (
+              <a
+                href="/"
+                className={`btn-retro btn-retro-nav gap-2 !border-pinball-red !shadow-[0_0_15px_rgba(255,42,42,0.4)] hover:!shadow-[0_0_25px_rgba(255,42,42,0.8)] !text-pinball-cream hover:!bg-pinball-red/10 ${overflowed ? "!hidden" : "!inline-flex"}`}
+              >
+                <Home className="w-4 h-4 mr-2" />
+                Old School Pinball
+              </a>
+            ) : (
+              <a
+                href="/tv"
+                className={`btn-retro btn-retro-nav gap-2 !border-pinball-neon-blue !shadow-[0_0_15px_rgba(0,183,255,0.4)] hover:!shadow-[0_0_25px_rgba(0,183,255,0.8)] !text-pinball-neon-blue hover:!bg-pinball-neon-blue/10 ${overflowed ? "!hidden" : "!inline-flex"}`}
+              >
+                <PlaySquare className="w-4 h-4 mr-2" />
+                Old School TV
+              </a>
+            )}
+
+            {/* Mobile hamburger — visible when overflowed, hidden on TV route */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`p-2 text-pinball-cream ${overflowed ? "" : "hidden"}`}
+              className={`p-2 text-pinball-cream ${(overflowed && !isTVRoute) ? "" : "hidden"}`}
               aria-label={t("navbar.menu")}
             >
               {mobileOpen ? (
@@ -225,13 +249,32 @@ export default function Navbar({ activeSection = "home" }: NavbarProps) {
             );
           })}
           <div className="w-full max-w-[250px] pt-4 mt-2 border-t border-pinball-red/20">
-            <a
-              href="#ingressos"
-              className="!flex w-full justify-center btn-retro text-center text-xs py-2"
-            >
-              <Ticket className="w-5 h-5 mr-2 inline-block" />
-              {t("navbar.buy_online")}
-            </a>
+            {!isTVRoute && (
+              <a
+                href="#ingressos"
+                className="!flex w-full justify-center btn-retro text-center text-xs py-2"
+              >
+                <Ticket className="w-5 h-5 mr-2 inline-block" />
+                {t("navbar.buy_online")}
+              </a>
+            )}
+            {isTVRoute ? (
+              <a
+                href="/"
+                className="!flex w-full justify-center btn-retro text-center text-xs py-2 mt-2 !border-pinball-neon-blue !text-pinball-neon-blue hover:!bg-pinball-neon-blue/10"
+              >
+                <Home className="w-5 h-5 mr-2 inline-block" />
+                Old School Pinball
+              </a>
+            ) : (
+              <a
+                href="/tv"
+                className="!flex w-full justify-center btn-retro text-center text-xs py-2 mt-2 !border-pinball-neon-blue !text-pinball-neon-blue hover:!bg-pinball-neon-blue/10"
+              >
+                <PlaySquare className="w-5 h-5 mr-2 inline-block" />
+                Old School TV
+              </a>
+            )}
           </div>
         </div>
       </div>

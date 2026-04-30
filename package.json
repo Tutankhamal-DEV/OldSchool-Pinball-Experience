@@ -11,7 +11,7 @@
     "build:wp": "npm run build"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.6.1",
+    "hls.js": "^1.6.16",
     "i18next": "^25.8.13",
     "i18next-browser-languagedetector": "^8.2.1",
     "lucide-react": "^0.574.0",

@@ -1,10 +1,10 @@
 import { useEffect, useState, Suspense, lazy, useRef } from "react";
-import { Analytics } from "@vercel/analytics/react";
 import { useContentProtection } from "./hooks/useContentProtection";
 const CRTOverlay = lazy(() => import("./components/effects/CRTOverlay"));
 const CookieConsent = lazy(() => import("./components/CookieConsent"));
 import Navbar from "./components/Navbar";
 import Hero from "./features/Hero";
+import TVPage from "./pages/TVPage";
 
 // Ultra-light DOM delivery using lazy dynamic imports for below-the-fold sections
 const CanvasBackground = lazy(
@@ -18,19 +18,17 @@ const Footer = lazy(() => import("./components/Footer"));
 const Machines = lazy(() => import("./features/Machines"));
 const Media = lazy(() => import("./features/Media"));
 const Tickets = lazy(() => import("./features/Tickets"));
-const Chatbot = lazy(() => import("./components/Chatbot"));
 
 export default function App() {
   useContentProtection();
+  
+  // Basic routing for TV page
+  const [isTVRoute] = useState(() => {
+    return window.location.pathname === "/tv" || window.location.hostname === "tv.oldschool.plus";
+  });
+
   const [activeSection, setActiveSection] = useState("home");
   const activeSectionRef = useRef(activeSection);
-
-  // Defer Chatbot mount so its tooltip (opacity:0→1) doesn't become the LCP element
-  const [chatbotReady, setChatbotReady] = useState(false);
-  useEffect(() => {
-    const id = setTimeout(() => setChatbotReady(true), 4000);
-    return () => clearTimeout(id);
-  }, []);
 
   // Preloader handoff is managed by Hero.tsx (adopts image, then hides overlay)
 
@@ -93,7 +91,15 @@ export default function App() {
       observer.disconnect();
       mutationObserver.disconnect();
     };
-  }, []); // Empty dependency array, observer never recreates
+  }, [isTVRoute]); // Added dependency to avoid observer setup when not rendering main layout
+
+  if (isTVRoute) {
+    return (
+      <Suspense fallback={<div className="min-h-svh bg-black" />}>
+        <TVPage />
+      </Suspense>
+    );
+  }
 
   return (
     <div className="relative min-h-svh overflow-x-hidden text-pinball-cream font-sans">
@@ -146,13 +152,7 @@ export default function App() {
 
       </Suspense>
 
-      {/* Chatbot in its own Suspense so loading its chunk doesn't flash the main content */}
-      <Suspense fallback={null}>
-        {chatbotReady && <Chatbot />}
-      </Suspense>
-
       <CookieConsent />
-      <Analytics />
     </div>
   );
 }
